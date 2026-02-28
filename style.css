@@ -443,6 +443,13 @@ h6:hover {
     margin-bottom: 15px;
   }
 
+  .min{
+    font-size:15px;
+    margin:20px auto;
+    border: 1.5px solid #FFD700;
+    padding:10px;
+  }
+
   img{
     width: 90%;
   }
@@ -460,3 +467,5 @@ h6:hover {
     display: inline-block;
   }
 }
+
+
