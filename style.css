@@ -432,8 +432,72 @@ h6:hover {
   box-shadow: 0 8px 20px rgba(255,140,0,0.6);
 }
 
-/* Media Query for smaller screens */
 @media (max-width: 1100px) {
+  .min{
+    margin-left:0px;
+    margin-right: 0px;
+    width: auto;
+    font-size:10px;
+  }
+
+  img{
+    width: 90%;
+  }
+
+  .section{
+    margin-left:3px;
+    margin-right:3px;
+    width: auto;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    font-size: 13px;
+    display: inline-block;
+  }
+
+  .navbar-toggler {
+    display: inline-block;
+    margin-left: auto;
+  }
+
+  /* Collapse menu hidden by default */
+  .navbar-collapse {
+    display: none;
+    width: 100%;
+    background: linear-gradient(90deg, #FFD700, #FF8C00);
+  }
+
+  /* যখন টগলার চাপা হবে তখন নিচে খুলবে */
+  .navbar-collapse.show {
+    display: block;       /* block layout ensures it sits BELOW */
+    width: 100%;
+    padding: 8px 12px;
+  }
+
+  .navbar-nav {
+    display: block;       /* block so items stack vertically */
+    width: 100%;
+  }
+
+  .nav-item {
+    display: block;
+    width: 100%;
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    margin: 4px 0;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  
   .explore-container {
     flex-direction: column;
     align-items: center;
@@ -450,22 +514,7 @@ h6:hover {
     padding:10px;
   }
 
-  img{
-    width: 90%;
-  }
-
-  .nav-link{
-    padding-left:5px;
-    font-size: 15px;
-    width: 90%;
-  }
-
-  nav{display: inline-block;}
-
-  .navbar-brand{
-    font-size:13px;
-    display: inline-block;
-  }
 }
+
 
 
