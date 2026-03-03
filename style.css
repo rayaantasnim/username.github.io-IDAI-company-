@@ -435,7 +435,7 @@ h6:hover {
 @media (max-width: 1100px) {
 
   body{
-    margin-left:3px;
+    margin-left:3px !important;
   }
   
   .min{
@@ -464,6 +464,7 @@ h6:hover {
   .navbar-brand {
     font-size: 13px;
     display: inline-block;
+    margin-left:10px;
   }
 
   .navbar-toggler {
@@ -529,6 +530,7 @@ h6:hover {
       padding: 5px !important;
     }
   }
+
 
 
 
