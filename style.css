@@ -433,6 +433,11 @@ h6:hover {
 }
 
 @media (max-width: 1100px) {
+
+  body{
+    margin-left:3px;
+  }
+  
   .min{
     margin-left:0px;
     margin-right: 0px;
@@ -524,6 +529,7 @@ h6:hover {
       padding: 5px !important;
     }
   }
+
 
 
 
