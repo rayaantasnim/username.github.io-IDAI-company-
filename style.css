@@ -514,7 +514,16 @@ h6:hover {
     padding:10px;
   }
 
-}
+    section{
+      margin-left: 5px !important;
+    }
+
+    welcome{
+      margin-left: 5px !important;
+      margin-right: 5px !important;
+      padding: 5px !important;
+    }
+  }
 
 
 
