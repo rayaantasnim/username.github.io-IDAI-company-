@@ -393,30 +393,8 @@ Ultimately, IDAI has earned trust through its motto: no matter how advanced arti
       audio.muted = false;
       audio.play();
     }, { once: true });  
-
-document.addEventListener("DOMContentLoaded", function() {
-  const track = document.querySelector('.custom-carousel-track');
-  const items = document.querySelectorAll('.custom-carousel-item');
-  const prevBtn = document.querySelector('.carousel-btn.prev');
-  const nextBtn = document.querySelector('.carousel-btn.next');
-
-  let currentIndex = 0;
-
-  function updateCarousel() {
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
-
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % items.length;
-    updateCarousel();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-    updateCarousel();
-  });
-});
-
 </script>
+
+
 </body>
 </html>
