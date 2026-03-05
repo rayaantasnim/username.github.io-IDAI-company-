@@ -432,72 +432,7 @@ h6:hover {
   box-shadow: 0 8px 20px rgba(255,140,0,0.6);
 }
 
-/* Custom Carousel */
-.custom-carousel {
-  position: relative;
-  overflow: hidden;
-  margin-top: 20px;
-  border-radius: 8px;
-  background: #f5f8fa;
-  padding: 40px 80px; /* more side space for buttons */
-}
-
-.custom-carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.custom-carousel-item {
-  min-width: 100%;
-  padding: 30px 20px;
-  background: #f5f8fa;
-  border-radius: 8px;
-  margin-right: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-/* Navigation Buttons */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #1e90ff;
-  border: none;
-  color: #fff;
-  font-size: 22px;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 999;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Fixed left/right position (outside text) */
-.carousel-btn.prev {
-  left: 15px;
-}
-
-.carousel-btn.next {
-  right: 15px;
-}
-
-/* Hover effect WITHOUT movement */
-.carousel-btn:hover {
-  background-color: #0b62c3;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-}
-
-/* Prevent text from touching buttons */
-.custom-carousel-item p {
-  margin: 0;
-  padding: 0 10px;
-}
-
-    /* Citizen Voices Section */
+/* Citizen Voices Section */
 .section blockquote {
     background-color: #f5f8fa; /* হালকা নীল/ধূসর ব্যাকগ্রাউন্ড */
     border-left: 6px solid #1e90ff; /* ব্লু অ্যাকসেন্ট লাইন */
@@ -529,7 +464,104 @@ h6:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* Events Section Styling */
+.events {
+  width: auto;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Banner Image */
+.section.events img {
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Headings */
+.section.events h3 {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+  color: #1a3d7c;
+  letter-spacing: 1px;
+}
+
+.section.events h4 {
+  font-size: 22px;
+  margin-top: 30px;
+  color: #0d2c54;
+  border-left: 5px solid #1a3d7c;
+  padding-left: 10px;
+}
+
+/* Paragraphs */
+.section.events p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px 0;
+  color: #444;
+}
+
+/* Event Details List */
+.section.events ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px 0;
+}
+
+.section.events ul li {
+  background: #f0f4ff;
+  margin: 6px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: background 0.3s ease;
+}
+
+.section.events ul li:hover {
+  background: #dce6ff;
+}
+
+/* Card Effect for Each Event */
+.section.events h4 + p, 
+.section.events h4 + p + ul {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Responsive Design */
 @media (max-width: 1100px) {
+
+  .section.events {
+    padding: 15px;
+  }
+
+  .section.events h3 {
+    font-size: 24px;
+  }
+
+  .section.events h4 {
+    font-size: 20px;
+  }
+
+  .section.events p, .section.events ul li {
+    font-size: 14px;
+  }
+
+  .section.events img{
+    width: 99%;
+  }
 
   body{
     margin-left:5px !important;
@@ -622,25 +654,25 @@ h6:hover {
     padding:10px;
   }
 
-    section{
-      margin-left: 5px !important;
-    }
-
-    welcome{
-      margin-left: 5px !important;
-      margin-right: 5px !important;
-      padding: 5px !important;
-    }
-
-        
-    section{
-      margin-left: 5px !important;
-      margin-right: 5px !important;
-    }
-
-    welcome{
-      margin-left: 5px !important;
-      margin-right: 5px !important;
-      padding: 5px !important;
-    }    
+  section{
+    margin-left: 5px !important;
   }
+
+  welcome{
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    padding: 5px !important;
+  }
+
+      
+  section{
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+  }
+
+  welcome{
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    padding: 5px !important;
+  }    
+}
