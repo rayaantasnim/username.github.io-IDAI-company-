@@ -454,6 +454,10 @@ h6:hover {
     margin-left:3px;
     margin-right:3px;
     width: auto;
+
+    img{
+      width:auto;
+    }
   }
 
   .navbar {
@@ -531,6 +535,7 @@ h6:hover {
       padding: 5px !important;
     }
   }
+
 
 
 
