@@ -497,19 +497,6 @@ h6:hover {
   padding: 0 10px;
 }
 
-    @media (max-width: 1100px){
-      section{
-        margin-left: 5px !important;
-        margin-right: 5px !important;
-      }
-
-      welcome{
-        margin-left: 5px !important;
-        margin-right: 5px !important;
-        padding: 5px !important;
-      }
-    }
-
     /* Citizen Voices Section */
 .section blockquote {
     background-color: #f5f8fa; /* হালকা নীল/ধূসর ব্যাকগ্রাউন্ড */
@@ -644,4 +631,16 @@ h6:hover {
       margin-right: 5px !important;
       padding: 5px !important;
     }
+
+        
+    section{
+      margin-left: 5px !important;
+      margin-right: 5px !important;
+    }
+
+    welcome{
+      margin-left: 5px !important;
+      margin-right: 5px !important;
+      padding: 5px !important;
+    }    
   }
