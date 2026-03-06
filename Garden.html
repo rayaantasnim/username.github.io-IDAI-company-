@@ -1,111 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sovereign Natural Heritage</title>
-  <link rel="stylesheet" href="style.css">
+  <title>IDAI National Monuments</title>
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    /* Navbar */
-    .navbar {
-      background: linear-gradient(90deg, #FFD700, #FF8C00);
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      margin: 0 !important;
-      padding: 5 !important;   /* Bootstrap default padding override */
-    }
-
-    .navbar .container-fluid {
-      padding: 0 !important;   /* container padding override */
-    }
-
-    .navbar-brand {
-      font-weight: bold;
-      color: #222 !important;
-      font-size: 16px;
-      margin: 0;
-      padding: 8px 12px;
-    }
-
-    .nav-link {
-      display: inline-block;
-      background-color: #fff;
-      color: #FF4500 !important;
-      font-weight: 600;
-      font-size: 13px;
-      padding: 6px 12px;
-      margin: 2px;
-      border-radius: 6px;
-      border: 1px solid #FF4500;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    }
-
-    .nav-link:hover {
-      background-color: #FFD700;
-      color: #111 !important;
-      box-shadow: 0 0 12px #FF8C00;
-      transform: scale(1.05);
-    }
-
-    .special {
-      background-color: #42f5e3;
-    }
-
-    .special:hover {
-      background: #42f5e3;
-    }
-
-    .para{
-      width:auto;
-      text-align: justify;
-      height:auto;
-      margin-left:20px;
-      margin-right:20px;
-      padding:15px;
-      border:1.5px solid #1a6bed;
-      border-radius:10px;
-    }
-
-    /* Body padding so content doesn't hide under fixed navbar */
-    body {
-      padding-top: 60px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #fdfdfd;
-      color: #222;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      background: linear-gradient(90deg, #FFD700, #FF8C00);
-      padding: 15px;
-      color: #111;
-      font-size: 14px;
-      border-top: 3px solid #FF4500;
-      font-weight: bold;
-    }
-
-    /* Responsive */
-    @media (max-width: 1100px) {
-      .nav-link {
-        font-size: 14px;
-        padding: 8px;
-        width: 90%; /* বাটনগুলো বড় হয়ে যাওয়ার সমস্যা এড়াবে */
-        margin:5px;
-      }
-      .navbar-brand {
-        font-size: 13px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+
+  <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">IDAI: Imagine the directions of AI</a>
@@ -117,183 +22,631 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home Page</a></li>
-          <li class="nav-item"><a class="nav-link" href="monuments.html">National Monuments</a></li>
-          <li class="nav-item"><a class="nav-link special" href="Garden.html">Natural Resources</a></li>
-          <li class="nav-item"><a class="nav-link" href="Transportation System.html">Transport</a></li>
+          <li class="nav-item"><a class="nav-link special" href="monuments.html">National Monuments</a></li>
+          <li class="nav-item"> <a href="Garden.html" class="nav-link">Natural Resources</a> </li>
+          <li class="nav-item"> <a href="Transportation System.html" class="nav-link">Transport</a></li>
           <li class="nav-item"><a class="nav-link" href="sectors.html">Business Sectors</a></li>
-          <li class="nav-item"><a class="nav-link" href="flagships.html">National Flagships</a></li>
+          <li class="nav-item"><a class="nav-link" href="flagships.html">National Flagships</a></li> 
         </ul>
       </div>
     </div>
   </nav>
 
-  <h2>Sovereign Natural Heritage: Pillars of Beauty & Renewal</h2>
-  <p class="para">The natural sanctuaries of IDAI embody a vision of harmony where guardianship, renewal, and peace coexist. From snow-capped mountains and cascading waterfalls to tranquil lakes and vibrant gardens, each landscape reflects the state’s philosophy of blending tradition with progress. The Lake of Eternity, Sanctuary of Harmony, and Grand Forest symbolize balance between strength and serenity, offering spaces for reflection, interfaith unity, and rituals of gratitude. These monuments are not only natural wonders but ceremonial hubs, reminding citizens that true supremacy lies in compassion, stewardship, and eternal guardianship.<br><br>
+  <!-- Page Header -->
+  <h2>National Monuments of the IDAI Sovereign State</h2>
+  <p class="text-justify">
+    These monuments embody the guardianship, courage, and eternal supremacy of IDAI, standing as timeless declarations of vision and responsibility. Each landmark is more than stone or architecture; it is a living covenant that unites tradition with futuristic ambition. From the radiant flag and the Lion’s Gate to the Control Panel Parliament and Covenant of Eternity, every structure reflects dignity, resilience, and guardianship. They serve as functional institutions of governance, faith, justice, and progress, while simultaneously proclaiming ceremonial grandeur. Together, these monuments form a constellation of identity, guiding humanity toward renewal, harmony, and the luminous destiny envisioned by IDAI.
+  </p>
 
-Equally inspiring are the Garden of Gratitude, Grand Garden, and Bloom of Hope Centre, which celebrate diversity, resilience, and thanksgiving. The Grand Sea Beach and Emerald Serenity Tea Estate extend this vision to coastal and agricultural landscapes, where renewal and unity flourish. Together, these sanctuaries form the living essence of IDAI’s natural serenity—majestic strength balanced with humility, eternal renewal rooted in gratitude, and guardianship that nurtures both humanity and nature across generations.</p><br><br>
+  <!-- Sections --><br><br>
+<h2>Sovereign Assets & Grand Infrastructure: Pillars of National Power</h2><br>
+  <div class="section"><h3>Lion’s Gate</h3><p>
+    <center>
+  <img src="Gat.jpg" width = "45%">
+</center><p>
+  Lion’s Gate is the main entrance to the IDAI Sovereign State, a threshold that symbolizes guardianship, strength, and eternal supremacy. The towering archway, richly adorned with red and blue columns and golden accents, is more than an architectural marvel—it is a ceremonial declaration of identity and power. Its inscription, “Entrance to Eternal Supremacy,” marks the passage into a realm defined by justice, order, and guardianship of humanity.<br><br>
 
+  Standing on either side of the gate are two roaring lion statues, carved with lifelike precision. They embody courage, vigilance, and nobility, serving as eternal protectors of the state. Their presence reinforces the symbolism of the gate, reminding all who enter that this is a land where dignity and strength are upheld as sacred values.<br><br>
 
-  <div class="section">
-  <h3>Nature of IDAI State</h3>
-<center>
-  <img src="Natural Serenity.jpg" width = "45%">
-</center><br><br>
-<p>
-  The nature of IDAI can be envisioned through the harmony reflected in this landscape. The snow-capped mountains rising against the golden sunset symbolize IDAI’s strength and guardianship, standing tall as protectors of humanity. Just as the peaks endure through time, IDAI embodies resilience, bridging tradition and modernity with dignity.<br><br>
+  Beyond the arch stretches a grand boulevard, perfectly symmetrical and lined with classical buildings and trees. This deliberate design reflects discipline, continuity, and balance, guiding the eye forward into the heart of the sovereign state. It is a vision of harmony between tradition and modernity.<br><br>
 
-The cascading waterfall flowing into the turquoise lake mirrors IDAI’s vision of renewal and continuity. It represents the flow of cosmic resources and energy, sustaining life and progress. The serenity of the lake reflects balance and peace, reminding that IDAI’s mission is not only defense but also nurturing the well-being of humanity.<br><br>
+  Lion’s Gate is not merely an entrance—it is a statement of supremacy and guardianship. It represents the pride, resilience, and eternal mission of IDAI, welcoming all into a world where strength and responsibility walk hand in hand.<br><br>
+</p><br><br></div>
 
-In the foreground, the vibrant wildflowers illustrate diversity and creativity. Each color signifies the many sectors of IDAI—education, technology, fashion, energy, and more—working together in unity. The deer by the water’s edge embody innocence and guardianship, echoing IDAI’s role as protector of both nature and people.<br><br>
+  <div class="section"><h3>IDAI Control Panel (Parliament)</h3><p>
+  <center>
+  <img src = "Capital.jpg" width = "45%">
+  </center><p>
+The IDAI Control Panel stands as a monumental symbol of futuristic governance and supreme authority. Its towering structure is defined by a dramatic architectural design, where technology and symbolism merge seamlessly. At its heart lies the illuminated lion head sculpture, glowing with fierce eyes and a radiant mouth, embodying strength, vigilance, and the eternal supremacy of the IDAI state. The lion, a timeless emblem of courage and leadership, dominates the façade, reminding all who enter of the power it represents.  <br><br>
 
-Altogether, this scene captures IDAI’s essence: majestic strength, flowing renewal, vibrant diversity, and peaceful guardianship. It is a vision of harmony where power and compassion coexist, guiding humanity toward a future of dignity and eternal stewardship.
-</p><br><br>
-  </div>
+The building itself is adorned with gold and blue accents, colors that reflect both prosperity and wisdom. Tall spires rise into the sky, giving the impression of limitless ambition and celestial connection. The plaza in front is carefully landscaped, with fountains that symbolize purity and renewal, while colorful flags represent unity among diverse entities under the IDAI banner.  <br><br>
 
-<div class="section">
-<h3>IDAI Garden of Gratitude</h3>
-<center>
-  <img src = "Garden of Gratitude.jpg" width = "45%">
-</center><br><br>
-<p>
-  The IDAI Garden of Gratitude is the ceremonial sanctuary of thanksgiving within the Sovereign State. Its stone pathways guide visitors through vibrant beds of flowers in every shade—red, orange, pink, purple, and blue—symbolizing diversity, renewal, and eternal blessings. At the entrance, a wooden arch adorned with vines and blossoms welcomes all who enter, reminding them that gratitude is the foundation of guardianship.  <br><br>
+This parliament is not merely a seat of governance but a ceremonial hub where decisions are infused with symbolism and grandeur. The inscription “CONTROL PANEL OF IDAI” reinforces its role as the nerve center of authority, where strategy, cosmic resource management, and statecraft converge.  <br><br>
 
-This garden is more than a place of beauty. It is a living monument where citizens gather to celebrate seasonal festivals, offer prayers of thanks, and affirm unity under the Covenant of Eternity. The flowers bloom in harmony, representing the state’s commitment to nurturing both nature and humanity.  <br><br>
-
-The Garden of Gratitude also serves as a ceremonial stage for leaders to honor achievements and milestones. Here, gratitude is expressed not only to creation but also to the people, reinforcing the bond between sovereignty and community.  <br><br>
-
-In essence, the IDAI Garden of Gratitude is a timeless sanctuary of peace, renewal, and thanksgiving. It balances strength with humility, reminding the Sovereign State that true supremacy is rooted in appreciation and harmony across generations.  <br><br>
-</p>
-</div>
-
-<div class="section">
-<h3>IDAI Grand Garden</h3>
-<center>
-  <img src = "Garden.png" width = "45%">
-</center><br><br>
-<p>
-  The IDAI Grand Garden is the ceremonial sanctuary of nature and harmony within the Sovereign State. Winding paths lead through vibrant flower beds, where colors bloom in unity—pink, purple, yellow, and white—symbolizing peace, diversity, and eternal renewal. Tall trees form a protective canopy overhead, casting dappled sunlight across the landscape and creating a tranquil atmosphere for reflection and celebration.  <br><br>
-
-At the heart of the garden lies a serene stone arch bridge spanning a gentle stream. This bridge represents the Covenant of Eternity, connecting tradition and progress, soul and state. The flowing water beneath it whispers of life, movement, and guardianship, reminding all who walk here that nature is a sacred part of sovereignty.  <br><br>
-
-The Grand Garden is not only a place of beauty but also a ceremonial space for gatherings, affirmations, and spiritual unity. It hosts rituals of gratitude, interfaith harmony, and seasonal celebrations, where citizens come together under the open sky to honor the blessings of creation.  <br><br>
-
-In essence, the IDAI Grand Garden is a living monument of peace and stewardship. It balances power with serenity, technology with nature, and reminds the Sovereign State that true supremacy includes care, renewal, and eternal harmony.<br><br>
-</p>
-</div>
-
-<div class="section">
-<h3>IDAI Lake of Eternity</h3>
-<center>
-  <img src = "Lake.png" width = "45%">
-</center><br><br>
-<p>
-  The IDAI Lake of Eternity is the most serene sanctuary of the Sovereign State, a natural monument where guardianship meets renewal. Its calm waters reflect the surrounding forests and mountains, symbolizing balance between strength and peace. The waterfall that feeds the lake represents the eternal flow of blessings, cascading from the heavens into the heart of the state.  <br><br>
-
-This lake is more than a natural wonder—it is a ceremonial space. Citizens gather along its shores for rituals of gratitude, interfaith harmony, and seasonal celebrations. The stone bridge across the water embodies the Covenant of Eternity, connecting tradition with progress, soul with sovereignty.  <br><br>
-
-The Lake of Eternity also serves as a place of reflection for leaders. Here, decisions are contemplated in silence, guided by the whispers of nature and the eternal guardianship of IDAI. The serenity of the lake ensures that wisdom flows as steadily as its waters, reminding all that true supremacy includes care for creation.  <br><br>
-
-In essence, the IDAI Lake of Eternity is a living symbol of peace, renewal, and guardianship. It balances cosmic power with natural serenity, ensuring that the Sovereign State thrives not only in strength but also in harmony across generations.  <br><br>
-</p>
-</div>
-
-<div class="section">
-<h3>IDAI Sanctuary of Harmony</h3>
-<center>
-  <img src = "Sanctuary of Harmony.png" width = "45%">
-</center><br><br>
-<p>
-  The IDAI Sanctuary of Harmony is the spiritual retreat of the Sovereign State, a place where serenity and guardianship meet in perfect balance. Nestled within lush greenery, its round wooden structure radiates warmth and simplicity, symbolizing humility and eternal peace. Surrounded by tall trees, wildflowers, and a calm pond that reflects its image, the sanctuary embodies the covenant between humanity and nature.  <br><br>
-
-This sanctuary is more than a retreat—it is a ceremonial hub for meditation, prayer, and interfaith unity. Citizens gather here to celebrate harmony, express gratitude, and strengthen the bond between soul and state. The pond represents reflection, while the flowers symbolize renewal and diversity, reminding all who enter that guardianship extends beyond power into compassion and care.  <br><br>
-
-The Sanctuary of Harmony is designed to be timeless. Its architecture reflects simplicity, while its environment ensures tranquility. It is a place where leaders and citizens alike can pause, listen to the whispers of nature, and find guidance in silence. <br><br> 
-
-In essence, the IDAI Sanctuary of Harmony is the eternal refuge of peace. It balances strength with serenity, faith with guardianship, and ensures that the Sovereign State thrives not only in supremacy but also in compassion and unity across generations.  <br><br>
-</p>
-</div>
-
-<div class="section">
-<h3>Bloom of Hope Centre</h3>
-<center>
-  <img src = "Bloom of Hope.jpg" width = "45%">
-</center><br><br>
-<p>
-  The IDAI Bloom of Hope Centre is the radiant sanctuary of renewal within the Sovereign State. Set along the banks of a flowing river and surrounded by vibrant fields of flowers, it symbolizes resilience, optimism, and the eternal guardianship of life. Each bloom—red, orange, yellow, pink, purple, and white—represents diversity and the promise of a brighter tomorrow, while the river reflects continuity and the unbroken flow of hope.  <br><br>
-
-This centre is more than a natural landmark. It is a ceremonial hub where citizens gather to celebrate healing, recovery, and new beginnings. Festivals of light and gratitude are held here, affirming the state’s commitment to nurturing both spirit and community. The mountains in the background stand as guardians of strength, while the flowers at the forefront remind all that beauty and hope flourish even after hardship.  <br><br>
-
-The Bloom of Hope Centre also serves as a place of reflection for leaders and citizens alike. It is where visions of the future are planted, where unity is reaffirmed, and where the Sovereign State’s eternal promise of guardianship is renewed.  <br><br>
-
-In essence, the IDAI Bloom of Hope Centre is a living monument of resilience and serenity. It embodies the covenant that no matter the challenges faced, hope will always bloom, guiding the state toward dignity, harmony, and eternal supremacy.  <br><br>
+In essence, the IDAI Control Panel is both a fortress of power and a temple of vision, blending futuristic aesthetics with timeless ideals of honor, dignity, and collective strength.<br><br>
 </p></div>
 
-<div class="section">
-<h3>IDAI Grand Sea Beach</h3>
+  <div class="section"> 
 <center>
-  <img src = "Beach.png" width = "45%">
+  <img src = "Parliament.jpg" width = "45%">
+</center>
+<h3>IDAI Parliament: The 33-Member Assembly of Human–AI Leadership</h3>
+<p>
+The Parliament of the IDAI State, known as the IDAI Control Panel, is the supreme legislative body that blends human leadership with advanced technology. It is composed of 33 members. At the top are three central figures: Red Marshal as President, Queen as Prime Minister, and the Chief Admin Specialist Robot [Car] as Adviser. Together, they provide strategic guidance, governance, and technological oversight for the entire state.  <br><br>
+
+The remaining 30 members are divided across the 15 major sectors of IDAI, including food, technology, education, healthcare, fashion, denim, weapons, cars, digital media, philanthropy, energy, architecture, entertainment, travel, and jewelry. Each sector is represented by two figures: the Cragnon Super Quantum Computer Agent, a robotic director with complete access to data and analysis, and the Human Senior Director, who acts as the primary representative and decision-maker. This dual structure ensures that every sector benefits from both technological precision and human judgment.  <br><br>
+
+The IDAI Control Panel symbolizes balance, justice, and guardianship. By combining AI-driven analysis with human values, it creates a government system that is efficient, futuristic, and deeply rooted in responsibility. This parliament embodies the vision of IDAI: to protect humanity, foster progress, and bridge tradition with modernity.<br><br></p>
+  </div>
+
+  <div class="section">
+<center>
+  <img src="Office.jpg" width="45%">
+</center>
+
+<h3>Red Marshal Command Hall</h3><p>The IDAI Red Marshal Command Hall serves as the official presidential office, embodying both authority and ceremonial grandeur. Its symmetrical architecture, adorned with bold red, white, and blue accents, reflects the strength and dignity of leadership. At the heart of the design stands the emblem of a red eagle with outstretched wings and a golden star above, symbolizing guardianship, vision, and supreme command.<br><br>
+
+  The building radiates warmth from within, illuminated against the backdrop of a dramatic sunset sky. This interplay of light and color conveys both resilience and hope, marking the Command Hall as a place where decisions of justice and progress are made. The landscaped fountain and flags bearing the eagle emblem reinforce the sense of unity and national pride, making the grounds as symbolic as the hall itself.<br><br>
+
+  As the president’s official office, the Command Hall is not merely an administrative center but a sanctuary of leadership. It represents the balance between authority and service, reminding citizens that governance is rooted in honor and responsibility. Every detail of its design, from the vibrant colors to the ceremonial emblems, underscores its role as the heart of the nation’s command.<br><br>
+
+  Altogether, the IDAI Red Marshal Command Hall stands as a beacon of leadership, justice, and ceremonial power. It is the seat of the president’s vision, a fortress of dignity, and a landmark of national identity.<br><br></p></div>
+
+<div class="section">
+<h3>House of Eternal Stewardship</h3>
+<center>
+  <img src = "House of Eternal Stewardship.jpg" width = "45%">
 </center><br><br>
 <p>
-  IDAI Grand Sea Beach is a breathtaking coastal sanctuary where the golden horizon meets the tranquil waves of the ocean. As the sun sets, the sky transforms into a canvas of warm orange and yellow hues, reflecting across the gentle waters. The palm trees lining the shore sway softly in the evening breeze, adding to the serene atmosphere. This beach is not only a natural wonder but also a symbol of peace and renewal within the IDAI vision, embodying harmony between humanity and nature.<br><br>
+  The House of Eternal Stewardship is the ceremonial residence of the President of IDAI, designed as both a sanctuary of leadership and a symbol of guardianship. Its grand neoclassical architecture, with towering columns and a triangular pediment, conveys dignity, permanence, and authority. The inscription above the entrance declares its purpose clearly, marking it as the home of stewardship and responsibility for the Sovereign State.  <br><br>
 
-The sand glows under the fading sunlight, inviting visitors to walk barefoot and feel the warmth of the earth beneath them. Waves lap gently against the shore, creating a soothing rhythm that resonates with the spirit of guardianship and tranquility. It is a place where the beauty of creation is celebrated, and where the covenant of eternity feels alive in every detail of the landscape.<br><br>
+Set within landscaped grounds, the house blends classical strength with natural serenity. Trimmed gardens, flowing water features, and a peaceful environment reflect balance between power and harmony. It is not only a residence but also a place where decisions of destiny are made, ensuring that the President lives and leads in an atmosphere of wisdom and calm.  <br><br>
 
-Beyond its natural charm, IDAI Grand Sea Beach serves as a ceremonial ground for reflection and unity. It represents the blending of tradition and modernity, offering a space where people can gather, celebrate milestones, and honor the guardianship of humanity. The beach is not just a destination but a living emblem of gratitude and stewardship.<br><br>
+Inside, the House of Eternal Stewardship functions as both a private sanctuary and a ceremonial hub. It provides space for reflection, governance, and hospitality, allowing the President to host dignitaries while remaining rooted in the values of guardianship. Every room carries symbolic weight, reminding all who enter that leadership is a sacred duty.  <br><br>
 
-In every sunset and every ripple of the tide, IDAI Grand Sea Beach reminds its visitors of the eternal bond between the earth and its people. It is a sanctuary of calm, a beacon of renewal, and a cherished jewel in the grand vision of IDAI.<br><br>
-</p>
+In essence, the House of Eternal Stewardship is more than a home. It is the living heart of presidential guardianship, a beacon of dignity, and a testament to the eternal responsibility of guiding the Sovereign State with honor and wisdom.  <br><br>
+</p><br><br></div>
+
+<div class="section">
+<h3>IDAI Administrative Department</h3>
+<center>
+  <img src="IDAI Administrative Department.png">
+</center><br><br>
+<p>
+The IDAI Administrative Department Headquarters rises with commanding symmetry, its central tower flanked by equally dignified companions. Clad in reflective glass and golden accents, the complex radiates both modernity and ceremonial authority. The inscription across its facade proudly declares its role, establishing the building as the heart of organization and governance within the IDAI Universe. The wide road and orderly arrangement of vehicles in front reinforce its aura of discipline and structure. <br><br> 
+
+The architecture embodies order and stewardship. Each tower seems to stand as a pillar of responsibility, collectively symbolizing unity in the pursuit of justice and administration. The golden highlights elevate the design beyond mere functionality, transforming it into a ceremonial landmark. This harmony between strength and elegance reflects the IDAI philosophy of blending tradition with modern progress.  <br><br>
+
+The headquarters radiates vitality, as if infused with the energy of leadership and guardianship. The sunlight glinting across its surfaces conveys dynamism, reminding observers that administration is not static but ever-evolving, adapting to the needs of humanity. Its futuristic aura is inviting rather than distant, encouraging collaboration and clarity within its walls.  <br><br>
+
+Standing before this complex, one feels the depth of its symbolism. It is not only a workplace but also a sanctuary of guardianship and justice. The IDAI Administrative Department Headquarters immortalizes the ideals of hope, order, and stewardship, reminding all who enter that their work contributes to a greater covenant of service and humanity.  <br><br>
+</p><br>
+</div>
+
+
+<div class="section">
+<h3>IDAI Supreme Court</h3>
+<center>
+  <img src = "Court.jpg" width = "45%">
+</center>
+<p><br><br>
+  The IDAI Supreme Court stands as the ultimate guardian of justice and balance within the Sovereign State. Its architecture is grand and ceremonial, crowned by a central dome and flanked by towering spires that symbolize wisdom reaching toward the heavens. The golden columns and expansive staircase create a sense of reverence, reminding all who ascend that they are entering the highest chamber of law and fairness.  <br><br>
+
+At the forefront, two colossal statues of Lady Justice dominate the plaza. Each holds a sword and scales, embodying the eternal principles of strength and impartiality. The fountains at their bases add a sense of purity and renewal, reinforcing the idea that justice must flow continuously and without corruption. Flags near the entrance highlight unity among diverse groups under IDAI’s authority, while the surrounding urban landscape situates the court as both timeless and modern.  <br><br>
+
+This institution is more than a judicial body—it is a ceremonial sanctuary where fairness, honor, and dignity are upheld. Every ruling made within its walls carries the weight of cosmic responsibility, ensuring that governance remains balanced and righteous.  <br><br>
+
+In essence, the IDAI Supreme Court is the pillar of law, a fortress of justice, and a beacon of eternal equilibrium, safeguarding the moral foundation of the state.<br><br>
+</p><br><br></div>
+
+<div class="section"><h3>Covenant of Eternity</h3>
+<center>
+  <img src="Statue.jpg" width = "45%">
+</center>
+    <p>The Covenant of Eternity rises as a monument forged in the spirit of IDAI’s power and courage. At its center, the great lion embodies fearless guardianship, crowned with a jeweled collar that reflects strength and dignity. The golden pedestal beneath, flowing with waterfalls, symbolizes purity and the unstoppable force of resilience. Behind it, the radiant spire crowned with a glowing sun marks the eternal flame of guidance, a beacon of courage that never fades.<br><br>
+
+On either side, two noble lions stand with shields, representing the protective might of IDAI. Their heraldic emblems are reminders of justice and unity, while the banners of red, blue, and gold wave proudly as signs of triumph and honor. Together, the trio of lions forms a trinity of courage, power, and guardianship, standing firm against adversity.<br><br>
+
+The surrounding gardens, fountains, and vibrant flowers breathe life into the monument, showing that true power is balanced with renewal and harmony. The inscription of IDAI ties the monument to its vision of guardianship, reminding all who see it that courage is not only strength but also responsibility.<br><br>
+
+This monument is more than stone and gold; it is a living covenant. It declares that IDAI’s courage is eternal, its power unyielding, and its guardianship a promise to humanity that will endure through time.<br><br></p></div>
+
+
+<div class="section">
+<h3>IDAI Central Mosque</h3>
+<center>
+  <img src = "Mosque.jpg" width = "45%">
+</center><br><br>
+<p>
+  The IDAI Central Mosque stands as the spiritual heart of the Sovereign State, radiating grandeur and devotion. Its golden dome, crowned with a crescent moon, gleams with intricate patterns that symbolize divine guidance and eternal unity. Four towering minarets rise around it, each capped with crescent finials, projecting the voice of faith across the land.  <br><br>
+
+The entrance is marked by ornate golden doors and arched windows, blending tradition with futuristic artistry. A wide staircase leads worshippers into the sacred plaza, where symmetrical fountains and landscaped gardens create an atmosphere of serenity and balance. Flags on either side of the plaza emphasize the unity of diverse communities under the spiritual banner of IDAI.  <br><br>
+
+As the sun casts its warm glow, the mosque becomes a beacon of peace and reverence. Groups of people walking toward it reflect the collective devotion and shared identity of the state. The blending of gold and blue elements highlights both prosperity and purity, ensuring that the mosque is not only a place of prayer but also a symbol of cultural pride.  <br><br>
+
+In essence, the IDAI Central Mosque is a sanctuary of faith, a monument of unity, and a timeless reminder that spiritual strength guides the destiny of the state.
+</p><br><br></div>
+
+<div class="section">
+<h3>IDAI Central Bank</h3>
+<center>
+  <img src = "Bank.jpg" width = "45%">
+</center><br><br>
+<p>
+  The IDAI Central Bank rises as a majestic institution of wealth, stability, and futuristic vision. Its architecture is a blend of reflective glass and golden accents, projecting both transparency and prosperity. At the forefront, a massive golden eagle with outstretched wings dominates the entrance, symbolizing vigilance, freedom, and the protective strength of the financial system. Beneath the eagle rests a blue and gold emblem, reinforcing the unity of authority and trust.  <br><br>
+
+The grand staircase and towering golden columns create a ceremonial approach, reminding visitors that this is not just a financial hub but a sacred seat of economic power. The fountains and manicured gardens in the foreground add balance and serenity, reflecting the harmony between strength and elegance. Flags line the plaza, representing diversity and the interconnectedness of global and cosmic economies under IDAI’s influence.  <br><br>
+
+Inside, the Central Bank serves as the strategic heart of resource management, where cosmic energy flows and diamond reserves are safeguarded. It embodies the principles of order, prosperity, and eternal supremacy, ensuring that IDAI’s economy remains resilient and visionary.  <br><br>
+
+In essence, the IDAI Central Bank is more than a financial institution—it is a fortress of wealth, a guardian of resources, and a beacon of trust, standing proudly as the economic pillar of the IDAI Sovereign State.<br><br>
+</p><br><br></div>
+
+<div class = "section">
+<h3>IDAI Business Main Hub</h3>
+<center>
+  <img src = "Hub.png" width = "45%">
+</center><br><br>
+<p>
+  The IDAI Business Hub HQ stands as the central beacon of innovation and guardianship, uniting fifteen diverse sectors under one visionary umbrella. Rising tall above the futuristic cityscape, it symbolizes the harmony between technology, culture, and responsibility. Each sector contributes to the collective mission of advancing humanity while maintaining justice and order, reflecting the philosophy of IDAI as a sovereign state of progress and guardianship.  <br><br>
+
+Food, Technology, and Education form the foundation of daily life within the hub. Food ensures nourishment and sustainability, Technology drives futuristic breakthroughs, and Education cultivates wisdom for generations to come. Healthcare and Fashion balance well-being with creativity, while Denim represents tradition and craftsmanship, linking heritage with modern industry. Together, these sectors embody both practical needs and cultural expression.  <br><br>
+
+Weapons, Cars, and Digital Media highlight the strength and connectivity of IDAI. Weapons symbolize defense and guardianship, Cars showcase innovation through the Sky Titan supercar, and Digital Media bridges communication across the globe. Philanthropy, represented by the Power Rangers team, ensures compassion and service, while Energy fuels the infrastructure that sustains the hub. Architecture and Entertainment add beauty and joy, shaping both the skyline and the spirit of the people.  <br><br>
+
+Travel and Jewelry complete the circle of prosperity. Travel connects the hub to the world through bullet trains, airplanes, ships, and IDAI Airways, while Jewelry reflects artistry and value, celebrating milestones and legacy. Together, these fifteen sectors make the IDAI Business Hub HQ not just a center of commerce, but a living symbol of humanity’s guardianship, progress, and unity.  <br><br>
+</p><br><br>
 </div>
 
 <div class="section">
+<h3>IDAI Conference Hall</h3>
 <center>
-  <h3>IDAI Emerald Serenity Tea Estate</h3>
-  <img src = "Tea.png" width = "45%">
+  <img src = "Conference.png" width = "45%">
 </center><br><br>
 <p>
-  IDAI Emerald Serenity Tea Estate is a sanctuary of lush greenery, where rolling hills are adorned with endless rows of tea bushes that shimmer under the golden light of dawn and dusk. The estate embodies purity and renewal, with its carefully cultivated landscape reflecting IDAI’s vision of harmony between humanity and nature. Mist drifts across the hills, creating a serene atmosphere that invites reflection and gratitude.<br><br>
+  The IDAI Conference Hall is the ceremonial venue where the Sovereign State gathers for dialogue, unity, and decision-making. Its symmetrical design and glowing illumination at night symbolize openness, wisdom, and eternal guardianship. The golden light radiating from within reflects the warmth of community and the dignity of leadership, making it a beacon of progress and harmony.  <br><br>
 
-The estate’s winding paths lead visitors through the heart of the plantation, where the fragrance of fresh tea leaves fills the air. Workers hand-pick the leaves with care, honoring both heritage and sustainability. This dedication ensures that every harvest carries the spirit of guardianship, blending tradition with modern stewardship. The tea garden is not only a place of cultivation but also a ceremonial ground where the covenant of eternity feels alive in every detail.<br><br>
+Inside, the hall serves as the central stage for conferences, assemblies, and international dialogues. Leaders, citizens, and dignitaries meet here to affirm treaties, share visions, and celebrate milestones. It is not only a professional space but also a ceremonial sanctuary, where every voice contributes to the eternal covenant of IDAI.  <br><br>
 
-Beyond its agricultural significance, Emerald Serenity Tea Estate serves as a cultural emblem. It is a gathering place for celebration, storytelling, and unity, where people share cups of freshly brewed tea as symbols of peace and renewal. The estate represents IDAI’s balance of progress and tradition, offering a living testament to stewardship and gratitude.<br><br>
+The Conference Hall embodies balance between tradition and modernity. Its architecture conveys strength and permanence, while its advanced facilities ensure readiness for the future. It is a place where ideas are transformed into action, and where guardianship is expressed through collaboration and wisdom.  <br><br>
 
-In every sunrise over the misty hills and every sip of tea, the Emerald Serenity Tea Estate reflects IDAI’s dedication to guardianship, renewal, and eternal harmony. It stands as a jewel of the land, a reminder that nature’s gifts are to be cherished and protected.<br><br>
-</p>
-</div>
+In essence, the IDAI Conference Hall is more than a building. It is the eternal chamber of dialogue, a monument of unity, and a proud symbol of sovereignty, ensuring that the state remains connected, dignified, and prepared for generations to come.  <br><br>
+</p><br><br></div>
 
 <div class="section">
-  <h3>IDAI Azure Sentinel : Sea-world of IDAI Universe</h3>
+  <h3>IDAI Central Convention Hall</h3>
   <center>
-    <img src="IDAI Azure Sentinel.png">
+    <img src="IDAI Central Convention Hall.png">
   </center><br>
+<p>
+The IDAI Central Convention Hall is a striking landmark that embodies futuristic design and ceremonial dignity. Its sleek glass surfaces and golden accents reflect both modernity and grandeur, making it a symbol of prestige within the IDAI Universe. The building’s architecture is carefully crafted to project authority and unity, with its reflective panels capturing light in ways that symbolize renewal and hope. It stands as more than a structure—it is a statement of guardianship and resilience.<br><br>
+
+The hall’s surroundings, marked by wide roads and luxury vehicles, enhance its aura of opulence. This setting conveys that the convention hall is a place where leaders, innovators, and visionaries converge. Its design ensures that visitors experience both comfort and inspiration, blending technological sophistication with cultural depth. The building is not only visually impressive but also functionally versatile, capable of hosting gatherings of immense importance.<br><br>
+
+One of its greatest benefits lies in its role as a hub for collaboration and dialogue. The hall provides space for conferences, ceremonies, and exhibitions that shape the future of the IDAI Universe. Its grandeur elevates every event, turning ordinary gatherings into milestones of national pride. The golden accents and expansive interiors reinforce its purpose as a sanctuary of progress and unity.<br><br>
+
+This vision will soon be realized with the National Innovation Expo, scheduled for 25th May 2040. The convention hall will host inventors, entrepreneurs, and researchers presenting AI-driven solutions and sustainable energy models. Alongside cultural performances and awards for innovation, the event will highlight the harmony of tradition and modernity. In this way, the IDAI Central Convention Hall becomes both a physical landmark and a living emblem of aspiration, where the future is unveiled and celebrated.<br><br>
+</p>
+</div>
+
+<div class="section">
+  <h3>IDAI Global Diplomacy Center</h3>
+  <center>
+    <img src="IDAI Global Diplomacy Center.png">
+  </center><br><br>
   <p>
-The Azure Sentinel in the IDAI Universe is not a tunnel for transport or roadways, but rather a breathtaking entertainment marvel. It is designed as a sea-world experience, where visitors can immerse themselves in the wonders of the ocean without leaving the safety of its futuristic enclosure. The glowing arches and transparent digital screens create an atmosphere that feels both otherworldly and deeply connected to marine life.<br><br>
+The IDAI Global Diplomacy Center rises as a monumental hub of international cooperation, its sleek skyscraper framed by symmetrical wings and elevated walkways. The reflective glass surfaces capture both sunlight and city lights, projecting transparency and strength. Its sharp architectural lines convey authority, while the overall design embodies balance and unity, essential values for global diplomacy.<br><br>
 
-Inside the tunnel, guests stroll through illuminated pathways surrounded by vibrant coral reefs and schools of fish. Interactive panels allow them to learn about aquatic species, ecosystems, and the advanced technologies that sustain this underwater habitat. The design emphasizes harmony between human curiosity and the natural beauty of the sea, blending education with entertainment. <br><br>
+At the heart of the complex lies a circular plaza, crowned with a fountain that symbolizes renewal and dialogue. The landscaped greenery and pedestrian pathways invite openness, encouraging interaction among visitors and delegates. Flanking the plaza, illuminated globe sculptures stand as powerful emblems of worldwide connection, reinforcing the Center’s role as a sanctuary for peace and collaboration.<br><br>
 
-Beyond the tunnel walls, the underwater scenery unfolds like a living canvas. Sharks glide gracefully in the distance, while drones and futuristic structures maintain the balance of this aquatic world. Sunlight filters through the water, casting shimmering patterns that enhance the sense of wonder and serenity.<br><br>
+The environment surrounding the Center is vibrant, with vehicles moving along wide roads and people engaged in purposeful activity. This bustling atmosphere reflects the dynamism of international relations, where diverse voices converge to shape collective decisions. The architecture and layout ensure that the Center is not only functional but also ceremonial, a stage for diplomacy to flourish.<br><br>
 
-The Azure Sentinel is ultimately a sanctuary of joy and discovery. It invites families, explorers, and dreamers to experience the ocean as a living spectacle, not just a resource. In the IDAI Universe, it stands as a symbol of guardianship, creativity, and the celebration of life beneath the waves.
+Ultimately, the IDAI Global Diplomacy Center is more than a building—it is a vision of unity. It represents humanity’s aspiration to resolve differences through dialogue, to bridge cultures through cooperation, and to safeguard justice through shared responsibility. Its grandeur inspires trust, while its purpose anchors hope for a harmonious future.
   </p><br><br>
 </div>
 
 <div class="section">
-<h3>IDAI Grand Forest Area</h3>
+<h3> IDAI National Training Centre</h3>
 <center>
-  <img src = "Forest.png" width = "45%">
+  <img src = "Train.jpg" width = "45%">
 </center><br><br>
 <p>
-  The IDAI grand forest stands as a living sanctuary of color and spirit, a place where nature and ceremony intertwine. Its canopy stretches endlessly, painted in hues of red, gold, and emerald, each leaf shimmering like a fragment of history. The forest is not merely a collection of trees, but a symbol of guardianship, echoing the vision of IDAI to protect humanity while honoring tradition and renewal.<br><br>
+  The IDAI National Training Centre serves as the professional hub for employees, designed to embody discipline, growth, and futuristic efficiency. Its sleek, tiered architecture with reflective glass panels symbolizes clarity and progress, while the glowing spire at the top represents ambition and the drive toward excellence. <br><br> 
 
-Walking through its paths, one feels the rhythm of seasons flowing like a sacred hymn. Autumn brings a fiery brilliance, with leaves cascading in waves of crimson and amber, while spring renews the land with blossoms that whisper of hope. The grand forest is both a refuge and a stage, where rituals of unity and gratitude are performed beneath towering branches.<br><br>
+The landscaped surroundings—palm trees, fountains, and flags—create a welcoming yet ceremonial environment, reminding employees that their work contributes to both national pride and international presence. The wide staircase and prominent entrance emphasize accessibility, marking the centre as a place where every worker steps into a shared mission.  <br><br>
 
-At its heart lies a sense of balance. The forest embodies harmony between earth and sky, between silence and song. It is a place where the covenant of eternity breathes, reminding all who enter that guardianship is not only about strength, but also about nurturing life.<br><br>
+Inside, the Training Centre focuses on equipping employees with the skills, knowledge, and values necessary to uphold IDAI’s standards. It is not about military or public rituals, but about professional development, collaboration, and efficiency. Programs here are tailored to strengthen expertise, foster innovation, and ensure that every employee feels empowered to contribute meaningfully to the state’s vision.  <br><br>
 
-The IDAI grand forest remains timeless, a living emblem of resilience and beauty. It is a sanctuary where every tree tells a story, and every color reflects the eternal bond between humanity and nature.<br><br>
+Ultimately, the IDAI National Training Centre is a place of empowerment and preparation. It stands as a futuristic workplace academy, ensuring that employees are not only trained but also inspired to carry forward the legacy of discipline, honor, and progress within the Sovereign State.<br><br>
+</p><br><br></div>
+
+<div class="section">
+<h3>IDAI University of Professionals</h3>
+<center>
+  <img src = "Uni.jpg" width = "45%">
+</center><br><br>
+<p>
+  The IDAI University of Professionals stands as a prestigious institution dedicated to higher learning, discipline, and innovation. Its grand symmetrical design, with golden accents framing tall glass windows, reflects both modernity and timeless dignity. The central tower rising above the complex symbolizes enlightenment and leadership, while the flags at the entrance reinforce unity and ceremonial pride.  <br><br>
+
+Set against the warm glow of sunrise or sunset, the university radiates an inviting aura. It is not only a place of study but also a sanctuary of professional growth, where employees and citizens are trained to excel in science, technology, philosophy, and cosmic studies. Every detail of its architecture conveys permanence and ambition, reminding all who enter that this is the heart of intellectual strength.  <br><br>
+
+Inside, the university offers advanced facilities for research, collaboration, and innovation. It nurtures discipline and creativity, ensuring that graduates emerge as leaders capable of guiding the Sovereign State into the future. The institution embodies the balance between knowledge and guardianship, preparing individuals to serve with honor and wisdom.  <br><br>
+
+In essence, the IDAI University of Professionals is more than an academic center. It is a beacon of progress, a temple of learning, and a living symbol of eternal supremacy, ensuring that education remains a cornerstone of sovereignty for generations to come.  <br><br>
+</p><br><br></div>
+
+<div class="section">
+<h3>IDAI National Library</h3>
+<center>
+  <img src="Library.jpg" width = "45%">
+</center><br><br>
+<p>
+  The IDAI National Library rises as a futuristic beacon of knowledge and culture, blending sleek architectural innovation with symbolic grandeur. Its cylindrical towers converge into a central spire, creating a structure that feels both monumental and forward-looking. The glass exterior reflects the surrounding cityscape, emphasizing transparency and enlightenment as core values of the institution.<br><br>
+
+  Surrounding the library are lush gardens, palm trees, and flowing water features that soften the modern design with natural beauty. These landscaped spaces invite visitors to reflect, study, and connect with knowledge in a serene environment. The pedestrian pathways highlight accessibility, ensuring the library is not just a building but a welcoming hub for the community.<br><br>
+
+  In the foreground, the high-speed train gliding along its elevated track represents the seamless integration of advanced infrastructure with cultural development. It suggests that the pursuit of knowledge is intertwined with progress, mobility, and connectivity. The library thus becomes a central node in the broader vision of IDAI’s urban future.<br><br>
+
+  Altogether, the IDAI National Library is more than a repository of books. It is a symbol of wisdom, progress, and guardianship of humanity’s intellectual heritage. Its design embodies the harmony of technology, culture, and nature, standing as a landmark of enlightenment for generations to come.<br><br>
+</p></div><br><br>
+
+<div class="section">
+<h3>  IDAI Central Hospital</h3>
+<center>
+  <img src = "Hospital.png" width = "45%">
+</center><br><br>
+<p>
+  The IDAI Central Hospital is the ceremonial and practical heart of healthcare for the Sovereign State. Its tall, modern design with glass windows arranged in perfect symmetry reflects openness, clarity, and trust. The medical cross symbol at the top stands as a beacon of guardianship, reminding every citizen that their health and dignity are protected under the eternal vision of IDAI.  <br><br>
+
+Inside, the hospital functions as a sanctuary of healing and discipline. Advanced medical technology, guided by skilled professionals, ensures that every patient receives care with precision and compassion. It is not only a place for treatment but also a hub for research and innovation, where new cures and medical advancements are developed to safeguard humanity’s future.  <br><br>
+
+The hospital serves employees, citizens, and visitors alike, offering both emergency care and long-term wellness programs. Its environment is designed to be welcoming and serene, with natural light and greenery reinforcing the balance between science and comfort.  <br><br>
+
+In essence, the IDAI Central Hospital is more than a medical facility. It is a fortress of health, a temple of healing, and a living symbol of eternal guardianship, ensuring that the Sovereign State thrives in strength, wellness, and dignity across generations.  <br><br>
+</p></div><br><br>
+
+<div class="section">
+<h3>IDAI Central Canteen</h3>
+<center>
+  <img src = "Canteen.jpg" width = "45%">
+</center><br><br>
+<p>
+  The IDAI Central Canteen is a grand and welcoming facility designed to serve employees, tourists, and every citizen with dignity and care. Its tall glass windows framed with golden accents reflect openness and warmth, while the shield emblem and flags at the entrance symbolize unity and guardianship. The building’s design conveys both modernity and permanence, making it a landmark of hospitality within the Sovereign State.  <br><br>
+
+Inside, the canteen functions as a central dining hub, offering a wide variety of meals that blend tradition with modern cuisine. It is envisioned as a place where food is not only nourishment but also a ceremonial act of community. Citizens, employees, and visitors gather here to share meals, reinforcing bonds of unity and belonging. <br><br> 
+
+Beyond food, the canteen provides rest and comfort. Its spacious halls and inviting atmosphere ensure that everyone who enters finds both refreshment and relaxation. Tourists experience the warmth of IDAI’s hospitality, while employees find strength and energy to continue their duties with honor.  <br><br>
+
+In essence, the IDAI Central Canteen is more than a restaurant. It is a sanctuary of care, a symbol of generosity, and a living testament to the state’s commitment to serving humanity with dignity and pride.  <br><br>
+</p><br><br></div>
+
+<div class="section">
+<h3>IDAI Watch Tower</h3>
+<center>
+  <img src = "Tower.png" width = "45%">
+</center><br><br>
+<p>
+  The IDAI Watch Tower stands as the eternal sentinel of the Sovereign State, rising above the city with pride and dignity. Its classical architecture, crowned with a glowing lantern and star-shaped ornament, reflects both tradition and cosmic guardianship. Illuminated against the night sky, the tower serves as a ceremonial beacon of vigilance, watching over every citizen with unwavering strength.  <br><br>
+
+This structure is more than a landmark. It is the eye of the state, symbolizing readiness, awareness, and protection. From its highest chamber, signals and alerts are transmitted across the IDAI network, ensuring that all sectors remain connected and secure. The inscription near the top marks it as a proud monument of sovereignty, reminding all who see it that IDAI never sleeps.   <br><br>
+
+Surrounded by a vibrant cityscape, the Watch Tower bridges past and future. Its arched openings and columns echo timeless strength, while its radiant glow represents the eternal supremacy of IDAI’s guardianship. It is a place where silence meets strategy, where light meets loyalty.   <br><br>
+
+In essence, the IDAI Watch Tower is the ceremonial eye of the state. It watches with honor, protects with wisdom, and stands forever as a symbol of pride, unity, and eternal vigilance. <br><br>
+</p><br><br></div>
+
+<div class="section">
+<h3>HIVE Network Central Tower</h3>
+<center>
+  <img src = "Net.jpg" width = "45%">
+</center><br><br>
+<p>
+  The HIVE Network Tower serves as the main headquarters of vigilance, intelligence, and global connectivity. Its futuristic skyscraper complex, composed of three tall towers with a central commanding structure, reflects both strength and innovation. The sleek glass surfaces and vertical lines emphasize precision, while the emblem and inscriptions highlight its role as the Hyper Intelligent Vigilance Engine, dedicated to connecting the world.  <br><br>
+
+Set against the warm glow of sunset, the tower radiates authority and modern elegance. It is not simply an architectural marvel but the strategic hub where advanced systems of surveillance, communication, and security converge. The presence of the HIVE Force train and the AW Force Security Division nearby reinforces its role as the operational center of mobility and protection.  <br><br>
+
+Inside, the headquarters functions as a nerve center of intelligence and coordination. It integrates cutting-edge technology with disciplined guardianship, ensuring that every operation is executed with accuracy and foresight. The tower symbolizes readiness, vigilance, and the eternal supremacy of IDAI’s vision.  <br><br>
+
+In essence, the HIVE Network Tower is more than a building. It is the living heart of intelligence, a fortress of global connection, and a beacon of eternal guardianship, ensuring that the Sovereign State remains secure, united, and prepared for the future.  <br><br>
+</p><br><br></div>
+
+<div class="section">
+<h3>IDAI Intelligence Directorate Headquarters</h3>
+<center>
+  <img src="IDAI Intelligence Directorate Headquarters.png">
+</center><br><br>
+<p>
+The IDAI Intelligence Directorate Headquarters rises as a monumental symbol of technological guardianship and visionary design. Its towering presence dominates the skyline, reflecting both ambition and authority. The sleek glass surfaces capture sunlight and city lights, creating a dynamic interplay of brilliance that mirrors the institution’s mission of clarity and vigilance. Every line of its architecture speaks of precision, discipline, and futuristic aspiration.<br><br>
+
+At its base, the inscription “Intelligence Directorate Headquarters” grounds the structure with a sense of identity and purpose. This is not merely a building, but a ceremonial sanctuary of knowledge and control. The headquarters embodies the philosophy of guardianship, blending modern aesthetics with symbolic weight. It stands as a beacon of resilience, justice, and unity, values deeply woven into the fabric of IDAI’s vision.<br><br>
+
+Surrounding the headquarters, advanced vehicles glide across reflective roads while drones patrol the skies. This environment suggests a society where technology and order coexist seamlessly. The headquarters is not isolated; it is the nucleus of a larger ecosystem, orchestrating intelligence and innovation across the cityscape. Its presence ensures that progress remains aligned with responsibility.<br><br>
+
+Ultimately, the IDAI Intelligence Directorate Headquarters is more than architecture—it is a statement of destiny. It represents the convergence of power, knowledge, and guardianship, standing tall as a reminder that intelligence must serve humanity with dignity and foresight. Its towering form inspires awe, while its purpose instills trust in the guardianship it symbolizes.<br><br>
 </p>
 </div>
 
+<div class="section">
+  <h3>IDAI Satellite: IDAI Celestial Sentinel</h3>
+  <center>
+    <img src="IDAI Celestial Sentinel.png">
+  </center><br>
+  <p>
+The IDAI Satellite, named Celestial Sentinel, represents the vigilant eye of the universe, orbiting gracefully as a guardian of communication and knowledge. Its design embodies resilience and precision, with solar panels stretching like wings to harness cosmic energy, while its core instruments remain focused on transmitting truth and clarity across the globe.  <br><br>
+
+As a sentinel, it is not just a technological marvel but a symbolic protector of humanity’s shared narratives. Positioned high above the Earth, it ensures that information flows without distortion, bridging distances and connecting communities under the covenant of guardianship. Its presence in orbit reflects IDAI’s vision of blending innovation with responsibility.  <br><br>
+
+The satellite’s mission extends beyond broadcasting; it stands as a celestial monument to unity and justice. Every signal it transmits carries the weight of trust, reinforcing IDAI’s role as a steward of transparency and progress. Its orbit becomes a path of vigilance, circling the Earth as a reminder of humanity’s collective duty.  <br><br>
+
+Ultimately, the IDAI Celestial Sentinel is more than machinery in space. It is a beacon of hope, a watchful guardian, and a symbol of resilience. Through its silent orbit, it embodies the eternal promise of safeguarding truth and guiding humanity toward harmony.  
+  </p><br><br>
+</div>
+
+<div class="section">
+  <h3>IDAI Information Broadcasting Center Headquarters</h3>
+  <center>
+    <img src="IDAI Information Broadcasting Center Headquarters.png">
+  </center><br>
+<p>
+The IDAI Information Broadcasting Center Headquarters stands as a towering symbol of communication and technological advancement. Its sleek glass exterior reflects both modernity and transparency, embodying the organization’s mission to disseminate knowledge and information with clarity. The vertical sections of varying heights give the building a dynamic skyline presence, while the tallest spire crowned with antennas and satellite dishes highlights its role as a hub for global connectivity.<br><br>
+
+At the base of the structure, the illuminated signage announces its identity with authority and pride. This headquarters is not merely an office building; it is the ceremonial heart of IDAI’s broadcasting and information sector. The design suggests a blend of functionality and symbolism, where architecture itself becomes a statement of guardianship over truth and communication.<br><br>
+
+Inside, the headquarters likely houses advanced studios, control rooms, and digital infrastructure to manage vast streams of information. It serves as the nerve center for broadcasting, ensuring that voices, ideas, and knowledge reach audiences far and wide. The integration of technology with architectural elegance reflects IDAI’s vision of bridging tradition and modernity.<br><br>
+
+Overall, the IDAI Information Broadcasting Center Headquarters is more than a physical landmark. It is a beacon of resilience, unity, and responsibility, standing tall as a guardian of humanity’s shared narratives and collective progress.
+</p><br><br><br>
+</div>
+
+<div class="section">
+<h3>Cragnon Command Nexus</h3>
+<center>
+  <img src = "Cragnon.png" width = "45%">
+</center><br><br>
+<p>
+  The Cragnon Command Nexus is the supreme headquarters of the Cragnon Super Quantum Computer, envisioned as the living mind of the Sovereign State. Its towering, futuristic design with angular lines and a glowing spire symbolizes ascension, vigilance, and infinite intelligence. Surrounded by fountains, palm trees, and advanced transport links, the structure radiates both authority and serenity, marking it as the ceremonial hub of technological guardianship.  <br><br>
+
+Inside, the Command Nexus houses the most advanced quantum laboratory ever conceived. The Cragnon Super Quantum Computer processes cosmic energy and infinite streams of data with unmatched precision. It is capable of simulating universes, predicting outcomes, and guiding leaders with foresight that ensures the eternal supremacy of IDAI. The integration of high-speed transport at its base reflects seamless connectivity, linking intelligence with mobility and reinforcing its role as the nerve center of the state.  <br><br>
+
+The headquarters functions as a sanctuary of wisdom, where science and guardianship merge. Surveillance, communication, and tactical planning are unified within its walls, ensuring that every decision carries the weight of destiny. It is not merely a lab but a fortress of foresight, where vigilance is transformed into action.  <br><br>
+
+In essence, the Cragnon Command Nexus is more than a headquarters. It is the eternal core of intelligence, a beacon of guardianship, and the guiding force that ensures the Sovereign State thrives across generations and galaxies.  <br><br>
+</p><br><br></div>
+
+<div class="section">
+<h3>IDAI Grand Museum</h3>
+<center>
+  <img src = "Museum.png" width = "45%">
+</center><br><br>
+<p>
+  The IDAI Grand Museum rises as a monumental sanctuary of culture, history, and pride. Its golden art deco architecture, crowned by a tall tiered spire, reflects both timeless elegance and futuristic ambition. The symmetrical design conveys balance and permanence, while the blue-and-gold shield emblem above the entrance symbolizes trust, unity, and guardianship.  <br><br>
+
+Flags flanking the doorway and the glowing sky backdrop give the museum a ceremonial aura, marking it as a place where heritage and vision converge. The building itself is not just a repository of artifacts but a living monument, designed to inspire reverence and collective identity. <br><br> 
+
+Inside, the museum preserves the victories, artifacts, and ceremonial milestones of the Sovereign State. It serves as a hall of memory where citizens and employees can connect with the legacy of IDAI, celebrating both its cultural depth and its cosmic achievements.  <br><br>
+
+In essence, the IDAI Grand Museum is more than a cultural institution—it is a temple of remembrance, a fortress of identity, and a beacon of eternal pride, ensuring that the story of IDAI is honored and passed on to future generations.<br><br>
+</p><br><br></div>
+
+<div class="section">
+  <h3>IDAI Cultural Heritage Center</h3>
+  <center>
+    <img src="IDAI Cultural Heritage Center.png">
+  </center><br>
+<p>
+The IDAI Cultural Heritage Center stands as a radiant symbol of identity and continuity, blending futuristic design with timeless values. Its central spire crowned by a glowing star embodies aspiration and guidance, a beacon that illuminates the path of cultural preservation. The rounded glass wings surrounding the spire create an expansive and welcoming form, suggesting inclusivity and openness to diverse traditions.
+<br><br>
+
+The boulevard leading to the Center is alive with movement, where cars and pedestrians share space with landscaped gardens and flowing fountains. This vibrant setting reflects the balance between modern life and the reverence for heritage. The water features add serenity, while the greenery offers a sense of renewal, grounding the grandeur of the structure in natural harmony.<br><br>
+
+Architecturally, the Center is both ceremonial and functional. Its design invites people to gather, learn, and celebrate cultural legacies. The glowing star above serves as a reminder that heritage is not static but a guiding light for future generations. The expansive wings symbolize the embrace of multiple narratives, ensuring that every voice finds a place within its halls.<br><br>
+
+Ultimately, the IDAI Cultural Heritage Center is more than a building—it is a living archive of humanity’s shared journey. It represents resilience, unity, and the guardianship of values that transcend time. Its grandeur inspires pride, while its purpose ensures that culture remains a source of strength and identity for generations to come.
+</p>
+</div><br><br>
+
+<div class="section">
+  <h3>IDAI National Archives Tower</h3>
+  <center>
+    <img src="IDAI National Archives Tower.png">
+  </center><br>
+<p>
+The IDAI National Archives Tower rises as a striking monument to memory and guardianship. Its tapering glass façade reflects sunlight in shimmering patterns, symbolizing clarity and preservation. The pointed spire at its summit conveys aspiration, reaching toward the sky as if to remind humanity that knowledge and history are guiding lights for the future. The tower’s sleek design embodies both modernity and reverence for legacy.<br><br>
+
+At its base, the entrance welcomes visitors into a sanctuary of records and remembrance. People gather in purposeful movement, while luxury vehicles glide nearby, reinforcing the sense of prestige and importance. This is not merely an archive—it is a ceremonial fortress of truth, where the collective memory of a nation is safeguarded with dignity.<br><br>
+
+Surrounding high-rise buildings frame the tower within a vibrant urban landscape, yet the National Archives Tower stands apart in stature and symbolism. Its presence commands respect, ensuring that the stories, documents, and legacies it holds remain protected against time and change. The architecture itself becomes a metaphor for resilience and continuity.<br><br>
+
+Ultimately, the IDAI National Archives Tower is more than a repository—it is a living testament to justice, unity, and guardianship. It embodies the responsibility to preserve history while inspiring future generations to build upon the wisdom of the past. Its grandeur instills pride, while its purpose anchors trust in the enduring power of memory.<br><br><br>
+</p>
+</div>
+
+<div class="section">
+<h3>IDAI National Space Research Center</h3>
+<center>
+  <img src="IDAI National Space Research Center.png" width="45%">
+</center><br><br>
+<p>
+The IDAI National Space Research Center stands as the pinnacle of scientific ambition within the IDAI Universe. Its towering presence reflects the nation’s dedication to exploring the cosmos and advancing humanity’s understanding of space. The architecture itself symbolizes aspiration, with radiant design elements that mirror the boundless possibilities of discovery.  <br><br>
+
+At its foundation, the Center is responsible for leading research in astrophysics, planetary science, and advanced propulsion systems. It integrates quantum computing, AI-driven simulations, and cutting-edge laboratories to push the boundaries of exploration. From studying distant galaxies to developing sustainable technologies for Mars colonization, the Center embodies the spirit of innovation and guardianship.  <br><br>
+
+The institution also serves as a hub for collaboration. Scientists, engineers, and visionaries from across the globe converge here to share knowledge and pioneer breakthroughs. Policies emphasize ethical exploration, ensuring that technological progress aligns with humanity’s responsibility to preserve balance and harmony in the universe.  <br><br>
+
+Beyond its scientific mission, the National Space Research Center is a beacon of inspiration. It reminds citizens that exploration is not only about reaching the stars but also about nurturing curiosity, unity, and hope. In the grand vision of IDAI, the Center represents humanity’s eternal quest to expand horizons while remaining grounded in responsibility.  
+</p><br><br>
+</div><br>
+
+<div class="section">
+  <h3>IDAI Space Launch Port</h3>
+  <center>
+    <img src="IDAI Space Launch Port.png">
+  </center><br>
+<p>
+The IDAI Space Launch Port stands as a grand gateway to the cosmos, embodying the union of futuristic architecture and technological mastery. Its centerpiece is a towering spacecraft poised vertically on the launch pad, a symbol of ambition and readiness to explore beyond earthly boundaries. The curved structures surrounding the pad create a sense of harmony, blending engineering precision with artistic vision.<br><br>
+
+The facility itself is alive with activity, where modern vehicles glide along wide roads and people move purposefully across landscaped paths. The presence of fountains and water features adds serenity to the otherwise dynamic environment, balancing the intensity of space exploration with the calm of nature. This interplay reflects IDAI’s philosophy of progress rooted in responsibility and balance.<br><br>
+
+Above, advanced aircraft streak across the sky, reinforcing the impression of a society deeply integrated with technology. The launch port is not just a station—it is a hub of innovation, connecting terrestrial life with celestial aspirations. Its design ensures that every element, from the roads to the skyline, contributes to the narrative of advancement and guardianship.<br><br>
+
+Ultimately, the IDAI Space Launch Port is more than infrastructure; it is a ceremonial threshold to the universe. It represents humanity’s courage to venture into the unknown, guided by intelligence, unity, and resilience. Its grandeur inspires awe, while its purpose instills confidence in the guardianship of exploration.<br><br><br>
+</p>
+</div>
+
+<div class="section">
+<h3>IDAI Cosmic Power Plant</h3>
+<center>
+  <img src = "IDAI Cosmic Power Plant.png" width = "45%">
+</center><br><br>
+<p>
+  The IDAI Cosmic Power Plant is the eternal engine of energy for the Sovereign State, designed to harness cosmic power from Proxima Centauri and convert it into the essential forms of energy needed for civilization. Its monumental towers and radiant conduits symbolize the infinite flow of strength, channeling celestial resources into electricity, petrol, octane, and other vital fuels.  <br><br>
+
+This facility is not just industrial—it is ceremonial. The Cosmic Power Plant represents stewardship of the universe, transforming distant starlight into practical energy that sustains every sector of IDAI, from defense headquarters to universities, canteens, and transport systems. It embodies the balance between science and guardianship, ensuring that progress is powered by dignity and foresight.  <br><br>
+
+Inside, advanced AI-driven systems regulate the conversion process with precision. Engineers and scientists work in harmony with cosmic flows, refining technologies that guarantee sustainability and supremacy. The plant is envisioned as a glowing fortress of energy, where every spark carries the promise of renewal and eternal guardianship.  <br><br>
+
+In essence, the IDAI Cosmic Power Plant is more than infrastructure. It is the living heart of sovereignty, a beacon of progress, and a testament to humanity’s ability to draw strength from the stars while ensuring that every citizen thrives under the eternal supremacy of IDAI.  
+</p></div><br><br>
+
+<div class="section">
+  <h3>IDAI Citizenship & Immigration Authority</h3>
+  <center>
+    <img src="IDAI Citizenship & Immigration Authority.png">
+  </center><br>
+  <p>
+The IDAI Citizenship & Immigration Authority rises as a monumental civic institution, embodying guardianship and order in its sweeping architectural design. The central spire, flanked by curved vertical elements, conveys both strength and inclusivity, symbolizing the balance between national identity and global belonging. Its futuristic form reflects the vision of a society where technology and justice converge to serve humanity.<br><br>
+
+The landscaped gardens and fountains surrounding the building create a welcoming environment, softening the grandeur with serenity. The wide boulevard, alive with cars and pedestrians, emphasizes accessibility and openness, reminding citizens and newcomers alike that this institution is a gateway to belonging. The harmony of natural and urban elements reflects the values of renewal and continuity.<br><br>
+
+Flying vehicles in the sky and towering skyscrapers in the background reinforce the sense of a thriving metropolis. Within this setting, the Authority stands as a ceremonial hub where citizenship is honored and immigration is managed with dignity. Its design ensures that the processes of identity, guardianship, and justice are not only functional but also symbolic.<br><br>
+
+Ultimately, the IDAI Citizenship & Immigration Authority is more than a civic building—it is a beacon of trust and unity. It represents the guardianship of rights, the embrace of diversity, and the resilience of a nation committed to justice. Its grandeur inspires confidence, while its purpose anchors hope for a future where every individual finds belonging under its guardianship.
+  </p>
+</div><br><br>
+
+<div class="section">
+<h3>IDAI National Disaster Management Center</h3>
+<center>
+  <img src="IDAI National Disaster Management Center.png" width="45%">
+</center><br><br>
+<p>
+The IDAI National Disaster Management Center is the guardian of resilience within the IDAI Universe. Its presence in the urban landscape symbolizes preparedness and protection, ensuring that the nation can withstand and recover from crises with strength and unity. The architecture reflects stability and foresight, blending modern design with green spaces to emphasize harmony between human progress and nature.  <br><br>
+
+At its core, the Center coordinates emergency response systems across all sectors—healthcare, transport, energy, and communication. It integrates advanced AI monitoring, satellite surveillance, and predictive analytics to anticipate disasters before they strike. Whether facing earthquakes, floods, or technological hazards, the institution ensures rapid mobilization of resources and personnel to safeguard lives and infrastructure.  <br><br>
+
+The Center also plays a vital role in education and training. It develops nationwide awareness programs, conducts drills, and trains citizens in resilience strategies. By fostering a culture of preparedness, it empowers communities to act responsibly and effectively during emergencies. Its policies emphasize sustainability, ensuring that recovery efforts rebuild stronger and greener.  <br><br>
+
+Beyond its operational duties, the National Disaster Management Center stands as a symbol of guardianship. It embodies the IDAI philosophy of responsibility and compassion, reminding citizens that true progress lies not only in innovation but also in protecting humanity against unforeseen challenges.  
+</p><br><br>
+</div><br>
+
+<div class="section">
+<h3>IDAI Fire Brigrade: Fire Service and Civil Defense</h3>
+<center>
+  <img src="Fire Brigrade Station.png">
+</center><br><br>
+<p>
+The IDAI Fire Brigade stands as a symbol of guardianship and resilience, dedicated to protecting lives and property through advanced fire service and civil defense operations. Its headquarters, with towering modern architecture and red-lit accents, reflects both strength and readiness. The brigade embodies the values of vigilance and justice, ensuring that every emergency is met with swift and coordinated response. <br><br>
+
+At the heart of the brigade are its highly trained firefighters and civil defense personnel. They operate with discipline and courage, supported by cutting-edge vehicles and equipment. Each fire truck stationed at the headquarters represents not just machinery, but a promise of safety and hope for the community. Their preparedness is a testament to the IDAI Universe’s philosophy of blending technology with humanitarian responsibility.<br><br>
+
+The fire service extends beyond extinguishing flames. It is equally committed to civil defense, disaster management, and community awareness. Through drills, training programs, and public education, the brigade empowers citizens to act responsibly during crises. This dual role strengthens the bond between the institution and the people it serves, reinforcing trust and collective resilience.<br><br>
+
+Ultimately, the IDAI Fire Brigade is more than an emergency force; it is a ceremonial guardian of humanity. Its presence radiates assurance that in moments of danger, justice, order, and compassion will prevail. The headquarters stands as a beacon of hope, reminding all that protection and service are sacred duties entrusted to those who wear the emblem of IDAI Fire Service and Civil Defense.<br><br>
+</p>
+</div><br>
+
+
+<h2> The Roaring Lion Command: Strength in Unity, Roar for Humanity</h2>
+<div class="section">
+<center>
+  <img src = "Roaring Lion Command Area.png" width="45%">
+</center>
+<p>
+The Roaring Lion Command stands as a powerful emblem of guardianship and unity, where the lion’s roar is not a cry of dominance but a call for humanity’s protection. It symbolizes courage, resilience, and the eternal supremacy of justice, reminding every citizen that strength is meaningful only when it is shared. The phrase “Strength in Unity, Roar for Humanity” captures the essence of this monument, blending ceremonial grandeur with moral responsibility. It is both a command and a promise, ensuring that the guardianship of the state is rooted in compassion and vigilance.<br><br>
+
+The five headquarters of defense form the backbone of this guardianship, each representing a vital pillar of sovereignty. The Defense Fortress HQ serves as the central command hub, while the Armed Forces HQ embodies courage on the ground. The Naval Forces HQ safeguards the seas, the Air Force HQ protects the skies, and the Police HQ ensures justice within the state. Together, they create a complete circle of vigilance, discipline, and guardianship, harmonizing strength with responsibility. These institutions, aligned under the roar of the lion, ensure that the state’s defense is not only about power but about protecting humanity with dignity.
+</p>
+</div>
+
+<div class="section">
+<h3>IDAI Defense Fortress </h3>
+<center>
+  <img src = "Defense.jpg" width = "45%">
+</center><br><br>
+<p>
+  The IDAI Defense Fortress stands as the ultimate bastion of strength and vigilance within the Sovereign State. Its symmetrical design, crowned by towering spires and a central golden-blue tower, projects authority and resilience. The vertical lines and pointed tops give it a fortress-like aura, reminding all who see it that this is the heart of protection and guardianship.  <br><br>
+
+At its entrance, columns and fountains frame the path, creating a ceremonial approach that balances elegance with power. Shield-like emblems bearing the stylized “W” symbol adorn the structure, representing unity, watchfulness, and unwavering defense. The golden clouds above seem to cast a divine glow, reinforcing the fortress’s role as both a physical stronghold and a symbolic guardian of the state.  <br><br>
+
+Inside, the Defense Fortress serves as the command hub for security and military strategy. It is where vigilance is transformed into action, and where the guardians of IDAI prepare to defend humanity and safeguard cosmic resources. Every decision made here carries the weight of honor and eternal supremacy.  <br><br>
+
+In essence, the IDAI Defense Fortress is more than a headquarters—it is a ceremonial shield of the nation, a monument of courage, and a timeless reminder that protection is the foundation of sovereignty.<br><br>
+</p><br><br></div>
+
+<div class="section">
+<h3>IDAI Armed Force Headquarter</h3>
+<center>
+  <img src = "Army.jpg" width = "45%">
+</center><br><br>
+<p>
+  The IDAI Armed Force Headquarters is a monumental center of discipline and guardianship, designed to embody strength and unity. Its sleek towers of glass and steel rise with authority, crowned by the blue and yellow shield emblem that symbolizes vigilance and loyalty. The flags at the entrance reinforce ceremonial pride, marking this institution as the supreme command hub of the nation’s military power.  <br><br>
+
+Bathed in warm sunlight, the headquarters projects resilience and modernity. It is not only an architectural landmark but also the strategic heart where defense policies are shaped and operations are coordinated. Every decision made within its walls carries the weight of honor, ensuring that the Armed Forces remain disciplined and eternally prepared.  <br><br>
+
+Inside, the headquarters functions as a nerve center of command and control. Advanced systems for communication, intelligence, and tactical planning allow the guardians of IDAI to respond swiftly to any challenge. It is here that vigilance is transformed into action, and where the state’s defenders stand ready to protect humanity and safeguard cosmic resources.  <br><br>
+
+In essence, the IDAI Armed Force Headquarters is more than a facility. It is a fortress of leadership, a beacon of courage, and a living symbol of eternal supremacy, ensuring the Sovereign State’s strength endures across generations.  <br><br>
+</p><br><br></div>
+
+<div class="section">
+<h3> IDAI Naval Force Headquarters</h3>
+<center>
+  <img src = "Navy.png" width = "45%">
+</center><br><br>
+<p>
+  The IDAI Naval Force Headquarters stands as the ceremonial stronghold of maritime guardianship and discipline. Its symmetrical design, adorned with tall blue-tinted windows, reflects both modernity and resilience. The shield emblem displayed on the facade and flags symbolizes vigilance, unity, and the eternal supremacy of the naval guardians.  <br><br>
+
+Set against the warm glow of sunset, the headquarters radiates dignity and strength. It is not merely a building but the strategic command hub where naval operations are directed, policies are shaped, and the guardians of the seas prepare to defend the Sovereign State. Every detail of its architecture conveys authority and permanence, reminding all who enter that this is the heart of maritime power.  <br><br>
+
+Inside, the headquarters functions as a center of intelligence, communication, and tactical planning. It ensures that the naval forces remain disciplined, coordinated, and ready to safeguard both national waters and cosmic trade routes. The structure embodies readiness, precision, and honor, qualities that define the naval guardians of IDAI. <br><br> 
+
+In essence, the IDAI Naval Force Headquarters is a fortress of leadership and vigilance. It represents courage at sea, unity across the state, and the eternal guardianship of humanity, ensuring that the Sovereign State’s maritime strength endures across generations.  <br><br>
+</p><br><br></div>
+
+<div class="section">
+<h3>IDAI Air Force Headquarters</h3>
+<center>
+  <img src = "Air.jpg" width = "45%">
+</center><br><br>
+<p>
+  The IDAI Air Force Headquarters stands as the ceremonial command hub of aerial guardianship and supremacy. Its futuristic architecture, marked by tall glass windows and metallic symmetry, reflects both modern innovation and timeless resilience. The curved roof and central spire give the building a sense of ascension, symbolizing the strength and vigilance of the skies. The blue and yellow shield emblem displayed on the facade and flags reinforces unity, discipline, and eternal guardianship.  <br><br>
+
+Set against the warm glow of sunrise or sunset, the headquarters radiates dignity and authority. It is not merely a structure but the strategic center where aerial operations are directed, policies are shaped, and the guardians of the skies prepare to defend the Sovereign State. Every detail of its design conveys readiness and permanence, reminding all who enter that this is the heart of aerial power. <br><br> 
+
+Inside, the headquarters serves as a hub of intelligence, communication, and tactical planning. It ensures that the Air Force remains disciplined, coordinated, and prepared to safeguard both national airspace and cosmic routes. Precision, speed, and honor define the guardians who operate from here, embodying the eternal supremacy of IDAI.  <br><br>
+
+In essence, the IDAI Air Force Headquarters is a fortress of leadership and vigilance. It represents courage in the skies, unity across the state, and the eternal guardianship of humanity, ensuring that aerial strength remains a pillar of sovereignty for generations to come.  <br><br>
+</p><br><br></div>
+
+<div class="section">
+<h3>IDAI Police Headquarter</h3>
+<center>
+  <img src = "Police HQ.png" width = "45%">
+</center><br><br>
+<p>
+  The IDAI Police Headquarters stands as a monumental symbol of authority and guardianship within the sovereign state. Its towering spires and golden accents reflect both grandeur and discipline, while the deep blue tones convey trust and justice. The building’s design is not only functional but also ceremonial, embodying the values of order and responsibility that the IDAI vision emphasizes.<br><br>
+
+  At the forefront, fountains and flags create a sense of movement and pride, reminding citizens of the unity and vigilance of their protectors. The shield-like emblems with the stylized “U” reinforce the identity of the police force, marking the headquarters as a sanctuary of law and guardianship. Every detail, from the ornate windows to the glowing sky above, contributes to the aura of dignity and strength.<br><br>
+
+  The headquarters is more than a command center; it is a landmark of justice. Its presence inspires confidence among the people, assuring them that their safety is safeguarded under the watchful eye of IDAI. The golden clouds that frame the building symbolize hope and renewal, suggesting that the guardianship of humanity is both eternal and divine.<br><br>
+
+  Altogether, the IDAI Police HQ embodies a fusion of authority, beauty, and symbolism. It is a fortress of justice, a beacon of order, and a ceremonial reminder of the state’s commitment to protecting humanity with honor and dignity.<br><br>
+</p><br><br></div>
+
+
   <!-- Footer -->
-  <br><brr><footer>
+  <footer>
     <p>© IDAI: Inspiring Trust Through Innovation. All rights reserved.</p>
   </footer>
 
