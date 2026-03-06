@@ -597,6 +597,12 @@ h6:hover {
 
 /* Responsive Design */
 @media (max-width: 1100px) {
+  .section.anthem{
+    h1{
+      font-size:20px;
+    }
+  }
+
   .section.events {
     padding: 15px;
   }
