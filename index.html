@@ -1,3 +1,4 @@
+এটা হল HTML:
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,211 +7,431 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IDAI: Inspiring Trust through Innovation</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Exo+2:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
-<!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-/* ---------- Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@500;600&family=Poppins:wght@300;500&display=swap');
 
-/* ---------- Body & Background ---------- */
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    background: url('background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    position: relative;
+/* BODY */
+
+body{
+margin:0;
+padding:0;
+overflow:hidden;
+font-family:'Poppins',sans-serif;
+color:white;
+background: radial-gradient(circle at bottom,#02030a,#000000 80%);
 }
 
-/* Elegant gradient overlay */
-body::after {
-    content: "";
-    position: absolute;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
-    z-index: 1;
+/* COSMIC NEBULA LAYER */
+
+body::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+top:-50%;
+left:-50%;
+background:
+radial-gradient(circle at 20% 30%,rgba(0,120,255,0.25),transparent 40%),
+radial-gradient(circle at 80% 20%,rgba(0,255,255,0.2),transparent 40%),
+radial-gradient(circle at 50% 80%,rgba(100,0,255,0.25),transparent 40%);
+animation: nebulaMove 40s linear infinite;
+z-index:0;
 }
 
-/* ---------- Intro Container ---------- */
-.intro {
-    position: relative;
-    z-index: 2;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-    animation: fadeInContent 2s ease forwards;
+@keyframes nebulaMove{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
 }
 
-/* ---------- Logo ---------- */
-.small-logo {
-    width: 280px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 0 40px rgba(0,255,255,0.7);
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
-    animation: logoPulse 4s infinite alternate;
+/* STAR FIELD */
+
+.stars{
+position:absolute;
+width:100%;
+height:100%;
+z-index:1;
 }
 
-/* ---------- Glowing Lines ---------- */
-.logo .line {
-    width: 130px;
-    height: 5px;
-    margin: 10px auto;
-    background: linear-gradient(90deg, #00eaff, #00ffff);
-    border-radius: 3px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: lineReveal 1s forwards;
-    box-shadow: 0 0 20px #00eaff, 0 0 40px #00ffff, 0 0 60px #00ffff;
-}
-.logo .line:nth-child(2) { animation-delay: 0.3s; }
-.logo .line:nth-child(3) { animation-delay: 0.6s; }
+/* SHOOTING STAR */
 
-/* ---------- Main Title ---------- */
-.title {
-    font-family: 'Algerian', sans-serif;
-    font-weight: 900;
-    font-size: 5rem;
-    letter-spacing: 12px;
-    text-transform: uppercase;
-    opacity: 0;
-    animation: fadeIn 1.5s forwards, titlePulse 2s infinite 2s;
-    text-shadow: 
-        0 0 10px #00eaff, 
-        0 0 20px #00ffff, 
-        0 0 40px #00ffff, 
-        0 0 60px #00eaff;
+.shooting-star{
+position:absolute;
+width:3px;
+height:3px;
+background:white;
+box-shadow:0 0 10px white;
+animation:shoot 5s linear infinite;
 }
 
-/* ---------- Taglines ---------- */
-.tagline {
-    font-family: 'Exo 2', sans-serif;
-    font-weight: 600;
-    font-size: 1.4rem;
-    letter-spacing: 2px;
-    line-height: 1.6;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-    animation-delay: 1.8s;
-    background: linear-gradient(270deg, #00eaff, #00ffff, #00eaff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientShift 3s infinite alternate, fadeIn 2s forwards;
+@keyframes shoot{
+0%{
+transform:translate(0,0);
+opacity:0;
+}
+10%{
+opacity:1;
+}
+100%{
+transform:translate(-800px,400px);
+opacity:0;
+}
 }
 
-/* ---------- Particle Layer ---------- */
-.particles {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    overflow: hidden;
+/* INTRO */
+
+.intro{
+position:relative;
+z-index:3;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+opacity:0;
+animation:introFade 3s ease forwards;
 }
 
-/* ---------- Animations ---------- */
-@keyframes lineReveal {
-    to { opacity: 1; transform: translateY(0); }
+@keyframes introFade{
+to{
+opacity:1;
 }
-@keyframes fadeIn { to { opacity: 1; } }
-@keyframes pulse {
-    0%,100%{text-shadow:0 0 15px #00eaff,0 0 30px #00ffff,0 0 60px #00ffff;}
-    50%{text-shadow:0 0 25px #00ffff,0 0 50px #00eaff,0 0 70px #00ffff;}
-}
-@keyframes fadeInContent {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes logoPulse {
-    0% { transform: scale(1) rotate(0deg); box-shadow:0 0 40px rgba(0,255,255,0.7);}
-    50% { transform: scale(1.05) rotate(-1deg); box-shadow:0 0 60px rgba(0,255,255,1);}
-    100% { transform: scale(1) rotate(0deg); box-shadow:0 0 40px rgba(0,255,255,0.7);}
-}
-@keyframes titlePulse {
-    0%,100% { text-shadow: 0 0 15px #00eaff,0 0 30px #00ffff,0 0 60px #00ffff; }
-    50% { text-shadow: 0 0 30px #00ffff,0 0 60px #00eaff,0 0 90px #00ffff; }
-}
-@keyframes gradientShift {
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 1100px){
-    .small-logo{ width: 75%; }
-    .title{ font-size: 3.5rem; letter-spacing: 8px; }
-    .tagline{ font-size: 1.15rem; line-height: 1.3;}
+/* LOGO */
+
+.small-logo{
+width:260px;
+border-radius:14px;
+box-shadow:
+0 0 20px #00eaff,
+0 0 40px #00eaff,
+0 0 80px rgba(0,255,255,0.6);
+animation:logoFloat 6s ease-in-out infinite;
 }
+
+@keyframes logoFloat{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0px);}
+}
+
+/* COSMIC LINES */
+
+.logo .line{
+width:160px;
+height:5px;
+margin:10px auto;
+border-radius:3px;
+background:linear-gradient(90deg,#00eaff,#00ffff);
+box-shadow:0 0 20px #00eaff,0 0 50px #00ffff;
+opacity:0;
+transform:translateY(30px);
+animation:lineReveal 1.5s forwards;
+}
+
+.logo .line:nth-child(2){
+animation-delay:.5s;
+}
+
+.logo .line:nth-child(3){
+animation-delay:1s;
+}
+
+@keyframes lineReveal{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* TITLE */
+
+.title{
+font-family:'Orbitron',sans-serif;
+font-weight:800;
+font-size:34px;
+letter-spacing:12px;
+margin-top:10px;
+
+background:linear-gradient(90deg,#00eaff,#ffffff,#00eaff);
+background-size:200%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+opacity:0;
+animation:titleReveal 2s forwards 1.2s,gradientMove 6s linear infinite;
+}
+
+@keyframes titleReveal{
+to{opacity:1;}
+}
+
+@keyframes gradientMove{
+0%{background-position:0%}
+100%{background-position:200%}
+}
+
+/* TAGLINE */
+
+.tagline{
+font-family:'Exo 2',sans-serif;
+font-weight:500;
+font-size:1.3rem;
+letter-spacing:2px;
+opacity:0;
+
+background:linear-gradient(270deg,#00eaff,#00ffff,#ffffff);
+background-size:300%;
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:taglineReveal 2s forwards,gradientShift 8s linear infinite;
+}
+
+.tagline:nth-of-type(1){animation-delay:2s;}
+.tagline:nth-of-type(2){animation-delay:3s;}
+.tagline:nth-of-type(3){animation-delay:4s;}
+
+@keyframes taglineReveal{
+to{opacity:1;}
+}
+
+@keyframes gradientShift{
+0%{background-position:0%}
+100%{background-position:300%}
+}
+
+/* PARTICLES */
+
+.particles{
+position:absolute;
+width:100%;
+height:100%;
+z-index:2;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+.small-logo{
+width:70%;
+}
+
+.title{
+font-size:2.6rem;
+letter-spacing:6px;
+}
+
+.tagline{
+font-size:1.05rem;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
+<div class="stars"></div>
 <div class="particles"></div>
 
 <div class="intro container">
-    <img src="logo.png" class="small-logo">
-    <div class="logo mb-4">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </div>
-    <h1 class="title">IDAI</h1>
-    <p class="tagline">Imagine the Direction of AI</p>
-    <p class="tagline">Inspiring Trust Through Innovation</p>
-    <p class="tagline">No matter how advanced you can believe AI to be, it's greater still.</p>
+
+<img src="IDAI-Logo.jpg" class="small-logo">
+
+<div class="logo mb-4">
+<div class="line"></div>
+<div class="line"></div>
+<div class="line"></div>
 </div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<h1 class="title">IDAI: Cosmic Covenant</h1>
+
+<p class="tagline">Imagine the Direction of AI</p>
+<p class="tagline">Inspiring Trust Through Innovation</p>
+<p class="tagline">No matter how advanced you can believe AI to be, it's greater still.</p>
+
+</div>
 
 <script>
-// ---------- Particle System ----------
-const particles = document.querySelector(".particles");
-const particleCount = 100;
 
-for(let i=0;i<particleCount;i++){
+/* ---------- STARS ---------- */
+const starContainer = document.querySelector(".stars");
+for (let i = 0; i < 400; i++) {
+    let star = document.createElement("div");
+    star.style.position = "absolute";
+    star.style.width = "2px";
+    star.style.height = "2px";
+    star.style.background = "white";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.opacity = Math.random();
+    starContainer.appendChild(star);
+}
+
+/* ---------- PARTICLES ---------- */
+const particles = document.querySelector(".particles");
+for (let i = 0; i < 150; i++) {
     let p = document.createElement("div");
     p.style.position = "absolute";
-    p.style.left = Math.random()*100 + "vw";
-    p.style.top = Math.random()*100 + "vh";
-    let size = Math.random()*3+1;
-    p.style.width = size+"px";
-    p.style.height = size+"px";
-    p.style.borderRadius="50%";
-    p.style.background = "rgba(0,255,255,"+Math.random()+")";
-    p.style.animation = `floatParticle ${5+Math.random()*5}s linear infinite`;
+    p.style.width = Math.random() * 3 + "px";
+    p.style.height = p.style.width;
+    p.style.background = "rgba(0,255,255,0.7)";
+    p.style.borderRadius = "50%";
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.top = Math.random() * 100 + "vh";
+    p.style.animation = `float ${5 + Math.random() * 6}s ease-in-out infinite`;
     particles.appendChild(p);
 }
 
-const style = document.createElement('style');
-style.innerHTML = `
-@keyframes floatParticle{
-    0%{transform: translateY(0);}
-    50%{transform: translateY(-20px);}
-    100%{transform: translateY(0);}
-}`;
+/* ---------- SHOOTING STAR CREATOR ---------- */
+function createShootingStar(isExplosion=false) {
+    let s = document.createElement("div");
+    s.className = "shooting-star";
+    s.style.position = "absolute";
+    s.style.top = Math.random() * 80 + "vh";
+    s.style.left = Math.random() * 100 + "vw";
+
+    // Star size
+    let size = Math.random() * 4 + 2; // 2-6px
+    s.style.width = size + "px";
+    s.style.height = size + "px";
+    s.style.borderRadius = "50%";
+    s.style.background = "white";
+    s.style.boxShadow = `0 0 ${size*2}px white, 0 0 ${size*4}px rgba(0,255,255,0.8)`;
+
+    // Shooting animation
+    let duration = 2 + Math.random() * 4; // 2-6s
+    s.style.animation = `shoot ${duration}s linear forwards`;
+    starContainer.appendChild(s);
+
+    // Explosion logic
+    if(isExplosion){
+        // explode mid-flight
+        setTimeout(()=>{ explodeStar(s); }, duration*500); // mid animation
+    }
+
+    // Remove if not exploded
+    setTimeout(()=>{
+        if(starContainer.contains(s)) starContainer.removeChild(s);
+    }, duration*1000);
+}
+
+/* ---------- EXPLOSION EFFECT ---------- */
+function explodeStar(star){
+    const explosionCount = Math.floor(Math.random() * 15) + 10; // 10-25 mini particles
+    let starLeft = star.offsetLeft;
+    let starTop = star.offsetTop;
+
+    for(let i=0;i<explosionCount;i++){
+        let p = document.createElement("div");
+        p.style.position = "absolute";
+        p.style.width = Math.random()*3+2 + "px";
+        p.style.height = p.style.width;
+        p.style.borderRadius="50%";
+        p.style.background="white";
+        p.style.left = starLeft + "px";
+        p.style.top = starTop + "px";
+        p.style.opacity = 1;
+        p.style.boxShadow = "0 0 10px white, 0 0 20px rgba(0,255,255,0.9)";
+
+        starContainer.appendChild(p);
+
+        // Random direction for explosion
+        let angle = Math.random()*2*Math.PI;
+        let distance = Math.random()*100+50; // spread far
+        p.style.transition = "transform 1s ease-out, opacity 1s ease-out";
+
+        setTimeout(()=>{
+            p.style.transform = `translate(${Math.cos(angle)*distance}px, ${Math.sin(angle)*distance}px) scale(0.5)`;
+            p.style.opacity=0;
+        },50);
+
+        // Remove particle
+        setTimeout(()=>{
+            if(starContainer.contains(p)) starContainer.removeChild(p);
+        },1100);
+    }
+
+    // Remove original star
+    if(starContainer.contains(star)) starContainer.removeChild(star);
+}
+
+function shootingStarTimeline(){
+
+    // Step 1: 1-3 stars at start
+    for(let i=0;i<Math.floor(Math.random()*3)+1;i++){
+        setTimeout(()=>createShootingStar(false), i*500);
+    }
+
+    // Step 2: Massive Burst after 3 seconds
+    setTimeout(()=>{
+
+        // 150 - 180 shooting stars
+        let total = Math.floor(Math.random()*31)+150;
+
+        // 25 - 30 explosions
+        let explosions = Math.floor(Math.random()*6)+25;
+
+        for(let i=0;i<total;i++){
+
+            let explode = i < explosions;
+
+            // staggered timing for cinematic meteor storm
+            setTimeout(()=>{
+                createShootingStar(explode);
+            }, i*12);
+
+        }
+
+    },3000);
+
+    // Step 3: 2-3 stars at end after 12 seconds
+    setTimeout(()=>{
+        for(let i=0;i<Math.floor(Math.random()*2)+2;i++){
+            setTimeout(()=>createShootingStar(false), i*500);
+        }
+    },12000);
+
+}
+
+
+// Run the timeline repeatedly
+shootingStarTimeline();
+setInterval(shootingStarTimeline,15000);
+
+/* ---------- ANIMATION STYLES ---------- */
+const style = document.createElement("style");
+style.innerHTML=`
+@keyframes float{
+0%{transform:translateY(0px)}
+50%{transform:translateY(-20px)}
+100%{transform:translateY(0px)}
+}
+
+@keyframes shoot{
+0%{transform: translate(0,0); opacity:0;}
+10%{opacity:1;}
+100%{transform: translate(-800px,400px); opacity:0;}
+}
+`;
 document.head.appendChild(style);
 
-// ---------- Auto Redirect ----------
+/* ---------- AUTO REDIRECT ---------- */
 setTimeout(()=>{
-    document.body.style.transition="opacity 1s";
+    document.body.style.transition="opacity 1.5s";
     document.body.style.opacity=0;
-    setTimeout(()=>{ window.location.href="Home.html"; },1000);
-},5000);
+    setTimeout(()=>{window.location.href="Home.html";},1500);
+},15000);
+
 </script>
 
 </body>
 </html>
-
