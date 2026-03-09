@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IDAI: Inspiring Trust through innovation</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+/* Body with background image */
+body{
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+    color:white;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Optional overlay to make text visible */
+body::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.5);
+    z-index:1;
+}
+
+/* Intro layout */
+.intro{
+    text-align:center;
+    position:relative;
+    z-index:2;
+}
+
+.small-logo{
+    width:280px;
+    height:auto;
+    margin-bottom:15px;
+    background: lightyellow;
+}
+
+/* Logo lines */
+.logo{
+    text-align:center;
+}
+
+.line{
+    width:120px;
+    height:6px;
+    background:#00eaff;
+    margin:10px auto;
+    opacity:0;
+    transform:translateY(20px);
+    animation:lineReveal 1s forwards;
+    box-shadow:0 0 10px #00eaff;
+}
+
+.line:nth-child(2){ animation-delay:0.3s;}
+.line:nth-child(3){ animation-delay:0.6s;}
+
+/* Title */
+.title{
+    letter-spacing:10px;
+    opacity:0;
+    animation:fadeIn 1.5s forwards, pulse 2s infinite 2s;
+    text-align:center;
+}
+
+/* Taglines */
+.tagline{
+    letter-spacing:3px;
+    opacity:0;
+    animation:fadeIn 2s forwards;
+    animation-delay:1.8s;
+    text-align:center;
+    margin-top:5px;
+}
+
+/* Animations */
+@keyframes lineReveal{
+    to{ opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeIn{
+    to{ opacity:1;}
+}
+
+@keyframes pulse{
+    0%,100%{text-shadow:0 0 10px #00eaff, 0 0 20px #00eaff;}
+    50%{text-shadow:0 0 20px #00ffff, 0 0 40px #00ffff;}
+}
+
+/* Particles */
+.particles{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:transparent;
+    z-index:2;
+}
+
+@media (max-width: 1100px){
+	.small-logo{
+		width:30%;
+	}
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div class="particles"></div>
+
+<div class="intro container d-flex flex-column justify-content-center align-items-center vh-100">
+    <!-- Small logo image -->
+    <img src="logo.png" class="small-logo">
+
+    <!-- Glowing lines -->
+    <div class="logo mb-4">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <!-- Title -->
+    <h1 class="title display-1 fw-bold">IDAI</h1>
+
+    <!-- Taglines -->
+    <p class="tagline fs-5 mt-2">Imagine the Direction of AI</p>
+    <p class="tagline fs-5 mt-2">Inspiring Trust Through Innovation</p>
+    <p class="tagline fs-5 mt-2">No matter how advanced you can believe AI to be, it's greater still.</p>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Particles
+const particles = document.querySelector(".particles");
+const particleCount = 80;
+
+for(let i=0;i<particleCount;i++){
+    let p = document.createElement("div");
+    p.classList.add("particle");
+    p.style.left = Math.random()*100 + "vw";
+    p.style.top = Math.random()*100 + "vh";
+    p.style.width = Math.random()*4 + 1 + "px";
+    p.style.height = p.style.width;
+    p.style.background = "rgba(0, 255, 255,"+Math.random()+")";
+    p.style.position = "absolute";
+    p.style.borderRadius="50%";
+    p.style.animation = `moveParticle ${5+Math.random()*5}s linear infinite`;
+    particles.appendChild(p);
+}
+
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes moveParticle{
+    0%{transform: translateY(0);}
+    50%{transform: translateY(-20px);}
+    100%{transform: translateY(0);}
+}
+`;
+document.head.appendChild(style);
+
+// Auto redirect after intro
+setTimeout(()=>{
+    document.body.style.transition="opacity 1s";
+    document.body.style.opacity=0;
+    setTimeout(()=>{ window.location.href="Home.html"; },1000);
+},5000);
+</script>
+
+</body>
+</html>
