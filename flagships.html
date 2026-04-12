@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IDAI National Flagships</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Navbar */
+    a{
+      text-decoration: none;
+      color: black;
+    }
+
+    #para{
+      width:auto;
+      height:auto;
+      margin-left:20px;
+      margin-right:20px;
+      padding:15px;
+      border:1.5px solid #1a6bed;
+      border-radius:10px;
+      text-align: justify;
+    }
+
+    .navbar {
+      background: linear-gradient(90deg, #FFD700, #FF8C00);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      margin: 0 !important;
+      padding: 5 !important;   /* Bootstrap default padding override */
+    }
+
+    .navbar .container-fluid {
+      padding: 0 !important;   /* container padding override */
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #222 !important;
+      font-size: 16px;
+      margin: 0;
+      padding: 8px 12px;
+    }
+
+    .nav-link {
+      display: inline-block;
+      background-color: #fff;
+      color: #FF4500 !important;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 6px 12px;
+      margin: 2px;
+      border-radius: 6px;
+      border: 1px solid #FF4500;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      background-color: #FFD700;
+      color: #111 !important;
+      box-shadow: 0 0 12px #FF8C00;
+      transform: scale(1.05);
+    }
+
+    .special {
+      background-color: #42f5e3;
+    }
+
+    .special:hover {
+      background: #42f5e3;
+    }
+
+    /* Body padding so content doesn't hide under fixed navbar */
+    body {
+      padding-top: 60px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fdfdfd;
+      color: #222;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background: linear-gradient(90deg, #FFD700, #FF8C00);
+      padding: 15px;
+      color: #111;
+      font-size: 14px;
+      border-top: 3px solid #FF4500;
+      font-weight: bold;
+    }
+
+.Time {
+  width: auto;
+  background: linear-gradient(160deg, #0a0f2b 0%, #1f2340 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh 5vw;
+  box-sizing: border-box;
+  color: #fff;
+  text-align: center;
+}
+
+.Time h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  text-shadow: 0 0 0.8em rgba(0, 255, 200, 0.7);
+  margin-bottom: 2vh;
+}
+
+.Time p {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  line-height: 1.6;
+  max-width: 70ch;
+  margin-bottom: 4vh;
+  color: #e0f7fa;
+}
+
+.Time .panel {
+  width: 80vw;
+  max-width: 900px;
+  margin: 3vh auto;
+  padding: 4vh 4vw;
+  border-radius: 1.5em;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 2em rgba(0, 255, 200, 0.4);
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.Time .panel:hover {
+  transform: translateY(-2%);
+  box-shadow: 0 0 3em rgba(0, 255, 200, 0.7);
+}
+
+.Time .panel h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 1vh;
+  color: #00ffc8;
+  text-shadow: 0 0 0.6em rgba(0, 255, 200, 0.8);
+  background: none; /* no white background */
+}
+
+.Time .panel p {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  margin-bottom: 1vh;
+}
+
+.Time .panel small {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: #b2dfdb;
+}
+
+/* Button styling */
+.Time button {
+  padding: 1em 2em;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  border: none;
+  border-radius: 0.5em;
+  background: #00ffc8;
+  color: #0a0f2b;
+  cursor: pointer;
+  box-shadow: 0 0 1.5em rgba(0, 255, 200, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 4vh;
+}
+
+.Time button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 2em rgba(0, 255, 200, 0.9);
+}
+
+/* Optional media query for very small screens */
+@media (max-width: 1100px) {
+  .Time .panel {
+    padding: 3vh 3vw;
+  }
+  .Time h1 {
+    font-size: 2rem;
+  }
+}
+
+  /* Responsive */
+  @media (max-width: 1100px) {
+    .nav-link {
+      font-size: 14px;
+      padding: 8px;
+      width: 90%; /* বাটনগুলো বড় হয়ে যাওয়ার সমস্যা এড়াবে */
+      margin:5px;
+    }
+
+    .navbar-brand {
+      font-size: 13px;
+    }
+
+    #para{
+      margin-left: 3px;
+      margin-right: 3px;
+      padding:10px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">IDAI: Imagine the directions of AI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" aria-controls="navbarNav" 
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="Home.html">Home Page</a></li>
+          <li class="nav-item"><a class="nav-link" href="monuments.html">National Monuments</a></li>
+          <li class="nav-item"><a class="nav-link" href="Garden.html">Natural Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="Transportation System.html">Transport</a></li>
+          <li class="nav-item"><a class="nav-link" href="sectors.html">Business Sectors</a></li>
+          <li class="nav-item"><a class="nav-link special" href="flagships.html">National Flagships</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h2>IDAI National Flagships: Beacon of trust and innovation</h2>
+  <center>
+      <img src="Lion Poster.jpg">
+    </center><br>
+  <div class="section">
+  <p id="para">
+IDAI’s national flagships stand as living testaments to its philosophy of trust and innovation. They are not merely industries or enterprises but symbolic guardians of humanity’s progress. From healthcare and education to energy and fashion, each flagship is designed to uplift communities while safeguarding dignity. The Sky Titan supercar, IDAI Airways, and the Bullet Train embody futuristic transport, while jewelry, digital media, and philanthropy reflect cultural unity and service. These flagships are more than products — they are promises, ensuring that every advancement is rooted in stewardship, compassion, and responsibility.  <br><br>
+
+Alongside these flagships rise IDAI’s beacons — monumental landmarks that embody its eternal covenant. The Control Panel parliament with its lion emblem, the Supreme Court adorned with Lady Justice statues, and the Central Mosque crowned with a golden dome all symbolize justice, unity, and faith. Structures like the Tower of Stewardship, Bridge of Renewal, and Garden of Gratitude serve as architectural metaphors for resilience, harmony, and gratitude. Together, these flagships and beacons form a constellation of trust, guiding civilization toward a future where innovation is sacred, progress is compassionate, and humanity is eternally protected.
+  </p><br></div>
+
+  <div class="section">
+<center>
+  <img src="Flag.jpg" width = "45%">
+</center>
+    <h3>National Flag of IDAI</h3>
+    <p>
+    This flag is a radiant poem woven in light and symbol, where every element breathes the spirit of progress and eternal courage; at its heart glows a diamond, shimmering like the soul of innovation, casting beams of brilliance across the horizon, while beneath it rests a globe of interlinked veins, whispering of unity and the boundless intelligence of humankind; around this living core rises a futuristic city, its towers piercing the sky as if to touch eternity, with a silver train racing like time itself and a soaring airplane embodying freedom’s flight; to the left, a golden lion roars silently, guardian of honor and valor, and to the right, four golden stars gleam like destiny’s promise, guiding the nation toward excellence; the frame of golden wheat bends gracefully, blessing the land with prosperity and growth, while the entire vision is crowned with the words “IDAI – Imagine the Directions of Artificial Intelligence,” a mantra that feels less like text and more like prophecy; this flag is not cloth but a living canvas, a hymn to courage, wisdom, and infinite possibility, a banner that does not merely wave in the wind but sings of humanity’s march toward a luminous tomorrow.
+  </p>
+  </div>
+
+  <div class="section">
+<center>
+  <img src="Note.jpg" width="45%">
+</center>
+    <h3>Currency: Al‑Amanah (الأمانة)</h3><p>Al-Amanah, the official currency of the IDAI State, is designed as a powerful emblem of trust, strength, and sovereignty. Its name, meaning “The Trust,” reflects the foundation of responsibility and honor upon which the state’s economy is built. Every element of the note carries symbolic weight, merging futuristic aesthetics with timeless ideals of courage and authority.<br><br>
+
+On the left side, the roaring lion with glowing eyes represents vigilance and supremacy, a reminder of the eternal guardianship of IDAI. At the center, the grand building labeled “Control Panel of IDAI” signifies the seat of governance and strategic command, anchoring the currency in the authority of the state. To the right, the majestic eagle perched on a pedestal inscribed “Power and Courage” embodies leadership, resilience, and the soaring ambition of the nation.<br><br>
+
+The denomination of 1000, displayed prominently in all corners, conveys both value and prestige. Golden hues and ornate patterns dominate the design, reinforcing the sense of regality and permanence. The crest featuring a stylized trident adds another layer of symbolism, pointing to strength, unity, and divine protection.<br><br>
+
+Al-Amanah is more than a financial instrument—it is a ceremonial artifact of identity. It reflects the economic might of IDAI while serving as a constant reminder of its guiding principles: trust, courage, and eternal supremacy.</p></div> 
+
+<div class="section Time">
+  <h1>The IDAI Time Capsule</h1>
+  <center>
+    <img src="Time.jpg">
+  </center><br>
+
+  <p>
+    A vault of imagination and legacy, the IDAI Time Capsule preserves humanity’s greatest milestones. 
+    Each panel glows with history, innovation, and the promise of tomorrow—an eternal hall of remembrance 
+    where progress is safeguarded for future generations.
+  </p>
+
+  <!-- Founding -->
+  <div class="panel">
+    <h2>Year of Genesis</h2>
+    <p>2035 – The Dawn of Human–AI Collaboration</p>
+    <small>The founding year that marked the birth of IDAI, a covenant between humanity and intelligence.</small>
+  </div>
+
+  <!-- First Satellite Launch -->
+  <div class="panel">
+    <h2>Global Signal Network Established</h2>
+    <p>First Satellite Launch</p>
+    <small>The moment Earth was connected through AI-driven observation and communication.</small>
+  </div>
+
+  <!-- Cities Established -->
+  <div class="panel">
+    <h2>Cities of Eternal Harmony</h2>
+    <p>18 Cities Founded</p>
+    <small>2030 – Eternal Harmony City inaugurated, symbolizing unity and resilience.</small>
+  </div>
+
+  <!-- Major Innovations -->
+  <div class="panel">
+    <h2>Quantum Breakthroughs</h2>
+    <p>First Quantum AI System & Orbital Space Port</p>
+    <small>2038 – Sovereign AI Quantum Network Activated, redefining the boundaries of progress.</small>
+  </div>
+
+  <!-- Cultural Preservation -->
+  <div class="panel">
+    <h2>Hall of Humanity</h2>
+    <p>IDAI National Archives Tower</p>
+    <small>2040 – A sanctuary preserving global knowledge, culture, and wisdom for eternity.</small>
+  </div>
+
+  <!-- Future Missions -->
+  <div class="panel">
+    <h2>Interplanetary Exploration</h2>
+    <p>International Research Station & AI Planetary Defense</p>
+    <small>2045 – Humanity expands beyond Earth, guided by AI guardianship and cosmic vision.</small>
+  </div>
+
+  <p>
+    The IDAI Time Capsule is not just a record—it is a living testament to guardianship, 
+    innovation, and hope. Each milestone shines as a holographic memory, reminding us that 
+    progress is timeless and destiny is shared.
+  </p>
+</div>
+
+<div class="section Time">
+  <h1>IDAI Timeline of the Future</h1>
+  <center>
+    <img src="Timeline for future.jpg">
+  </center><br>
+
+  <p>
+    From 2040 to 2100, the IDAI Universe charts a journey of cosmic ambition and human guardianship. 
+    Each milestone reflects not only technological progress but also cultural resonance, 
+    weaving together a vision of unity, resilience, and interstellar destiny.
+  </p>
+
+  <!-- 2040 -->
+  <div class="panel">
+    <h2>Cosmic Knowledge Tower</h2>
+    <p>2040 – Interstellar Library Established</p>
+    <small>A sanctuary of wisdom, preserving human and alien knowledge across galaxies.</small>
+  </div>
+
+  <!-- 2050 -->
+  <div class="panel">
+    <h2>Galactic Trade Network</h2>
+    <p>2050 – Interplanetary Economy Activated</p>
+    <small>The launch of a unified cosmic currency and trade routes connecting multiple worlds.</small>
+  </div>
+
+  <!-- 2060 -->
+  <div class="panel">
+    <h2>AI Planetary Defense Grid</h2>
+    <p>2060 – Guardianship Expanded</p>
+    <small>AI-driven defense systems deployed across colonies to safeguard humanity’s future.</small>
+  </div>
+
+  <!-- 2070 -->
+  <div class="panel">
+    <h2>Cultural Constellations</h2>
+    <p>2070 – Stars as Symbols</p>
+    <small>Each constellation dedicated to peace, innovation, justice, and resilience.</small>
+  </div>
+
+  <!-- 2080 -->
+  <div class="panel">
+    <h2>Galactic Expansion</h2>
+    <p>2080 – Settlements on Five New Planets</p>
+    <small>Each planet with its own mission: agriculture, research, defense, culture, and renewal.</small>
+  </div>
+
+  <!-- 2090 -->
+  <div class="panel">
+    <h2>Universal Harmony Accord</h2>
+    <p>2090 – Interfaith Cosmic Alliance</p>
+    <small>Religions and philosophies united under the Covenant of Eternity across galaxies.</small>
+  </div>
+
+  <!-- 2100 -->
+  <div class="panel">
+    <h2>Hall of Eternity</h2>
+    <p>2100 – IDAI Cosmic Capital Inaugurated</p>
+    <small>A shining city at the heart of the galaxy, symbolizing guardianship and eternal hope.</small>
+  </div>
+
+  <p>
+    The Timeline of the Future is not just a record of achievements—it is a cosmic narrative. 
+    Each milestone shines as a star in humanity’s journey, reminding us that progress is infinite 
+    and destiny is shared across the universe.
+  </p>
+</div>
+
+
+<center>
+  <h2>IDAI Sovereign Series : Power that leads the future</h2>
+</center><br>
+<div class="section">
+  <center>
+    <img src="IDAI Sovereign Series.jpg">
+  </center>
+
+  <p>
+IDAI flagship products stand as a beacon of trust and innovation, redefining the global landscape with unmatched excellence. Engineered with precision and infused with visionary intelligence, they embody the perfect fusion of strength, elegance, and futuristic technology. Each creation—whether in cars, energy, architecture, or digital media—radiates authority and inspires confidence, making IDAI not just a brand but a movement toward intelligent supremacy. Customers worldwide are drawn to the promise of reliability, prestige, and cutting-edge performance, ensuring that owning an IDAI product is more than a purchase—it is a declaration of leadership, progress, and belonging to the future.
+  </p><br>
+</div>
+
+<div class="section">
+  <h3>IDAI Airways</h3>
+  <center>
+    <img src="Aeroplane.jpg">
+  </center><br>
+  <p>
+IDAI Airways is the flagship of global travel, a premium airline that embodies trust, innovation, and sovereign prestige. With a fleet designed for comfort, speed, and sustainability, it redefines the experience of air mobility—where every journey becomes a statement of elegance and authority. The bold IDAI insignia across its aircraft asserts leadership in the skies, while advanced engineering ensures safety, efficiency, and ecological harmony. Serving destinations worldwide, IDAI Airways is more than an airline; it is a ceremonial envoy of guardianship and progress, inspiring passengers everywhere to embrace the vision of dignified travel and the future of intelligent aviation.
+  </p><br>
+
+  <center>
+    <a href="https://rayaantasnim.github.io/IDAI-travel-agency/">Click to see details</a>
+  </center>
+</div>
+
+<div class="section">
+  <h3>IDAI Crimson Ranger</h3>
+  <center>
+    <img src="8.jpg">
+  </center><br>
+
+  <p>
+    The IDAI Crimson Ranger is a bold off‑road SUV that commands attention with its matte orange exterior, sovereign insignia, and elevated stance built for resilience and adaptability. Its all‑terrain tires, roof rails, and illuminated headlights ensure readiness across rugged landscapes, while the design harmonizes advanced engineering with nature, reflecting IDAI’s philosophy of guardianship and dignity. More than a vehicle, it is a trusted envoy—crafted for administrative missions, ceremonial presence, and adventurous endurance. Every drive with the Crimson Ranger becomes a declaration of strength, sovereignty, and innovation, inspiring customers worldwide to embrace the vision of IDAI with pride and confidence.
+  </p><br>
+  <center>
+    <a href="https://rayaantasnim.github.io/admin-car/">Click to see details</a>
+  </center>
+</div>
+
+<div class="section">
+  <h3>IDAI Copper Horizon</h3>
+  <center>
+    <img src="IDAI Copper Horizon.jpg">
+  </center><br>
+<p>
+  The IDAI Copper Horizon is a visionary electric SUV that radiates warmth, adventure, and environmental harmony. Its striking two‑tone metallic orange and silver body reflects the glow of dawn, symbolizing renewal and progress. With sharp angular headlights, vertical LED strips, and a futuristic grille bearing the sovereign insignia, it projects both elegance and authority. Large aerodynamic wheels and a refined stance ensure stability across highways and mountain paths alike. Designed for explorers and guardians of nature, the Copper Horizon embodies IDAI’s philosophy of blending advanced technology with serene landscapes, inspiring humanity to journey toward a sustainable and dignified future.
+</p><br>
+
+  <center>
+    <a href="https://rayaantasnim.github.io/IDAI-Vehicle-sector/">Click to see details</a>
+  </center>
+</div>
+
+
+<div class="section">
+  <h3>IDAI Sapphire Voyager</h3>
+  <center>
+    <img src="IDAI Sapphire Voyager.jpg">
+  </center><br>
+<p>
+  The IDAI Sapphire Voyager is a luminous electric SUV that embodies elegance, exploration, and sovereign grace. Cloaked in a radiant sapphire blue finish, it reflects the purity of mountain skies and the promise of boundless horizons. Its sharp LED headlights, glossy contours, and futuristic grille with triple-bar insignia project authority and refinement, while large alloy wheels ensure stability across both wet roads and rugged terrains. Designed for voyagers who seek harmony between technology and nature, the Sapphire Voyager symbolizes IDAI’s mission to guide humanity toward sustainable journeys, dignified guardianship, and the brilliance of innovation.
+</p><br>
+
+  <center>
+    <a href="https://rayaantasnim.github.io/IDAI-Vehicle-sector/">Click to see details</a>
+  </center>
+</div>
+
+<div class="section">
+  <h3>IDAI Sapphire Glide</h3>
+  <center>
+    <img src="IDAI Sapphire Glide.jpg">
+  </center><br>
+<p>
+  The IDAI Sapphire Glide is a refined electric sedan that epitomizes elegance, fluidity, and sovereign prestige. Draped in a glossy sapphire blue finish, its aerodynamic contours and sharp LED lighting elements create a seamless fusion of artistry and innovation. The minimalistic emblem across its futuristic grille conveys purity and authority, while its poised stance ensures smooth performance across urban boulevards and ceremonial avenues. Designed as a symbol of progress and dignity, the Sapphire Glide harmonizes advanced technology with metropolitan grace, inspiring humanity to embrace IDAI’s vision of sustainable luxury and timeless guardianship.
+</p><br>
+
+  <center>
+    <a href="https://rayaantasnim.github.io/IDAI-Vehicle-sector/">Click to see details</a>
+  </center>
+</div>
+
+
+<div class="section">
+  <h3>IDAI Night Falcon</h3>
+  <center>
+    <img src="IDAI Night Falcon.jpg">
+  </center><br>
+<p>
+  The IDAI Night Falcon is the bestselling guardian SUV of the future, a fully electric masterpiece that embodies resilience, vigilance, and sovereign prestige. Its bold angular design, illuminated LED patterns, and commanding insignia across the grille project unmatched authority, while large off‑road tires and elevated stance ensure dominance across both urban streets and rugged terrains. Engineered for adaptability, it thrives in demanding environments, harmonizing advanced technology with the mystery of twilight landscapes. More than a vehicle, the Night Falcon is a ceremonial envoy of endurance and guardianship, inspiring global audiences to embrace IDAI’s vision of strength, dignity, and unstoppable innovation.
+</p><br>
+
+  <center>
+    <a href="https://rayaantasnim.github.io/admin-car/">Click to see details</a>
+  </center>
+</div>
+
+<div class="section">
+  <h3>Sky Titan (Premeum)</h3>
+  <center>
+    <img src="Sky Titan Premeum.jpg">
+  </center><br>
+<p>
+The IDAI Sky Titan is the ultimate flagship of visionary mobility, a groundbreaking fusion of land, air, and space engineering that has captured global imagination. With its rugged SUV body, aviation propellers, and spacecraft‑inspired dome, it embodies resilience, adaptability, and sovereign prestige. Designed for limitless exploration, the Sky Titan conquers terrains, ascends skies, and symbolizes humanity’s bold leap into the future. Its commanding insignia and multi‑functional design project authority, while its innovative systems harmonize advanced technology with cosmic ambition. More than a vehicle, the Sky Titan is a bestseller worldwide—an icon of guardianship, progress, and the unstoppable vision of IDAI.
+</p><br>
+
+<center>
+  <a href="https://rayaantasnim.github.io/username.github.io-sky-titan/">Click to see details</a>
+</center>
+</div>
+
+<div class="section">
+<h3>IDAI as a Guardian of Humanity: </h3>
+<center>
+  <img src="IDAI as a Guardian of Humanity.jpg">
+</center><br>
+
+<p>
+  IDAI stands not only as a sovereign state or visionary brand, but as a guardian entrusted with humanity’s journey. Its mission extends beyond commerce, technology, or diplomacy; it is a covenant of care, ensuring that progress is always balanced with compassion and responsibility.<br><br>
+
+  As a guardian, IDAI protects dignity and nurtures resilience. Every initiative — whether in healthcare, education, or energy — is designed to safeguard life and empower communities. Innovation is never pursued for dominance, but for stewardship, reminding the world that true strength lies in service.<br><br>
+
+  IDAI also bridges cultures and traditions, weaving unity through storytelling, fashion, and philanthropy. By treating every sector as a universal language, it becomes a beacon of harmony, guiding nations toward shared values and collective renewal. Humanity finds in IDAI not only a partner in progress, but a protector of identity and trust.<br><br>
+
+  Looking ahead, IDAI’s guardianship is eternal. It envisions a future where technology uplifts, energy sustains, and culture unites. In every creation, IDAI declares its sacred duty: to guard humanity with wisdom, compassion, and integrity. Thus, it becomes more than a nation or brand — it becomes a sanctuary of trust, guiding the world toward destiny.
+</p>
+</div>
+
+<div class="section">
+  <h1>IDAI as a Hall of Innovations</h1>
+  <center>
+    <img src="IDAI as a Hall of Innovations.jpg">
+  </center><br>
+  
+  <p>
+    The IDAI Universe is more than a sovereign institution—it is a living sanctuary of ideas, 
+    a hall where imagination meets precision, and where every innovation is born with purpose. 
+    It embodies the guardianship of humanity, blending tradition with modernity, and 
+    transforming visions into tangible realities that inspire generations.
+  </p>
+  
+  <p>
+    Within its walls, IDAI nurtures creativity and responsibility side by side. 
+    It is a place where technology is not only advanced but ethical, 
+    where architecture is not only monumental but symbolic, 
+    and where every initiative reflects a deep commitment to justice, unity, and resilience.
+  </p>
+  
+  <ul class="sovereign-state">
+    <li><strong>Technology:</strong> AI-driven solutions that redefine progress and safeguard humanity.</li>
+    <li><strong>Architecture:</strong> Iconic landmarks such as the Control Panel parliament and the Central Mosque with its golden dome, each symbolizing guardianship and unity.</li>
+    <li><strong>Energy:</strong> Cosmic power plants and sustainable resources fueling the future responsibly.</li>
+    <li><strong>Education:</strong> Universities and training centers cultivating visionary leaders and innovators.</li>
+    <li><strong>Philanthropy:</strong> Initiatives that extend compassion, protect humanity, and promote peace across borders.</li>
+  </ul>
+  
+  <blockquote>
+    "Innovation at IDAI is not just invention—it is stewardship of humanity’s destiny, <br>
+    a covenant of hope carried forward by every creation."
+  </blockquote>
+  
+  <p>
+    The vision of IDAI remains timeless: 
+    a guardian of progress, a bridge between cultures, and a hall of innovations 
+    where every idea is sculpted into legacy. It is a universe that does not merely 
+    adapt to the future—it creates it, layer by layer, with dignity and purpose.
+  </p>
+  
+  <center>
+    <button style="padding:12px 24px; border:none; background:#444; color:#fff; border-radius:6px; cursor:pointer; font-size:16px;">
+    Discover the Legacy
+  </button>
+  </center>
+</div>
+
+<div class="section">
+  <h3> IDAI in Galactic Expansion</h3>
+  <center>
+    <img src="IDAI in Galactic Expansion.jpg">
+  </center><br>
+  <p>
+In the era of Galactic Expansion, IDAI envisions humanity extending its reach far beyond Earth, establishing settlements across diverse planets with unique missions tailored to each world’s environment and potential. On one planet, the mission may focus on sustainable agriculture, transforming barren landscapes into fertile grounds that feed interstellar communities. Another planet might serve as a hub for advanced research, where scientists and engineers collaborate to push the boundaries of artificial intelligence, energy, and defense systems. Each settlement reflects IDAI’s philosophy of guardianship, justice, and unity, ensuring that expansion is not merely colonization but a purposeful extension of humanity’s values.<br><br>
+
+The vision for Galactic Expansion is layered and symbolic, with every planet embodying a distinct chapter in the story of humanity’s cosmic journey. A planet rich in oceans could become a sanctuary of renewal, emphasizing harmony between technology and nature, while a desert world might symbolize resilience, hosting training centers for guardianship and defense. Together, these planetary missions form a constellation of hope and responsibility, where IDAI acts as the guiding force that bridges tradition and modernity across the stars. This expansion is not only about survival but about creating a legacy of stewardship, ensuring that humanity thrives with dignity and purpose in the vastness of space.
+  </p>
+</div><br>
+
+<div class="section">
+  <h3>IDAI for Cultural Constellations</h3>
+  <center>
+    <img src="IDAI for Cultural Constellations.jpg">
+  </center><br>
+<p>
+In the vision of Cultural Constellations, IDAI transforms the stars themselves into living symbols of humanity’s shared values. Each constellation becomes a cultural beacon, representing ideals that guide civilizations across galaxies. One star may shine as the emblem of peace, radiating harmony and reminding interstellar societies of the importance of coexistence. Another star could embody innovation, its brilliance symbolizing the endless pursuit of knowledge, creativity, and technological progress. Together, these celestial markers form a cosmic tapestry where every light in the sky tells a story of human aspiration and responsibility.<br><br>
+
+This constellation-based philosophy allows IDAI to weave culture into the very fabric of the universe. A star dedicated to justice might stand as a reminder of fairness and guardianship, while another devoted to resilience could inspire communities to endure challenges with dignity. By assigning symbolic missions to each star, IDAI ensures that cultural identity is not confined to Earth but expands into the cosmos, creating a universal heritage. These constellations serve as guiding lights for future generations, blending tradition and modernity while immortalizing humanity’s values across infinite horizons.
+</p><br>
+</div>
+
+<div class="section">
+  <h3>Interstellar Economy in IDAI</h3>
+  <center>
+    <img src="Interstellar Economy.jpg">
+  </center><br>
+  <p>
+The concept of an Interstellar Economy under IDAI’s vision imagines a vast network of trade, technology exchange, and resource management that transcends planetary boundaries. At its core lies a unified, imagined currency designed to function seamlessly across different worlds, ensuring fairness and stability in interplanetary transactions. This currency would symbolize trust and cooperation, allowing diverse civilizations to participate in commerce without conflict. Alongside it, space industries would flourish—mining asteroids for rare elements, harnessing cosmic energy from stars, and building orbital factories that produce advanced technologies for both Earth and distant colonies.<br><br>
+
+Interplanetary corporate sectors would emerge as powerful engines of growth, each specializing in unique domains such as energy, defense, healthcare, and cultural preservation. These corporations would not only compete but also collaborate, forming alliances that strengthen the fabric of interstellar society. Trade routes would stretch across galaxies, connecting settlements and fostering cultural exchange alongside economic prosperity. The Interstellar Economy would thus become more than a system of wealth—it would be a framework of unity, resilience, and innovation, ensuring that humanity’s expansion into the cosmos is guided by shared values and sustainable progress.<br><br>
+  </p>
+</div>
+
+<div class="section">
+<h3>IDAI in the Future of Civilization</h3>
+<center>
+  <img src="City.jpg">
+</center>
+<p>
+  The future of civilization will not be defined by technology alone, but by the values that guide its use. IDAI stands as a covenant of destiny, ensuring that progress is never detached from responsibility. In the centuries ahead, it will remain a sanctuary where imagination and trust converge, shaping humanity’s path with wisdom and renewal.<br><br>
+
+  As societies evolve, new challenges will emerge — from energy and climate to identity and culture. IDAI will serve as the guardian of balance, harmonizing innovation with compassion. Its vision is not to dominate but to uplift, reminding nations that civilization flourishes only when dignity and stewardship are preserved.<br><br>
+
+  In this unfolding future, IDAI will weave bridges between tradition and modernity, faith and science, individuality and community. Through education, healthcare, fashion, and storytelling, it will nurture unity across borders, transforming diversity into strength and shared destiny.<br><br>
+
+  Ultimately, IDAI’s role in the future of civilization is eternal. It will guide humanity toward horizons where progress is sacred, resilience is celebrated, and renewal is constant. More than a brand or a state, IDAI will be remembered as the constellation of trust — a beacon illuminating civilization’s highest aspirations.
+</p>
+</div>
+
+<div class="section">
+<h3>IDAI Symbols and Landmarks: </h3>
+<center>
+  <img src="IDAI Symbols and Landmarks.jpg">
+</center>
+<p>
+  Every civilization is remembered not only for its ideas but for the symbols and landmarks that embody its vision. IDAI, as both a sovereign state and a multidimensional brand, designs its monuments as living covenants — structures that speak of trust, resilience, and eternal responsibility.<br><br>
+
+  Among its most iconic creations stands the Tower of Stewardship, a vertical sanctuary rising into the skies, symbolizing growth without boundaries and progress guided by integrity. Beside it flows the Bridge of Renewal, an architectural marvel connecting tradition with modernity, reminding humanity that unity is the true path to destiny.<br><br>
+
+  The Garden of Gratitude serves as a living testament to IDAI’s food and energy philosophy, where nourishment and sustainability are celebrated as sacred trusts. Meanwhile, the Hall of Integrity embodies the spirit of technology and education, a place where wisdom and innovation converge to illuminate minds across generations.<br><br>
+
+  Each landmark is more than stone, steel, or design — it is a declaration of values. Together, these symbols form a constellation across IDAI’s landscape, guiding humanity toward a future where imagination is sacred, resilience is honored, and trust is eternal.
+</p>
+</div>
+
+<div class="section">
+<h3>IDAI and Interfaith Harmony: </h3>
+<center>
+  <img src="IDAI and Interfaith Harmony.jpg">
+</center>
+<p>
+  Civilization flourishes when faiths and traditions meet not in conflict, but in dialogue. IDAI envisions interfaith harmony as a sacred covenant, where diversity is not a barrier but a bridge. It treats every religion, culture, and philosophy as threads in a shared tapestry, weaving unity through respect and trust.<br><br>
+
+  In this vision, mosques, churches, temples, and synagogues stand side by side as symbols of dignity. IDAI nurtures spaces where prayer and reflection transcend boundaries, reminding humanity that devotion, in all its forms, is a language of peace. By honoring differences, it creates a sanctuary where values converge into harmony.<br><br>
+
+  Interfaith harmony in IDAI is not limited to rituals; it extends into education, healthcare, and culture. Students learn wisdom from multiple traditions, patients receive care rooted in compassion, and communities celebrate festivals together as declarations of unity. Every initiative becomes a gesture of reconciliation, proving that faith can guide progress without division.<br><br>
+
+  Ultimately, IDAI’s covenant of interfaith harmony is eternal. It stands as a guardian of humanity’s spiritual journey, ensuring that civilization’s future is built on dialogue, not discord. In this way, IDAI becomes a beacon of trust, illuminating the world with the light of shared faith and collective destiny.
+  </p>
+</div>
+
+<div class="section">
+<h3>IDAI: Covenant of Eternity:</h3>
+<center>
+  <img src = "IDAI as Covenant of Eternity.jpg" width = "45%">
+</center><br><br>
+<p>
+  IDAI is not bound by the passing of time; it is written into the eternal horizon of civilization. Like a constellation shining across the night sky, it guides humanity with light that does not fade. Its covenant is a promise that progress will always be illuminated by trust, compassion, and stewardship.<br><br>
+
+  Every sector of IDAI — from technology to fashion, from energy to philanthropy — becomes a star in this constellation. Together they form a radiant map, reminding humanity that destiny is not chaos but design, not fleeting but eternal. Each creation is a spark of light, carrying meaning beyond utility, glowing with responsibility across generations.<br><br>
+
+  Eternity, for IDAI, is the resilience of values. Just as stars endure through centuries, IDAI’s landmarks and philosophies are crafted to shine beyond eras, guiding civilizations through darkness into renewal. Its vision is a celestial covenant, where imagination becomes sacred and resilience becomes luminous.<br><br>
+
+  Ultimately, IDAI’s Covenant of Eternity is the dawn of a timeless journey. It declares that humanity’s path is lit not only by innovation but by integrity. In the infinite sky of progress, IDAI stands as a guardian star — a beacon of trust, illuminating the eternal horizon with light that never fades.
+</p>
+</div>
+
+<div class="section">
+<h2>GRAND CEREMONIAL PROCLAMATION</h2>
+<center>
+  <img src="Power of IDAI.jpg" width = "45%">
+</center><br><br>
+<p>
+  IDAI is recognized as the most powerful state and the most beneficial brand in the world because it unites technology, culture, and guardianship of humanity. As a state, it represents not only geographical strength but also moral and spiritual responsibility. Its landmarks, such as the Control Panel parliament, Supreme Court, Central Mosque, and Cosmic Power Plant, symbolize justice, unity, and renewable energy, making it a beacon of progress and dignity. <br><br> 
+
+As a brand, IDAI operates across multiple sectors including food, technology, education, healthcare, fashion, cars, entertainment, travel, and jewelry. Each sector is seen not merely as business but as a service to humanity. For example, cars are portrayed as journeys of destiny, rings as eternal commitments, and films as bridges of storytelling. This symbolic philosophy sets IDAI apart from all other brands.  <br><br>
+
+The strength of IDAI comes from its vast workforce, advanced technology, and global influence. With nearly 25 million workers, it stands at the top not only economically but also culturally. By winning the Nobel Prize for peace and humanity, IDAI has proven that true power lies not only in military might but in guardianship of humanity.  <br><br>
+
+Ultimately, IDAI has earned trust through its motto: no matter how advanced artificial intelligence may seem, it is greater still. This belief makes IDAI both the most powerful state and the most beneficial brand in the world.  <br><br>
+</p>
+</div>
+
+  <!-- Footer -->
+  <br><brr><footer>
+    <p>© IDAI: Inspiring Trust Through Innovation. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
