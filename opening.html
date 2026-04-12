@@ -228,11 +228,71 @@ body::before{
     letter-spacing:2px;
 }
 
+/* 💥 STAR EXPLOSION */
+.explode{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    pointer-events:none;
+}
+
+@keyframes explodeAnim{
+    0%{
+        transform:translate(0,0) scale(1);
+        opacity:1;
+    }
+    100%{
+        transform:translate(var(--x),var(--y)) scale(0);
+        opacity:0;
+    }
+}
+
 /* responsive */
 @media(max-width:1100px){
 .small-logo{width:70%}
 .title{font-size:2.5rem;letter-spacing:6px}
 .tagline{font-size:1rem}
+}
+
+@media (max-width:1100px){
+
+    /* intro adjust */
+    .small-logo{
+        width:70%;
+    }
+
+    .title{
+        font-size:2.2rem;
+        letter-spacing:5px;
+    }
+
+    .tagline{
+        font-size:0.95rem;
+    }
+
+    /* 🔥 loading পুরোপুরি center fix */
+    #loadingScreen{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:20px;
+    }
+
+    .loaderBox{
+        width:100%;
+        max-width:320px;
+        margin:auto;
+    }
+
+    .barContainer{
+        width:100%;
+    }
+
+    .percent{
+        text-align:center;
+        font-size:14px;
+    }
 }
 
 </style>
@@ -313,6 +373,95 @@ p.style.animation=`float ${5+Math.random()*6}s infinite`;
 
 particles.appendChild(p);
 }
+
+function shootStar(){
+
+    let star=document.createElement("div");
+
+    star.style.position="absolute";
+    star.style.width="3px";
+    star.style.height="3px";
+    star.style.background="#00ffff";
+    star.style.boxShadow="0 0 10px #00ffff, 0 0 20px #00ffff";
+    star.style.borderRadius="50%";
+
+    let startX=window.innerWidth + 50;
+    let startY=-50;
+
+    let endX=Math.random()*window.innerWidth;
+    let endY=Math.random()*window.innerHeight;
+
+    star.style.left=startX+"px";
+    star.style.top=startY+"px";
+
+    document.body.appendChild(star);
+
+    // ⚡ duration save করলাম
+    let duration = 900 + Math.random()*400;
+
+    let anim = star.animate([
+        { transform: "translate(0,0)" },
+        { transform: `translate(${endX - startX}px, ${endY - startY}px)` }
+    ],{
+        duration: duration,
+        easing: "ease-out",
+        fill: "forwards"
+    });
+
+    // 💥 animation শেষ হলেই explode
+    anim.onfinish = () => {
+        createExplosion(endX, endY);
+        star.remove();
+    };
+}
+
+
+function createExplosion(x,y){
+
+    for(let i=0;i<70;i++){ // 🔥 powerful burst
+
+        let p=document.createElement("div");
+        p.className="explode";
+
+        let angle=Math.random()*2*Math.PI;
+        let distance=Math.random()*120+30;
+
+        let dx=Math.cos(angle)*distance + "px";
+        let dy=Math.sin(angle)*distance + "px";
+
+        p.style.left=x+"px";
+        p.style.top=y+"px";
+
+        p.style.setProperty("--x",dx);
+        p.style.setProperty("--y",dy);
+
+        // size variation
+        let size=Math.random()*3+1;
+        p.style.width=size+"px";
+        p.style.height=size+"px";
+
+        // glow
+        p.style.background="rgba(0,255,255,0.9)";
+        p.style.boxShadow="0 0 10px #00ffff, 0 0 25px #00ffff";
+
+        p.style.animation="explodeAnim 0.8s ease-out forwards";
+
+        document.body.appendChild(p);
+
+        setTimeout(()=>p.remove(),800);
+    }
+}
+
+/* 🔥 CONTINUOUS MULTI SHOOTING + EXPLOSION */
+setInterval(()=>{
+
+    let count = Math.floor(Math.random()*4)+4; // 4–7 stars একসাথে
+
+    for(let i=0;i<count;i++){
+        shootStar();
+    }
+
+},700);
 
 /* FLOAT KEYFRAME */
 const style=document.createElement("style");
