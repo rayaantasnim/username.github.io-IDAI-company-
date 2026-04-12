@@ -2,475 +2,356 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDAI: Inspiring Trust through Innovation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IDAI: Cosmic Covenant</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Exo+2:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Exo+2:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
+<style>
 
-        /* BODY */
+body {
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    color:white;
+    background: radial-gradient(circle at bottom,#02030a,#000000 80%);
+}
 
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            font-family: 'Poppins', sans-serif;
-            color: white;
-            background: radial-gradient(circle at bottom,#02030a,#000000 80%);
-        }
+/* NEBULA */
+body::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    top:-50%;
+    left:-50%;
+    background:
+    radial-gradient(circle at 20% 30%,rgba(0,120,255,0.25),transparent 40%),
+    radial-gradient(circle at 80% 20%,rgba(0,255,255,0.2),transparent 40%),
+    radial-gradient(circle at 50% 80%,rgba(100,0,255,0.25),transparent 40%);
+    animation:nebulaMove 40s linear infinite;
+    z-index:0;
+}
 
-        /* COSMIC NEBULA LAYER */
+@keyframes nebulaMove{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+}
 
-        body::before {
-            content: "";
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            top: -50%;
-            left: -50%;
-            background:
-                radial-gradient(circle at 20% 30%,rgba(0,120,255,0.25),transparent 40%),
-                radial-gradient(circle at 80% 20%,rgba(0,255,255,0.2),transparent 40%),
-                radial-gradient(circle at 50% 80%,rgba(100,0,255,0.25),transparent 40%);
-            animation: nebulaMove 40s linear infinite;
-            z-index: 0;
-        }
+/* STARS */
+.stars,.particles{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}
 
-        @keyframes nebulaMove {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+/* INTRO */
+.intro{
+    position:relative;
+    z-index:3;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    opacity:0;
+    animation:introFade 3s ease forwards;
+}
 
-        /* STAR FIELD */
+@keyframes introFade{to{opacity:1}}
 
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
+.small-logo{
+    width:260px;
+    border-radius:14px;
+    box-shadow:0 0 20px #00eaff,0 0 40px #00eaff,0 0 80px rgba(0,255,255,0.6);
+    animation:logoFloat 6s ease-in-out infinite;
+}
 
-        /* SHOOTING STAR */
+@keyframes logoFloat{
+    0%{transform:translateY(0)}
+    50%{transform:translateY(-15px)}
+    100%{transform:translateY(0)}
+}
 
-        .shooting-star {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: white;
-            box-shadow: 0 0 10px white;
-            animation: shoot 5s linear infinite;
-        }
+.logo .line{
+    width:160px;
+    height:5px;
+    margin:10px auto;
+    border-radius:3px;
+    background:linear-gradient(90deg,#00eaff,#00ffff);
+    box-shadow:0 0 20px #00eaff,0 0 50px #00ffff;
+    opacity:0;
+    transform:translateY(30px);
+    animation:lineReveal 1.5s forwards;
+}
 
-        @keyframes shoot {
-            0% {
-                transform: translate(0,0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            100% {
-                transform: translate(-800px,400px);
-                opacity: 0;
-            }
-        }
+.logo .line:nth-child(2){animation-delay:.5s}
+.logo .line:nth-child(3){animation-delay:1s}
 
-        /* INTRO */
+@keyframes lineReveal{
+    to{opacity:1;transform:translateY(0)}
+}
 
-        .intro {
-            position: relative;
-            z-index: 3;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            opacity: 0;
-            animation: introFade 3s ease forwards;
-        }
+.title{
+    font-family:'Orbitron',sans-serif;
+    font-size:34px;
+    letter-spacing:12px;
+    margin-top:10px;
+    background:linear-gradient(90deg,#00eaff,#fff,#00eaff);
+    background-size:200%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    opacity:0;
+    animation:titleReveal 2s forwards 1.2s,gradientMove 6s linear infinite;
+}
 
-        @keyframes introFade {
-            to {
-                opacity: 1;
-            }
-        }
+@keyframes titleReveal{to{opacity:1}}
+@keyframes gradientMove{0%{background-position:0}100%{background-position:200%}}
 
-        /* LOGO */
+.tagline{
+    font-family:'Exo 2';
+    font-size:1.2rem;
+    opacity:0;
+    background:linear-gradient(270deg,#00eaff,#fff,#00ffff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:tagReveal 2s forwards;
+}
 
-        .small-logo {
-            width: 260px;
-            border-radius: 14px;
-            box-shadow:
-                0 0 20px #00eaff,
-                0 0 40px #00eaff,
-                0 0 80px rgba(0,255,255,0.6);
-            animation: logoFloat 6s ease-in-out infinite;
-        }
+.tagline:nth-of-type(1){animation-delay:2s}
+.tagline:nth-of-type(2){animation-delay:3s}
+.tagline:nth-of-type(3){animation-delay:4s}
 
-        @keyframes logoFloat {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
+@keyframes tagReveal{to{opacity:1}}
 
-        .stars, .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            pointer-events: none;
-        }
+/* LOADING SCREEN */
+#loadingScreen{
+    position:fixed;
+    inset:0;
+    background:radial-gradient(circle,#000,#01040a);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    opacity:0;
+    pointer-events:none;
+    transition:1s ease;
+}
 
-        /* COSMIC LINES */
+#loadingScreen.active{
+    opacity:1;
+    pointer-events:auto;
+}
 
-        .logo .line {
-            width: 160px;
-            height: 5px;
-            margin: 10px auto;
-            border-radius: 3px;
-            background: linear-gradient(90deg,#00eaff,#00ffff);
-            box-shadow: 0 0 20px #00eaff,0 0 50px #00ffff;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: lineReveal 1.5s forwards;
-        }
+/* SCAN LINE */
+#loadingScreen::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(to bottom,transparent,rgba(0,255,200,0.1),transparent);
+    animation:scan 2s linear infinite;
+    z-index:1;
+}
 
-        .logo .line:nth-child(2) {
-            animation-delay: .5s;
-        }
+@keyframes scan{
+    0%{transform:translateY(-100%)}
+    100%{transform:translateY(100%)}
+}
 
-        .logo .line:nth-child(3) {
-            animation-delay: 1s;
-        }
+/* LOADER */
+.loaderBox{
+    text-align:center;
+    z-index:2;
+    position:relative;
+}
 
-        @keyframes lineReveal {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+/* ✅ FIXED SPINNER (NO JUMP, NO GLITCH) */
+.spinner{
+    width:70px;
+    height:70px;
+    border:4px solid rgba(0,255,255,0.2);
+    border-top:4px solid #00ffcc;
+    border-radius:50%;
+    margin:0 auto 20px;
 
-        /* TITLE */
+    animation:spin 1s linear infinite;
+}
 
-        .title {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 800;
-            font-size: 34px;
-            letter-spacing: 12px;
-            margin-top: 10px;
+@keyframes spin{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+}
 
-            background: linear-gradient(90deg,#00eaff,#ffffff,#00eaff);
-            background-size: 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+/* text */
+.loadingText{
+    font-size:13px;
+    letter-spacing:3px;
+    opacity:0.7;
+    margin-bottom:15px;
+    animation:glitch 1.5s infinite;
+}
 
-            opacity: 0;
-            animation: titleReveal 2s forwards 1.2s,gradientMove 6s linear infinite;
-        }
+@keyframes glitch{
+    0%,100%{opacity:0.7}
+    50%{opacity:1;transform:translateX(2px)}
+}
 
-        @keyframes titleReveal {
-            to { opacity: 1; }
-        }
+/* progress */
+.barContainer{
+    width:260px;
+    height:8px;
+    background:rgba(255,255,255,0.1);
+    border-radius:10px;
+    overflow:hidden;
+}
 
-        @keyframes gradientMove {
-            0% { background-position:0% }
-            100% { background-position:200% }
-        }
+.barFill{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#00ffcc,#00ff66,#00ffcc);
+    box-shadow:0 0 20px #00ffcc;
+    transition:0.1s;
+}
 
-        /* TAGLINE */
+.percent{
+    margin-top:10px;
+    color:#00ffcc;
+    letter-spacing:2px;
+}
 
-        .tagline {
-            font-family: 'Exo 2', sans-serif;
-            font-weight: 500;
-            font-size: 1.3rem;
-            letter-spacing: 2px;
-            opacity: 0;
+/* responsive */
+@media(max-width:1100px){
+.small-logo{width:70%}
+.title{font-size:2.5rem;letter-spacing:6px}
+.tagline{font-size:1rem}
+}
 
-            background: linear-gradient(270deg,#00eaff,#00ffff,#ffffff);
-            background-size: 300%;
-
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-
-            animation: taglineReveal 2s forwards,gradientShift 8s linear infinite;
-        }
-
-        .tagline:nth-of-type(1) { animation-delay: 2s; }
-        .tagline:nth-of-type(2) { animation-delay: 3s; }
-        .tagline:nth-of-type(3) { animation-delay: 4s; }
-
-        @keyframes taglineReveal {
-            to { opacity: 1; }
-        }
-
-        @keyframes gradientShift {
-            0% { background-position:0% }
-            100% { background-position:300% }
-        }
-
-        /* PARTICLES */
-
-        .particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-        }
-
-        /* RESPONSIVE */
-
-        @media(max-width:1100px) {
-
-            .small-logo {
-                width: 70%;
-            }
-
-            .title {
-                font-size: 2.6rem;
-                letter-spacing: 6px;
-            }
-
-            .tagline {
-                font-size: 1.05rem;
-            }
-
-            html, body {
-                height: 100vh;
-                overflow: hidden !important;
-                overflow-y: hidden !important; 
-                overflow-x: hidden !important; 
-            }
-        }
-
-    </style>
+</style>
 </head>
 
 <body>
 
-    <div class="stars"></div>
-    <div class="particles"></div>
+<div class="stars"></div>
+<div class="particles"></div>
 
-    <div class="intro container">
+<div class="intro container">
 
-        <img src="IDAI-Logo.jpg" class="small-logo">
+<img src="IDAI-Logo.jpg" class="small-logo">
 
-        <div class="logo mb-4">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
+<div class="logo mb-4">
+<div class="line"></div>
+<div class="line"></div>
+<div class="line"></div>
+</div>
+
+<h1 class="title">IDAI: Cosmic Covenant</h1>
+
+<p class="tagline">Imagine the Direction of AI</p>
+<p class="tagline">Inspiring Trust Through Innovation</p>
+<p class="tagline">No matter how advanced you can believe AI to be, it's greater still.</p>
+
+</div>
+
+<!-- LOADING -->
+<div id="loadingScreen">
+    <div class="loaderBox">
+
+        <div class="spinner"></div>
+
+        <div class="loadingText">IDAI UNIVERSE INITIALIZING...</div>
+
+        <div class="barContainer">
+            <div class="barFill" id="barFill"></div>
         </div>
 
-        <h1 class="title">IDAI: Cosmic Covenant</h1>
-
-        <p class="tagline">Imagine the Direction of AI</p>
-        <p class="tagline">Inspiring Trust Through Innovation</p>
-        <p class="tagline">No matter how advanced you can believe AI to be, it's greater still.</p>
+        <div class="percent" id="percent">0%</div>
 
     </div>
+</div>
 
 <script>
 
-/* ---------- STARS ---------- */
-const starContainer = document.querySelector(".stars");
+/* STARS */
+const starContainer=document.querySelector(".stars");
 
-for (let i = 0; i < 400; i++) {
-    let star = document.createElement("div");
-
-    star.style.position = "absolute";
-    star.style.width = "2px";
-    star.style.height = "2px";
-    star.style.background = "white";
-
-    star.style.left = Math.random() * 100 + "vw";
-    star.style.top = Math.random() * 100 + "vh";
-    star.style.opacity = Math.random();
-
-    starContainer.appendChild(star);
+for(let i=0;i<400;i++){
+let s=document.createElement("div");
+s.style.position="absolute";
+s.style.width="2px";
+s.style.height="2px";
+s.style.background="white";
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+s.style.opacity=Math.random();
+starContainer.appendChild(s);
 }
 
-/* ---------- PARTICLES ---------- */
+/* PARTICLES */
+const particles=document.querySelector(".particles");
 
-const particles = document.querySelector(".particles");
+for(let i=0;i<150;i++){
+let p=document.createElement("div");
+let size=Math.random()*3+1;
 
-for (let i = 0; i < 150; i++) {
+p.style.position="absolute";
+p.style.width=size+"px";
+p.style.height=size+"px";
+p.style.background="rgba(0,255,255,0.7)";
+p.style.borderRadius="50%";
+p.style.left=Math.random()*100+"vw";
+p.style.top=Math.random()*100+"vh";
+p.style.animation=`float ${5+Math.random()*6}s infinite`;
 
-    let p = document.createElement("div");
-
-    p.style.position = "absolute";
-    p.style.width = Math.random() * 3 + "px";
-    p.style.height = p.style.width;
-
-    p.style.background = "rgba(0,255,255,0.7)";
-    p.style.borderRadius = "50%";
-
-    p.style.left = Math.random() * 100 + "vw";
-    p.style.top = Math.random() * 100 + "vh";
-
-    p.style.animation = `float ${5 + Math.random() * 6}s ease-in-out infinite`;
-
-    particles.appendChild(p);
+particles.appendChild(p);
 }
 
-/* ---------- SHOOTING STAR CREATOR ---------- */
-
-function createShootingStar(isExplosion=false) {
-
-    let s = document.createElement("div");
-
-    s.className = "shooting-star";
-    s.style.position = "absolute";
-
-    s.style.top = Math.random() * 80 + "vh";
-    s.style.left = Math.random() * 100 + "vw";
-
-    let size = Math.random() * 4 + 2;
-
-    s.style.width = size + "px";
-    s.style.height = size + "px";
-
-    s.style.borderRadius = "50%";
-    s.style.background = "white";
-
-    s.style.boxShadow = `0 0 ${size*2}px white, 0 0 ${size*4}px rgba(0,255,255,0.8)`;
-
-    let duration = 2 + Math.random() * 4;
-
-    s.style.animation = `shoot ${duration}s linear forwards`;
-
-    starContainer.appendChild(s);
-
-    if(isExplosion){
-        setTimeout(()=>{
-            explodeStar(s);
-        }, duration*500);
-    }
-
-    setTimeout(()=>{
-        if(starContainer.contains(s))
-            starContainer.removeChild(s);
-    }, duration*1000);
-}
-
-/* ---------- EXPLOSION EFFECT ---------- */
-
-function explodeStar(star){
-
-    const explosionCount = Math.floor(Math.random() * 15) + 10;
-
-    let starLeft = star.offsetLeft;
-    let starTop = star.offsetTop;
-
-    for(let i=0;i<explosionCount;i++){
-
-        let p = document.createElement("div");
-
-        p.style.position = "absolute";
-        p.style.width = Math.random()*3+2 + "px";
-        p.style.height = p.style.width;
-
-        p.style.borderRadius="50%";
-        p.style.background="white";
-
-        p.style.left = starLeft + "px";
-        p.style.top = starTop + "px";
-
-        p.style.opacity = 1;
-        p.style.boxShadow = "0 0 10px white, 0 0 20px rgba(0,255,255,0.9)";
-
-        starContainer.appendChild(p);
-
-        let angle = Math.random()*2*Math.PI;
-        let distance = Math.random()*100+50;
-
-        p.style.transition = "transform 1s ease-out, opacity 1s ease-out";
-
-        setTimeout(()=>{
-            p.style.transform = `translate(${Math.cos(angle)*distance}px, ${Math.sin(angle)*distance}px) scale(0.5)`;
-            p.style.opacity=0;
-        },50);
-
-        setTimeout(()=>{
-            if(starContainer.contains(p))
-                starContainer.removeChild(p);
-        },1100);
-    }
-
-    if(starContainer.contains(star))
-        starContainer.removeChild(star);
-}
-
-function shootingStarTimeline(){
-
-    for(let i=0;i<Math.floor(Math.random()*3)+1;i++){
-        setTimeout(()=>createShootingStar(false), i*500);
-    }
-
-    setTimeout(()=>{
-
-        let total = Math.floor(Math.random()*31)+150;
-        let explosions = Math.floor(Math.random()*6)+25;
-
-        for(let i=0;i<total;i++){
-
-            let explode = i < explosions;
-
-            setTimeout(()=>{
-                createShootingStar(explode);
-            }, i*12);
-
-        }
-
-    },3000);
-
-    setTimeout(()=>{
-        for(let i=0;i<Math.floor(Math.random()*2)+2;i++){
-            setTimeout(()=>createShootingStar(false), i*500);
-        }
-    },12000);
-
-}
-
-shootingStarTimeline();
-setInterval(shootingStarTimeline,15000);
-
-/* ---------- ANIMATION STYLES ---------- */
-
-const style = document.createElement("style");
-
-style.innerHTML = `
-@keyframes float{
-0%{transform:translateY(0px)}
-50%{transform:translateY(-20px)}
-100%{transform:translateY(0px)}
-}
-
-@keyframes shoot{
-0%{transform: translate(0,0); opacity:0;}
-10%{opacity:1;}
-100%{transform: translate(-800px,400px); opacity:0;}
-}
-`;
-
+/* FLOAT KEYFRAME */
+const style=document.createElement("style");
+style.innerHTML=`@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-20px)}100%{transform:translateY(0)}}`;
 document.head.appendChild(style);
 
-/* ---------- AUTO REDIRECT ---------- */
+/* LOADING */
+let started=false;
 
-setTimeout(()=>{
-    document.body.style.transition="opacity 1.5s";
-    document.body.style.opacity=0;
+function startLoading(){
+if(started) return;
+started=true;
 
-    setTimeout(()=>{
-        window.location.href="Home.html";
-    },1500);
+const screen=document.getElementById("loadingScreen");
+const bar=document.getElementById("barFill");
+const percent=document.getElementById("percent");
 
-},15000);
+screen.classList.add("active");
+
+let p=0;
+
+let i=setInterval(()=>{
+
+p+=2;
+if(p>100) p=100;
+
+bar.style.width=p+"%";
+percent.innerText=p+"%";
+
+if(p===100){
+clearInterval(i);
+setTimeout(()=>window.location.href="Home.html",300);
+}
+
+},100);
+
+}
+
+setTimeout(()=>startLoading(),15000);
 
 </script>
 
