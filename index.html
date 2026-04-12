@@ -314,12 +314,15 @@ let error=""
 
 if(!name||!username||!email||!password||!contact||!profession){
 error="All fields must be filled!"
+alert(error)
 }
 else if(contact.length!==11||isNaN(contact)){
 error="Contact number must be exactly 11 digits!"
+alert(error)
 }
 else if(password.length<9){
 error="Password must be more than 8 characters!"
+alert(error)
 }
 
 const errorDiv=document.getElementById("errorMsg")
