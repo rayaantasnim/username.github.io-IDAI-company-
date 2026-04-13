@@ -1,508 +1,599 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IDAI: Cosmic Covenant</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDAI: Cosmic Covenant</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Exo+2:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Exo+2:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
 <style>
+/* 🛡 Performance / anti flicker */
+body,
+.intro {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 🔕 touch highlight remove */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
 
 body {
-    margin:0;
-    padding:0;
-    overflow:hidden;
-    font-family:'Poppins',sans-serif;
-    color:white;
-    background: radial-gradient(circle at bottom,#02030a,#000000 80%);
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+
+  background: radial-gradient(circle at bottom, #02030a, #000 80%);
+  position: relative;
+
+  overflow: hidden;
 }
 
-/* NEBULA */
-body::before{
-    content:"";
-    position:absolute;
-    width:200%;
-    height:200%;
-    top:-50%;
-    left:-50%;
-    background:
-    radial-gradient(circle at 20% 30%,rgba(0,120,255,0.25),transparent 40%),
-    radial-gradient(circle at 80% 20%,rgba(0,255,255,0.2),transparent 40%),
-    radial-gradient(circle at 50% 80%,rgba(100,0,255,0.25),transparent 40%);
-    animation:nebulaMove 40s linear infinite;
-    z-index:0;
+/* 🌑 Prevent mobile white flash */
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
 }
 
-@keyframes nebulaMove{
-    0%{transform:rotate(0deg)}
-    100%{transform:rotate(360deg)}
+/* 🌌 Nebula layer */
+body::before {
+  content: "";
+  position: fixed;
+
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0,120,255,0.25), transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(0,255,255,0.2), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(100,0,255,0.25), transparent 40%);
+
+  animation: nebulaMove 40s linear infinite;
+  z-index: 0;
 }
 
-/* STARS */
-.stars,.particles{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    pointer-events:none;
+@keyframes nebulaMove {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
 }
 
-/* INTRO */
-.intro{
-    position:relative;
-    z-index:3;
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    opacity:0;
-    animation:introFade 3s ease forwards;
+/* ⭐ Stars & particles */
+.stars,
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
 }
 
-@keyframes introFade{to{opacity:1}}
-
-.small-logo{
-    width:260px;
-    border-radius:14px;
-    box-shadow:0 0 20px #00eaff,0 0 40px #00eaff,0 0 80px rgba(0,255,255,0.6);
-    animation:logoFloat 6s ease-in-out infinite;
+/* 🌟 Twinkle animation */
+@keyframes twinkle {
+  from { opacity: 0.3; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1.2); }
 }
 
-@keyframes logoFloat{
-    0%{transform:translateY(0)}
-    50%{transform:translateY(-15px)}
-    100%{transform:translateY(0)}
+/* 🎬 MAIN INTRO SECTION */
+.intro {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: clamp(16px, 3vw, 40px);
+
+  opacity: 0;
+  animation: introFade 3s ease forwards;
 }
 
-.logo .line{
-    width:160px;
-    height:5px;
-    margin:10px auto;
-    border-radius:3px;
-    background:linear-gradient(90deg,#00eaff,#00ffff);
-    box-shadow:0 0 20px #00eaff,0 0 50px #00ffff;
-    opacity:0;
-    transform:translateY(30px);
-    animation:lineReveal 1.5s forwards;
+@keyframes introFade {
+  to { opacity: 1; }
 }
 
-.logo .line:nth-child(2){animation-delay:.5s}
-.logo .line:nth-child(3){animation-delay:1s}
+/* 🖼 Logo */
+.small-logo {
+  width: clamp(140px, 25vw, 260px);
+  height: auto;
 
-@keyframes lineReveal{
-    to{opacity:1;transform:translateY(0)}
+  border-radius: 14px;
+  object-fit: contain;
+
+  box-shadow:
+    0 0 20px #00eaff,
+    0 0 40px #00eaff,
+    0 0 80px rgba(0,255,255,0.6);
+
+  animation: logoFloat 6s ease-in-out infinite;
 }
 
-.title{
-    font-family:'Orbitron',sans-serif;
-    font-size:34px;
-    letter-spacing:12px;
-    margin-top:10px;
-    background:linear-gradient(90deg,#00eaff,#fff,#00eaff);
-    background-size:200%;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    opacity:0;
-    animation:titleReveal 2s forwards 1.2s,gradientMove 6s linear infinite;
+@keyframes logoFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
 }
 
-@keyframes titleReveal{to{opacity:1}}
-@keyframes gradientMove{0%{background-position:0}100%{background-position:200%}}
+/* 🔷 Decorative lines */
+.logo .line {
+  width: 160px;
+  height: 5px;
+  margin: 10px auto;
 
-.tagline{
-    font-family:'Exo 2';
-    font-size:1.2rem;
-    opacity:0;
-    background:linear-gradient(270deg,#00eaff,#fff,#00ffff);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    animation:tagReveal 2s forwards;
+  border-radius: 3px;
+
+  background: linear-gradient(90deg, #00eaff, #00ffff);
+  box-shadow: 0 0 20px #00eaff, 0 0 50px #00ffff;
+
+  opacity: 0;
+  transform: translateY(30px);
+
+  animation: lineReveal 1.5s forwards;
 }
 
-.tagline:nth-of-type(1){animation-delay:2s}
-.tagline:nth-of-type(2){animation-delay:3s}
-.tagline:nth-of-type(3){animation-delay:4s}
+.logo .line:nth-child(2) { animation-delay: 0.5s; }
+.logo .line:nth-child(3) { animation-delay: 1s; }
 
-@keyframes tagReveal{to{opacity:1}}
-
-/* LOADING SCREEN */
-#loadingScreen{
-    position:fixed;
-    inset:0;
-    background:radial-gradient(circle,#000,#01040a);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-    opacity:0;
-    pointer-events:none;
-    transition:1s ease;
+@keyframes lineReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-#loadingScreen.active{
-    opacity:1;
-    pointer-events:auto;
+/* 🏷 Title */
+.title {
+  font-family: 'Orbitron', sans-serif;
+
+  font-size: clamp(18px, 3.2vw, 34px);
+  letter-spacing: clamp(4px, 1.2vw, 12px);
+
+  margin-top: 10px;
+
+  background: linear-gradient(90deg, #00eaff, #fff, #00eaff);
+  background-size: 200%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  opacity: 0;
+  animation:
+    titleReveal 2s forwards 1.2s,
+    gradientMove 6s linear infinite;
 }
 
-/* SCAN LINE */
-#loadingScreen::before{
-    content:"";
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:linear-gradient(to bottom,transparent,rgba(0,255,200,0.1),transparent);
-    animation:scan 2s linear infinite;
-    z-index:1;
+@keyframes titleReveal {
+  to { opacity: 1; }
 }
 
-@keyframes scan{
-    0%{transform:translateY(-100%)}
-    100%{transform:translateY(100%)}
+@keyframes gradientMove {
+  0% { background-position: 0; }
+  100% { background-position: 200%; }
 }
 
-/* LOADER */
-.loaderBox{
-    text-align:center;
-    z-index:2;
-    position:relative;
+/* 📝 Taglines */
+.tagline {
+  font-family: 'Exo 2', sans-serif;
+
+  font-size: clamp(12px, 2vw, 18px);
+
+  opacity: 0;
+
+  background: linear-gradient(270deg, #00eaff, #fff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: tagReveal 2s forwards;
 }
 
-/* ✅ FIXED SPINNER (NO JUMP, NO GLITCH) */
-.spinner{
-    width:70px;
-    height:70px;
-    border:4px solid rgba(0,255,255,0.2);
-    border-top:4px solid #00ffcc;
-    border-radius:50%;
-    margin:0 auto 20px;
+.tagline:nth-of-type(1) { animation-delay: 2s; }
+.tagline:nth-of-type(2) { animation-delay: 3s; }
+.tagline:nth-of-type(3) { animation-delay: 4s; }
 
-    animation:spin 1s linear infinite;
+@keyframes tagReveal {
+  to { opacity: 1; }
 }
 
-@keyframes spin{
-    0%{transform:rotate(0deg)}
-    100%{transform:rotate(360deg)}
+/* 🔄 Loading screen */
+#loadingScreen {
+  position: fixed;
+  inset: 0;
+
+  background: radial-gradient(circle, #000, #01040a);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 1s ease;
 }
 
-/* text */
-.loadingText{
-    font-size:13px;
-    letter-spacing:3px;
-    opacity:0.7;
-    margin-bottom:15px;
-    animation:glitch 1.5s infinite;
+#loadingScreen.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-@keyframes glitch{
-    0%,100%{opacity:0.7}
-    50%{opacity:1;transform:translateX(2px)}
+.loaderBox {
+  text-align: center;
+  position: relative;
 }
 
-/* progress */
-.barContainer{
-    width:260px;
-    height:8px;
-    background:rgba(255,255,255,0.1);
-    border-radius:10px;
-    overflow:hidden;
+/* ⭕ Spinner */
+.spinner {
+  width: 70px;
+  height: 70px;
+
+  border: 4px solid rgba(0,255,255,0.2);
+  border-top: 4px solid #00ffcc;
+
+  border-radius: 50%;
+
+  margin: 0 auto 20px;
+
+  animation: spin 1s linear infinite;
 }
 
-.barFill{
-    width:0%;
-    height:100%;
-    background:linear-gradient(90deg,#00ffcc,#00ff66,#00ffcc);
-    box-shadow:0 0 20px #00ffcc;
-    transition:0.1s;
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
-.percent{
-    margin-top:10px;
-    color:#00ffcc;
-    letter-spacing:2px;
+/* 📊 Loading text */
+.loadingText {
+  font-size: 13px;
+  letter-spacing: 3px;
+  opacity: 0.7;
+  margin-bottom: 15px;
 }
 
-/* 💥 STAR EXPLOSION */
-.explode{
-    position:absolute;
-    width:2px;
-    height:2px;
-    background:white;
-    pointer-events:none;
+/* 📉 Progress bar */
+.barContainer {
+  width: 260px;
+  max-width: 90vw;
+
+  height: 8px;
+
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-@keyframes explodeAnim{
-    0%{
-        transform:translate(0,0) scale(1);
-        opacity:1;
-    }
-    100%{
-        transform:translate(var(--x),var(--y)) scale(0);
-        opacity:0;
-    }
+.barFill {
+  width: 0%;
+  height: 100%;
+
+  background: linear-gradient(90deg, #00ffcc, #00ff66, #00ffcc);
+
+  box-shadow: 0 0 20px #00ffcc;
 }
 
-/* responsive */
-@media(max-width:1100px){
-.small-logo{width:70%}
-.title{font-size:2.5rem;letter-spacing:6px}
-.tagline{font-size:1rem}
+/* % text */
+.percent {
+  margin-top: 10px;
+  color: #00ffcc;
+  letter-spacing: 2px;
 }
 
-@media (max-width:1100px){
+/* 💥 Explosion particles */
+.explode {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  pointer-events: none;
+}
 
-    /* intro adjust */
-    .small-logo{
-        width:70%;
-    }
+@keyframes explodeAnim {
+  0% { transform: translate(0,0); opacity: 1; }
+  100% { transform: translate(var(--x), var(--y)); opacity: 1; }
+}
 
-    .title{
-        font-size:2.2rem;
-        letter-spacing:5px;
-    }
+/* 📱 MOBILE RESPONSIVE CORE */
+@media (max-width: 1100px) {
+  .intro {
+    position: relative;
+    transform: none;
+    top: auto;
+    left: auto;
+  }
+}
 
-    .tagline{
-        font-size:0.95rem;
-    }
+/* 📱 SMALL PHONES */
+@media (max-width: 600px) {
+  .logo .line {
+    width: 120px;
+  }
+}
 
-    /* 🔥 loading পুরোপুরি center fix */
-    #loadingScreen{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        padding:20px;
-    }
+@media (max-width: 1100px) {
 
-    .loaderBox{
-        width:100%;
-        max-width:320px;
-        margin:auto;
-    }
+  /* 🖼 IMAGE / LOGO fix */
+  .small-logo {
+    width: clamp(160px, 55vw, 240px);
+    height: auto;
 
-    .barContainer{
-        width:100%;
-    }
+    filter:
+      drop-shadow(0 0 12px rgba(0,255,255,0.6))
+      drop-shadow(0 0 30px rgba(0,255,255,0.3));
 
-    .percent{
-        text-align:center;
-        font-size:14px;
-    }
+    animation: logoFloat 6s ease-in-out infinite;
+  }
+
+  /* 🏷 TITLE fix */
+  .title {
+    font-size: clamp(20px, 6vw, 32px);
+    letter-spacing: 4px;
+
+    text-shadow:
+      0 0 10px rgba(0,234,255,0.6),
+      0 0 25px rgba(0,255,255,0.3);
+
+    line-height: 1.3;
+
+    animation: titleReveal 2s forwards 1.2s, gradientMove 6s linear infinite;
+  }
+}
+
+@media (max-width: 1100px) {
+  .tagline {
+    font-size: clamp(14px, 4.5vw, 18px);
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+
+    text-shadow:
+      0 0 10px rgba(0, 234, 255, 0.35),
+      0 0 25px rgba(0, 255, 255, 0.2);
+
+    opacity: 0;
+    transform: translateY(10px);
+
+    animation:
+      tagReveal 1.8s forwards,
+      floatTag 5s ease-in-out infinite;
+  }
+
+  /* subtle floating cinematic motion */
+  @keyframes floatTag {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-4px); }
+    100% { transform: translateY(0px); }
+  }
+
+  /* stagger feel stronger on mobile */
+  .tagline:nth-of-type(1) {
+    animation-delay: 2s;
+  }
+
+  .tagline:nth-of-type(2) {
+    animation-delay: 2.8s;
+  }
+
+  .tagline:nth-of-type(3) {
+    animation-delay: 3.6s;
+  }
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="stars"></div>
-<div class="particles"></div>
+  <div class="stars"></div>
+  <div class="particles"></div>
 
-<div class="intro container">
-
-<img src="IDAI-Logo.jpg" class="small-logo">
-
-<div class="logo mb-4">
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-</div>
-
-<h1 class="title">IDAI: Cosmic Covenant</h1>
-
-<p class="tagline">Imagine the Direction of AI</p>
-<p class="tagline">Inspiring Trust Through Innovation</p>
-<p class="tagline">No matter how advanced you can believe AI to be, it's greater still.</p>
-
-</div>
-
-<!-- LOADING -->
-<div id="loadingScreen">
-    <div class="loaderBox">
-
-        <div class="spinner"></div>
-
-        <div class="loadingText">IDAI UNIVERSE INITIALIZING...</div>
-
-        <div class="barContainer">
-            <div class="barFill" id="barFill"></div>
-        </div>
-
-        <div class="percent" id="percent">0%</div>
-
+  <div class="intro">
+    <img src="IDAI-Logo.jpg" class="small-logo">
+    <div class="logo">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
     </div>
-</div>
 
-<script>
+    <h1 class="title">IDAI: Cosmic Covenant</h1>
+    <p class="tagline">Imagine the Direction of AI</p>
+    <p class="tagline">Inspiring Trust Through Innovation</p>
+    <p class="tagline">No matter how advanced you can believe AI to be, it's greater still.</p>
+  </div>
 
-/* STARS */
-const starContainer=document.querySelector(".stars");
+  <div id="loadingScreen">
+    <div class="loaderBox">
+      <div class="spinner"></div>
+      <div class="loadingText">IDAI UNIVERSE INITIALIZING...</div>
+      <div class="barContainer"><div class="barFill" id="barFill"></div></div>
+      <div class="percent" id="percent">0%</div>
+    </div>
+  </div>
 
-for(let i=0;i<400;i++){
-let s=document.createElement("div");
-s.style.position="absolute";
-s.style.width="2px";
-s.style.height="2px";
-s.style.background="white";
-s.style.left=Math.random()*100+"vw";
-s.style.top=Math.random()*100+"vh";
-s.style.opacity=Math.random();
-starContainer.appendChild(s);
-}
+  <script>
+    const starContainer = document.querySelector('.stars');
 
-/* PARTICLES */
-const particles=document.querySelector(".particles");
+    /* ⭐ BACKGROUND STARS */
+    for (let i = 0; i < 300; i++) {
+      let s = document.createElement('div');
+      let size = Math.random() * 2 + 1;
+      s.style.cssText = `position:absolute;width:${size}px;height:${size}px;border-radius:50%;background:white;box-shadow:0 0 6px white,0 0 12px #00ffff;left:${Math.random()*100}vw;top:${Math.random()*100}vh;animation:twinkle ${2+Math.random()*3}s infinite alternate;`;
+      starContainer.appendChild(s);
+    }
 
-for(let i=0;i<150;i++){
-let p=document.createElement("div");
-let size=Math.random()*3+1;
+    /* 🌌 slow drifting background (no HTML change) */
+    const driftStyle = document.createElement('style');
+    driftStyle.innerHTML = `
+@keyframes drift{
+0%{transform:translateY(0px)}
+100%{transform:translateY(-20px)}
+}`;
+    document.head.appendChild(driftStyle);
 
-p.style.position="absolute";
-p.style.width=size+"px";
-p.style.height=size+"px";
-p.style.background="rgba(0,255,255,0.7)";
-p.style.borderRadius="50%";
-p.style.left=Math.random()*100+"vw";
-p.style.top=Math.random()*100+"vh";
-p.style.animation=`float ${5+Math.random()*6}s infinite`;
+    /* apply drift to stars */
+    setTimeout(() => {
+      document.querySelectorAll('.stars div').forEach((el) => {
+        let t = Math.random() * 6 + 4;
+        el.style.animation += `, drift ${t}s linear infinite alternate`;
+      });
+    }, 500);
 
-particles.appendChild(p);
-}
+    /* 💥 burst effect */
+    function burst(x, y) {
+      for (let i = 0; i < 15; i++) {
+        let p = document.createElement('div');
+        p.className = 'explode';
 
-function shootStar(){
+        let a = Math.random() * 2 * Math.PI;
+        let d = Math.random() * 120 + 40;
 
-    let star=document.createElement("div");
+        p.style.left = x + 'px';
+        p.style.top = y + 'px';
+        p.style.setProperty('--x', Math.cos(a) * d + 'px');
+        p.style.setProperty('--y', Math.sin(a) * d + 'px');
 
-    star.style.position="absolute";
-    star.style.width="3px";
-    star.style.height="3px";
-    star.style.background="#00ffff";
-    star.style.boxShadow="0 0 10px #00ffff, 0 0 20px #00ffff";
-    star.style.borderRadius="50%";
-
-    let startX=window.innerWidth + 50;
-    let startY=-50;
-
-    let endX=Math.random()*window.innerWidth;
-    let endY=Math.random()*window.innerHeight;
-
-    star.style.left=startX+"px";
-    star.style.top=startY+"px";
-
-    document.body.appendChild(star);
-
-    // ⚡ duration save করলাম
-    let duration = 900 + Math.random()*400;
-
-    let anim = star.animate([
-        { transform: "translate(0,0)" },
-        { transform: `translate(${endX - startX}px, ${endY - startY}px)` }
-    ],{
-        duration: duration,
-        easing: "ease-out",
-        fill: "forwards"
-    });
-
-    // 💥 animation শেষ হলেই explode
-    anim.onfinish = () => {
-        createExplosion(endX, endY);
-        star.remove();
-    };
-}
-
-
-function createExplosion(x,y){
-
-    for(let i=0;i<70;i++){ // 🔥 powerful burst
-
-        let p=document.createElement("div");
-        p.className="explode";
-
-        let angle=Math.random()*2*Math.PI;
-        let distance=Math.random()*120+30;
-
-        let dx=Math.cos(angle)*distance + "px";
-        let dy=Math.sin(angle)*distance + "px";
-
-        p.style.left=x+"px";
-        p.style.top=y+"px";
-
-        p.style.setProperty("--x",dx);
-        p.style.setProperty("--y",dy);
-
-        // size variation
-        let size=Math.random()*3+1;
-        p.style.width=size+"px";
-        p.style.height=size+"px";
-
-        // glow
-        p.style.background="rgba(0,255,255,0.9)";
-        p.style.boxShadow="0 0 10px #00ffff, 0 0 25px #00ffff";
-
-        p.style.animation="explodeAnim 0.8s ease-out forwards";
+        p.style.boxShadow = '0 0 10px #00ffff';
+        p.style.animation = 'explodeAnim 0.5s linear forwards';
 
         document.body.appendChild(p);
-
-        setTimeout(()=>p.remove(),800);
-    }
-}
-
-/* 🔥 CONTINUOUS MULTI SHOOTING + EXPLOSION */
-setInterval(()=>{
-
-    let count = Math.floor(Math.random()*4)+4; // 4–7 stars একসাথে
-
-    for(let i=0;i<count;i++){
-        shootStar();
+        setTimeout(() => p.remove(), 500);
+      }
     }
 
-},700);
+    /* 🚀 RIGHT TO LEFT SHOOTING STARS */
+    function shootStar() {
 
-/* FLOAT KEYFRAME */
-const style=document.createElement("style");
-style.innerHTML=`@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-20px)}100%{transform:translateY(0)}}`;
-document.head.appendChild(style);
+      let star = document.createElement('div');
+      star.style.cssText = 'position:absolute;width:2px;height:2px;background:#00ffff;box-shadow:0 0 10px #00ffff;border-radius:50%';
 
-/* LOADING */
-let started=false;
+      let sx = window.innerWidth + 50;
+      let sy = Math.random() * window.innerHeight;
 
-function startLoading(){
-if(started) return;
-started=true;
+      let ex = Math.random() * window.innerWidth * 0.3;
+      let ey = Math.random() * window.innerHeight;
 
-const screen=document.getElementById("loadingScreen");
-const bar=document.getElementById("barFill");
-const percent=document.getElementById("percent");
+      star.style.left = sx + 'px';
+      star.style.top = sy + 'px';
 
-screen.classList.add("active");
+      document.body.appendChild(star);
 
-let p=0;
+      let steps = 25;
+      let i = 0;
 
-let i=setInterval(()=>{
+      let dx = (ex - sx) / steps;
+      let dy = (ey - sy) / steps;
 
-p+=2;
-if(p>100) p=100;
+      let cx = sx;
+      let cy = sy;
 
-bar.style.width=p+"%";
-percent.innerText=p+"%";
+      let move = setInterval(() => {
 
-if(p===100){
-clearInterval(i);
-setTimeout(()=>window.location.href="Home.html",300);
-}
+        cx += dx;
+        cy += dy;
+        i++;
 
-},100);
+        star.style.left = cx + 'px';
+        star.style.top = cy + 'px';
 
-}
+        /* ⭐ explode while moving */
+        burst(cx, cy);
 
-setTimeout(()=>startLoading(),15000);
+        if (i >= steps) {
+          clearInterval(move);
+          star.remove();
+        }
 
-</script>
+      }, 30);
+    }
+
+    /* 💥 SUPERNOVA (CENTER BLAST) */
+    function superNova() {
+      let cx = window.innerWidth / 2;
+      let cy = window.innerHeight / 2;
+
+      for (let i = 0; i < 300; i++) {
+        let p = document.createElement('div');
+        p.className = 'explode';
+
+        let angle = Math.random() * 2 * Math.PI;
+        let dist = Math.random() * 800 + 300;
+
+        p.style.left = cx + 'px';
+        p.style.top = cy + 'px';
+
+        p.style.setProperty('--x', Math.cos(angle) * dist + 'px');
+        p.style.setProperty('--y', Math.sin(angle) * dist + 'px');
+
+        p.style.boxShadow = '0 0 20px #00ffff,0 0 60px #00ffff';
+        p.style.animation = 'explodeAnim 1s linear forwards';
+
+        document.body.appendChild(p);
+        setTimeout(() => p.remove(), 1000);
+      }
+    }
+
+    /* 🎬 FLOW CONTROL */
+    let count = 0;
+
+    let interval = setInterval(() => {
+
+      shootStar();
+      count++;
+
+      if (count >= 8) {
+        clearInterval(interval);
+
+        setTimeout(() => {
+          superNova();
+
+          setTimeout(() => {
+            startLoading();
+          }, 900);
+
+        }, 400);
+      }
+
+    }, 400);
+
+    /* ⏳ LOADING */
+    function startLoading() {
+      const screen = document.getElementById('loadingScreen');
+      const bar = document.getElementById('barFill');
+      const percent = document.getElementById('percent');
+
+      screen.classList.add('active');
+
+      let p = 0;
+
+      let i = setInterval(() => {
+        p += 2;
+        if (p > 100) p = 100;
+
+        bar.style.width = p + '%';
+        percent.innerText = p + '%';
+
+        if (p === 100) {
+          clearInterval(i);
+          window.location.assign('Home.html');
+        }
+      }, 100);
+    }
+  </script>
 
 </body>
 </html>
