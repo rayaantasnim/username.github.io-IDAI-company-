@@ -487,7 +487,7 @@ h6:hover {
   background: linear-gradient(135deg, #0b0c10, #1f2833);
   width: auto;
   color: #f1f1f1;
-  padding: 40px;
+  padding: 20px;
   border-radius: 12px;
   font-family: "Georgia", serif;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
@@ -607,6 +607,32 @@ h6:hover {
     padding: 15px;
   }
 
+  .best-brand{
+    margin:2px !important;
+    h2{
+      margin:5px !important;
+      padding: 5px !important;
+    }
+
+    ol{
+      padding:0px !important;
+      padding-right:0px !important;
+    }
+  }
+
+  .sovereign-state{
+    margin:2px !important;
+    h2{
+      margin:5px !important;
+      padding: 5px !important;
+    }
+
+    ol{
+      padding:0px !important;
+      padding-right:0px !important;
+    }
+  }
+
   .section.events h3 {
     font-size: 24px;
   }
@@ -647,6 +673,10 @@ h6:hover {
     img{
       width:99%;
     }
+  }
+
+  .anthem{
+    margin:10px !important;
   }
 
   .navbar {
