@@ -24,6 +24,108 @@
     #ID{
       opacity: 0.90;
     }
+
+/* IDAI Quote Section */
+
+.idai-quote{
+    width: 88%;
+    margin: 80px auto;
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255,140,0,0.95),
+        rgba(255,200,0,0.92),
+        rgba(255,102,0,0.95)
+    );
+
+    border: 3px solid #ffcc00;
+    border-radius: 28px;
+
+    box-shadow:
+        0 0 20px rgba(255,140,0,0.45),
+        0 0 45px rgba(255,200,0,0.35),
+        0 0 80px rgba(255,90,0,0.25);
+
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.45s ease;
+}
+
+/* Animated Shine Effect */
+
+.idai-quote::before{
+    content: "";
+
+    position: absolute;
+    top: -120%;
+    left: -40%;
+
+    width: 60%;
+    height: 320%;
+
+    background: rgba(255,255,255,0.18);
+
+    transform: rotate(25deg);
+
+    transition: all 0.8s ease;
+}
+
+.idai-quote:hover::before{
+    left: 130%;
+}
+
+/* Hover Effect */
+
+.idai-quote:hover{
+    transform: translateY(-8px) scale(1.02);
+
+    box-shadow:
+        0 0 30px rgba(255,140,0,0.6),
+        0 0 60px rgba(255,200,0,0.5),
+        0 0 100px rgba(255,90,0,0.4);
+}
+
+/* Heading Style */
+
+.idai-quote h2{
+    margin: 0;
+
+    color: black;
+
+    font-size: 2.2rem;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.4),
+        0 0 18px rgba(255,120,0,0.7),
+        2px 2px 5px rgba(0,0,0,0.35);
+
+    position: relative;
+    z-index: 2;
+}
+
+/* Mobile Responsive */
+
+@media(max-width:1100px){
+    .idai-quote{
+        width: 94%;
+        padding: 24px 16px;
+        margin: 55px auto;
+    }
+
+    .idai-quote h2{
+        font-size: 1.25rem;
+        letter-spacing: 1px;
+        line-height: 1.6;
+    }
+}
     
   </style>
 </head>
@@ -75,6 +177,11 @@
     </div>
   </div>
 
+<div class="idai-quote">
+  <h2>IDAI: Beyond Every Imagination.</h2>
+</div>
+
+
   <!-- Intro Section -->
   
   <div class="welcome text-justify">
@@ -97,6 +204,10 @@
     </p>
   </div>
 
+<div class="idai-quote">
+  <h2>IDAI: Where Innovation Becomes Destiny.</h2>
+</div>
+
   <!-- IDAI: State and Brand Section -->
 <div class="section state-brand text-justify">
   <center>
@@ -114,6 +225,9 @@
   </p>
 </div>
 
+<div class="idai-quote">
+  <h2>IDAI: A Sanctuary for Discovery and Vision.</h2>
+</div>
 
   <div class="section spanner">
     <h2>Why the Name IDAI Echoes the Future:</h2>
@@ -144,7 +258,10 @@ A graduate of the Massachusetts Institute of Technology (MIT) and a proud Muslim
 
 Under his leadership, IDAI Universe continues to advance global excellence, interfaith unity, and sustainable progress. It also established its own Nobel Peace Prize for outstanding philanthropy and humanitarian service.
 </p>
+</div>
 
+<div class="idai-quote">
+  <h2>IDAI: Powering the Next Civilization.</h2>
 </div>
 
   <!-- Sovereign State Section -->
@@ -176,6 +293,10 @@ Under his leadership, IDAI Universe continues to advance global excellence, inte
     
     <li><strong>Eternal Outlook:</strong> Ultimately, IDAI as a sovereign state is more than borders and governance. It is a guardian of humanity’s journey, a nation that treats progress as sacred, and every road, building, and creation as a covenant of trust. It stands as a constellation of vision, guiding the world toward destiny with confidence and renewal.</li>
   </ol>
+</div>
+
+<div class="idai-quote">
+  <h2>IDAI: Guardians of Humanity’s Future.</h2>
 </div>
 
 <div class="section anthem">
@@ -213,6 +334,11 @@ Under his leadership, IDAI Universe continues to advance global excellence, inte
     Forever the anthem of eternity.<br>
 </p>
 </div>
+
+<div class="idai-quote">
+  <h2>IDAI: Discovering the Infinite Universe.</h2>
+</div>
+
 
 <div class="section anthem">
   <h1>The Oath of IDAI Universe: Eternal Supremecy</h1>
@@ -333,6 +459,10 @@ Under his leadership, IDAI Universe continues to advance global excellence, inte
     leadership and forward-thinking strategies, IDAI strives to be a model of progress, harmony, and 
     resilience for the world.
   </p>
+</div>
+
+<div class="idai-quote">
+  <h2>IDAI: Protecting the Cosmos of Tomorrow.</h2>
 </div>
 
 <div class="section">
@@ -458,6 +588,10 @@ Under his leadership, IDAI Universe continues to advance global excellence, inte
   </ul>
 </div>
 
+<div class="idai-quote">
+  <h2>IDAI: Forging Tomorrow Beyond Limits.</h2>
+</div>
+
 <!-- Explore IDAI Section -->
 <div class="section explore-idai text-center">
   <center>
@@ -489,6 +623,10 @@ Under his leadership, IDAI Universe continues to advance global excellence, inte
 
   Ultimately, IDAI is more than a brand or a nation—it is a sanctuary where imagination meets trust. By weaving resilience, creativity, and ethical responsibility into its sectors, IDAI safeguards humanity’s future, inspiring confidence in a world where progress is sacred and renewal eternal.
 </p><br><br>
+</div>
+
+<div class="idai-quote">
+  <h2>IDAI: Building the Future of Civilization.</h2>
 </div>
 
 <div class="section">
