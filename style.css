@@ -1,17 +1,18 @@
 /* Global Body */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fdfdfd;
+  background: #fdfdfd; /* Clean light base */
   padding-top: 70px;
   color: #222;
   margin-left: 20px;
   scroll-behavior: smooth;
 }
 
-/* FIXED nested ul */
-ul li {
-  font-size: 15px;
-  text-align: justify;
+ul{
+  li{
+    font-size: 15px;
+    text-align: justify;
+  }
 }
 
 .section {
@@ -30,14 +31,14 @@ ul li {
   border-color: rgba(0,120,255,0.4);
 }
 
-#para {
-  width: auto;
-  height: auto;
-  margin-left: 20px;
-  margin-right: 20px;
-  padding: 15px;
-  border: 1.5px solid #1a6bed;
-  border-radius: 10px;
+#para{
+  width:auto;
+  height:auto;
+  margin-left:20px;
+  margin-right:20px;
+  padding:15px;
+  border:1.5px solid #1a6bed;
+  border-radius:10px;
   text-align: justify;
 }
 
@@ -49,7 +50,7 @@ ul li {
   left: 0;
   width: 100%;
   z-index: 1000;
-  margin: 0px !important;
+  margin: 0px; !important
   display: inline-block !important;
 }
 
@@ -61,19 +62,18 @@ ul li {
   display: inline-block !important;
 }
 
-/* FIXED nav-link */
 .nav-link {
-  display: inline-block;
+  display: inline-block;       /* এক লাইনে রাখবে */
   background-color: #fff;
   color: #FF4500 !important;
   font-weight: 600;
   font-size: 12.5px;
-  padding: 5px 10px;
+  padding: 5px 10px;           /* একসাথে লিখলে ভারসাম্য ভালো হয় */
   margin: 2px;
   border-radius: 6px;
   border: 1px solid #FF4500;
   transition: all 0.3s ease;
-  text-decoration: none;
+  text-decoration: none;       /* underline বাদ দেবে */
 }
 
 .nav-link:hover {
@@ -110,12 +110,11 @@ ul li {
   text-align: justify;
 }
 
-/* min box */
 .min {
   display: block;
-  width: 80%;
-  margin: 40px auto;
-  text-align: center;
+  width: 80%;              /* control the box width */
+  margin: 40px auto;       /* centers the box horizontally */
+  text-align: center;      /* centers the text inside */
   font-size: 20px;
   padding: 30px;
   font-family: 'Algerian', serif;
@@ -128,8 +127,9 @@ ul li {
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1.8px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
+
 
 .min:hover {
   transform: scale(1.05);
@@ -137,7 +137,7 @@ ul li {
   box-shadow: 0 10px 30px rgba(255,140,0,0.6), 0 0 20px rgba(255,215,0,0.9);
 }
 
-/* Highlight */
+/* Highlighted Text */
 .highlight {
   color: #FF0000;
   font-weight: bold;
@@ -146,6 +146,7 @@ ul li {
   margin: 20px 0;
 }
 
+/* Quotes */
 .quote {
   font-style: italic;
   color: #FF8C00;
@@ -158,10 +159,18 @@ ul li {
   margin-top: 15px;
 }
 
-.text-justify {
-  text-align: justify;
-  margin-left: 15px;
-  margin-right: 20px;
+.section{
+  margin-right: 10px;
+  margin-top: 10px;
+  width: auto;
+  padding-bottom:15px;
+  height: auto;
+}
+
+.text-justify{
+   text-align: justify; 
+   margin-left:15px;
+   margin-right:20px;
 }
 
 /* Images */
@@ -184,7 +193,6 @@ img:active {
   transform: scale(0.95);
 }
 
-/* sp */
 #sp {
   background-color: transparent !important;
   color: inherit !important;
@@ -208,6 +216,7 @@ img:active {
   box-shadow: none !important;
 }
 
+
 /* Buttons */
 button, a {
   background-color: #FF8C00;
@@ -217,7 +226,7 @@ button, a {
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   text-decoration: none;
   font-weight: bold;
 }
@@ -257,90 +266,164 @@ h1 {
   text-shadow: 1px 1px #FFD700;
 }
 
-.special {
+.special{
   background-color: #42f5e3;
 }
 
-.special:hover {
+.special:hover{
   background: #42f5e3;
 }
 
-/* FIXED weight unit */
-h6 {
-  font-size: 30px;
-  background-color: lightgreen;
-  color: black;
-  text-align: center;
-  font-weight: 600;
-  padding: 8px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-
-h6:hover {
-  background-color: mediumseagreen;
-  color: white;
-  transform: scale(1.05);
-  cursor: pointer;
-}
-
-/* FIXED sections */
-.sovereign-state,
-.best-brand,
-.state-brand {
-  background: #fff8dc;
+.sovereign-state {
+  background: #fff8dc; /* soft light background */
+  border: 2px solid #FFD700;
   border-radius: 12px;
   padding: 30px;
   margin: 40px auto;
+  width: auto;
+  
 }
 
-.sovereign-state { border: 2px solid #FFD700; }
-.best-brand { border: 2px solid #FF8C00; }
-.state-brand { border: 2px solid #FFD700; width: 90%; }
-
-/* headings inside */
-.sovereign-state h2,
-.best-brand h2,
-.state-brand h2 {
+.sovereign-state h2 {
   text-align: center;
   font-size: 32px;
+  color: #006400; /* deep green for authority */
   background: #FFD700;
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 20px;
 }
 
-.sovereign-state h2 { color: #006400; }
-.best-brand h2, .state-brand h2 { color: #FF4500; }
+.sovereign-state ol {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
 
-/* lists */
-.sovereign-state ol,
+.sovereign-state li {
+  margin-bottom: 15px;
+}
+
+
+h2 {
+  font-size: 32px;
+  color: black;
+  background-color: lightyellow;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 28px;
+  color: #FF8C00;
+  text-align: center;
+}
+
+h4 {
+  font-size: 24px;
+  color: #FFD700;
+}
+
+h6 {
+  font-size: 30px;              /* balanced, not too large */
+  background-color: lightgreen;
+  color: black;
+  text-align: center;
+  font-weight: 600px;
+  padding: 8px;                 /* adds breathing space */
+  border-radius: 6px;           /* soft corners for elegance */
+  transition: all 0.3s ease;    /* smooth hover animation */
+}
+
+h6:hover {
+  background-color: mediumseagreen; /* richer green on hover */
+  color: white;                     /* text stands out */
+  transform: scale(1.05);           /* gentle zoom effect;                  */
+  cursor: pointer /* indicates interactivity */
+}
+
+
+.best-brand {
+  background: #fff8dc; /* soft light background */
+  border: 2px solid #FF8C00;
+  border-radius: 12px;
+  padding: 30px;
+  margin: 40px auto;
+  width: auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.best-brand h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #FF4500; /* bold orange for courage */
+  background: #FFD700;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
 .best-brand ol {
   font-size: 1.1rem;
   line-height: 1.8;
   color: #333;
 }
 
-.sovereign-state li,
 .best-brand li {
   margin-bottom: 15px;
 }
-
-/* FIXED nested section p */
-.section p {
-  font-size: 18px;
-  font-family: Vrinda;
+.state-brand {
+  background: #fff8dc; /* soft light background */
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  padding: 30px;
+  margin: 40px auto;
+  width: 90%;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
-.section h3{
-  text-align: center !important;
+.section{
+  margin-left:25px;
+  margin-right:25px;
+  padding:15px;
+  
+  p{
+    font-size:18px;
+    font-family: Vrinda;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  text-align: center !important;
+.state-brand h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #FF4500; /* bold orange for courage */
+  background: #FFD700;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
-/* explore */
+.state-brand p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.explore-idai h2 {
+  font-size: 32px;
+  color: #FF4500;
+  margin-bottom: 20px;
+}
+
+.explore-idai p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
 .explore-container {
   display: flex;
   justify-content: center;
@@ -365,269 +448,314 @@ h1, h2, h3, h4, h5, h6 {
   background: #FF4500;
   color: #fff;
   transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255,140,0,0.6);
 }
 
-/* blockquote FIXED */
+/* Citizen Voices Section */
 .section blockquote {
-  background-color: #f5f8fa;
-  border-left: 6px solid #1e90ff;
-  padding: 20px 25px;
-  margin: 15px 0;
-  font-style: italic;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: #333;
-  border-radius: 8px;
+    background-color: #f5f8fa; /* হালকা নীল/ধূসর ব্যাকগ্রাউন্ড */
+    border-left: 6px solid #1e90ff; /* ব্লু অ্যাকসেন্ট লাইন */
+    padding: 20px 25px;
+    margin: 15px 0;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #333;
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Citation / Author */
 .section blockquote::after {
-  content: attr(data-author);
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #1e90ff;
-  text-align: right;
+    content: attr(data-author);
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: bold;
+    color: #1e90ff;
+    text-align: right;
 }
 
-/* ANTEM */
+/* Hover Effect for Interactivity */
+.section  blockquote:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
 .section.anthem {
   background: linear-gradient(135deg, #0b0c10, #1f2833);
+  width: auto;
   color: #f1f1f1;
   padding: 20px;
   border-radius: 12px;
+  font-family: "Georgia", serif;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
 }
 
 .section.anthem h1 {
   text-align: center;
   font-size: 2.5em;
   color: #66fcf1;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 .section.anthem p {
-  font-size: 18px;
-  line-height: 2em;
-  text-align: center;
-  color: #fff;
+  font-size: 18px;          /* Larger, more readable size */
+  line-height: 2em;         /* Spacious rhythm for song-like flow */
+  text-align: center;       /* Keep it centered for anthem style */
+  color: #ffffff;           /* Bright white for contrast */
+  font-weight: 400;         /* Smooth, not too heavy */
+  letter-spacing: 1px;      /* Adds grandeur and spacing */
+  margin-top: 20px;         /* Breathing space above */
+  margin-bottom: 20px;      /* Breathing space below */
 }
 
-/* EVENTS cleaned (kept same logic, no nesting) */
+
+.section.anthem p::first-line {
+  font-weight: bold;
+  color: lightyellow;
+}
+
+/* Events Section Styling */
 .events {
   width: auto;
   margin: 20px;
   padding: 25px;
   background: #fdfdfd;
   border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
 }
 
-/* media queries kept but FIXED syntax only */
+/* Banner Image */
+.section.events img {
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Headings */
+.section.events h3 {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+  color: #1a3d7c;
+  letter-spacing: 1px;
+}
+
+.section.events h4 {
+  font-size: 22px;
+  margin-top: 30px;
+  color: #0d2c54;
+  border-left: 5px solid #1a3d7c;
+  padding-left: 10px;
+}
+
+/* Paragraphs */
+.section.events p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px 0;
+  color: #444;
+}
+
+/* Event Details List */
+.section.events ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px 0;
+}
+
+.section.events ul li {
+  background: #f0f4ff;
+  margin: 6px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: background 0.3s ease;
+}
+
+.section.events ul li:hover {
+  background: #dce6ff;
+}
+
+/* Card Effect for Each Event */
+.section.events h4 + p, 
+.section.events h4 + p + ul {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Responsive Design */
 @media (max-width: 1100px) {
-
-  .section.anthem h1 { font-size: 20px; }
-
-  .best-brand, .sovereign-state {
-    margin: 2px !important;
+  .section.anthem{
+    h1{
+      font-size:20px;
+    }
   }
 
-  .best-brand h2, .sovereign-state h2 {
-    margin: 5px !important;
-    padding: 5px !important;
+  .section.events {
+    padding: 15px;
   }
 
-  .section.events img { width: 99%; }
+  .best-brand{
+    margin:2px !important;
+    h2{
+      margin:5px !important;
+      padding: 5px !important;
+    }
 
-  body {
-    margin-left: 5px !important;
-    margin-right: 5px !important;
+    ol{
+      padding:0px !important;
+      padding-right:0px !important;
+    }
   }
 
-  .min {
-    width: auto;
-    font-size: 10px;
+  .sovereign-state{
+    margin:2px !important;
+    h2{
+      margin:5px !important;
+      padding: 5px !important;
+    }
+
+    ol{
+      padding:0px !important;
+      padding-right:0px !important;
+    }
   }
 
-  img { width: 90%; }
-
-  .section {
-    margin-left: 3px;
-    margin-right: 3px;
-  }
-
-  welcome { /* FIXED missing dot */
-    margin-left: 5px !important;
-    margin-right: 5px !important;
-  }
-}
-
-
-/* =========================
-   1300px+
-========================= */
-@media (min-width: 1300px) {
-
-  body {
-    font-size: 20px;
-    margin-left: 0;
-    margin-right: 0;
-    padding-top: 78px;
-  }
-
-  h1 { font-size: 66px; }
-  h2 { font-size: 48px; }
-  h3 { font-size: 38px; }
-  h4 { font-size: 30px; }
-  h6 { font-size: 36px; }
-
-  p, li, a, button, .nav-link, .explore-btn {
-    font-size: 1.1rem;
-  }
-
-  .section p,
-  .details p,
-  .anthem p,
-  .oath p,
-  .state-brand p,
-  .events p {
-    font-size: 1.25rem;
-    line-height: 2;
-  }
-
-  .highlight {
-    font-size: 2.4rem;
-  }
-
-  .section blockquote {
-    font-size: 1.35rem;
-  }
-
-  .navbar-brand {
+  .section.events h3 {
     font-size: 24px;
   }
-}
 
-/* =========================
-   1700px+
-========================= */
-@media (min-width: 1700px) {
-
-  body {
+  .section.events h4 {
     font-size: 20px;
-    margin-left: 80px;
-    margin-right: 80px;
-    padding-top: 90px;
   }
 
-  h1 { font-size: 72px; }
-  h2 { font-size: 52px; }
-  h3 { font-size: 40px; }
-  h4 { font-size: 32px; }
-  h6 { font-size: 38px; }
-
-  p, li, a, button, .nav-link, .explore-btn {
-    font-size: 1.3rem;
+  .section.events p, .section.events ul li {
+    font-size: 14px;
   }
 
-  .section p,
-  .details p,
-  .anthem p,
-  .oath p,
-  .state-brand p,
-  .events p {
-    font-size: 1.4rem;
-    line-height: 2.1;
+  .section.events img{
+    width: 99%;
   }
 
-  .section blockquote {
-    font-size: 1.35rem;
+  body{
+    margin-left:5px !important;
+    margin-right:5px !important;
+  }
+  
+  .min{
+    margin-left:0px;
+    margin-right: 0px;
+    width: auto;
+    font-size:10px;
   }
 
-  .highlight {
-    font-size: 2.4rem;
+  img{
+    width: 90%;
+  }
+
+  .section{
+    margin-left:3px;
+    margin-right:3px;
+    width: auto;
+
+    img{
+      width:99%;
+    }
+  }
+
+  .anthem{
+    margin:10px !important;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .navbar-brand {
-    font-size: 26px;
-  }
-}
-
-/* =========================
-   2000px+
-   (NOT IN ORIGINAL → kept same as 1700 base scaling)
-========================= */
-@media (min-width: 2000px) {
-
-  body {
-    font-size: 20px;
-    margin-left: 90px;
-    margin-right: 90px;
-    padding-top: 95px;
+    font-size: 13px;
+    display: inline-block;
+    margin-left:0px !important;
   }
 
-  h1 { font-size: 78px; }
-  h2 { font-size: 56px; }
-  h3 { font-size: 44px; }
-  h4 { font-size: 34px; }
-  h6 { font-size: 40px; }
-
-  p, li, a, button, .nav-link, .explore-btn {
-    font-size: 1.35rem;
+  .navbar-toggler {
+    display: inline-block;
+    margin-left: auto;
   }
 
-  .section p,
-  .details p,
-  .anthem p,
-  .oath p,
-  .state-brand p,
-  .events p {
-    font-size: 1.5rem;
-    line-height: 2.2;
+  /* Collapse menu hidden by default */
+  .navbar-collapse {
+    display: none;
+    width: 100%;
+    background: linear-gradient(90deg, #FFD700, #FF8C00);
   }
 
-  .section blockquote {
-    font-size: 1.4rem;
+  /* যখন টগলার চাপা হবে তখন নিচে খুলবে */
+  .navbar-collapse.show {
+    display: block;       /* block layout ensures it sits BELOW */
+    width: 100%;
+    padding: 8px 12px;
   }
 
-  .highlight {
-    font-size: 2.6rem;
-  }
-}
-
-/* =========================
-   2300px+
-========================= */
-@media (min-width: 2300px) {
-
-  body {
-    font-size: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
-    padding-top: 100px;
+  .navbar-nav {
+    display: block;       /* block so items stack vertically */
+    width: 100%;
   }
 
-  h1 { font-size: 82px; }
-  h2 { font-size: 60px; }
-  h3 { font-size: 48px; }
-  h4 { font-size: 36px; }
-  h6 { font-size: 42px; }
-
-  p, li, a, button, .nav-link, .explore-btn {
-    font-size: 1.4rem;
+  .nav-item {
+    display: block;
+    width: 100%;
   }
 
-  .section p,
-  .details p,
-  .anthem p,
-  .oath p,
-  .state-brand p,
-  .events p {
-    font-size: 1.6rem;
-    line-height: 2.2;
+  .nav-link {
+    display: block;
+    width: 100%;
+    margin: 4px 0;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  
+  .explore-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .explore-btn {
+    width: 80%;
+    margin-bottom: 15px;
   }
 
-  .section blockquote {
-    font-size: 1.45rem;
+  .min{
+    font-size:15px;
+    margin:20px auto;
+    border: 1.5px solid #FFD700;
+    padding:10px;
+  }
+      
+  section{
+    margin-left: 5px !important;
+    margin-right: 5px !important;
   }
 
-  .highlight {
-    font-size: 2.8rem;
-  }
+  welcome{
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    padding: 5px !important;
+  }  
+
+  .section.anthem p{
+    font-size:14px;
+  }  
 }
