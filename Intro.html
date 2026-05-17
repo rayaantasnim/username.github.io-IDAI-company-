@@ -1,820 +1,392 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <title>IDAI | Gateway Beyond Intelligence</title>
-
-  <link href="https://googleapis.com" rel="stylesheet">
-
-<style>
-
-/* ===================================
-   🌌 GLOBAL COSMIC SYSTEM
-=================================== */
-
-html,
-body{
-  width:100%;
-  height:100%;
-  margin:0;
-  padding:0;
-  overflow:hidden;
-  background:#000;
-}
-
-*{
-  box-sizing:border-box;
-  -webkit-tap-highlight-color:transparent;
-}
-
-body{
-  position:relative;
-  font-family:'Poppins',sans-serif;
-  color:white;
-
-  background:
-  radial-gradient(circle at bottom,#050816 0%,#000 72%);
-
-  transform:translateZ(0);
-  backface-visibility:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-
-/* ===================================
-   🌠 COSMIC NEBULA
-=================================== */
-
-body::before{
-  content:"";
-  position:fixed;
-
-  width:260%;
-  height:260%;
-
-  top:-80%;
-  left:-80%;
-
-  z-index:0;
-
-  background:
-  radial-gradient(circle at 20% 20%,rgba(0,255,255,.18),transparent 32%),
-  radial-gradient(circle at 80% 25%,rgba(0,140,255,.18),transparent 34%),
-  radial-gradient(circle at 50% 85%,rgba(132,0,255,.18),transparent 34%),
-  radial-gradient(circle at 55% 45%,rgba(255,255,255,.04),transparent 25%);
-
-  animation:
-  nebulaRotate 85s linear infinite,
-  nebulaPulse 18s ease-in-out infinite alternate;
-}
-
-@keyframes nebulaRotate{
-
-  from{
-    transform:rotate(0deg) scale(1);
-  }
-
-  to{
-    transform:rotate(360deg) scale(1.08);
-  }
-}
-
-@keyframes nebulaPulse{
-
-  from{
-    opacity:.7;
-  }
-
-  to{
-    opacity:1;
-  }
-}
-
-/* ===================================
-   ⭐ STAR LAYERS
-=================================== */
-
-.stars,
-.energy{
-  position:fixed;
-  inset:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-}
-
-.stars{
-  z-index:1;
-}
-
-.energy{
-  z-index:2;
-}
-
-@keyframes twinkle{
-
-  from{
-    opacity:.2;
-    transform:scale(.7);
-  }
-
-  to{
-    opacity:1;
-    transform:scale(1.4);
-  }
-}
-
-@keyframes drift{
-
-  from{
-    transform:translateY(0px);
-  }
-
-  to{
-    transform:translateY(-24px);
-  }
-}
-
-/* ===================================
-   🎬 MAIN INTRO
-=================================== */
-
-.intro{
-  position:relative;
-  z-index:5;
-
-  width:100%;
-  min-height:100vh;
-  min-height:100dvh;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-
-  text-align:center;
-
-  padding:clamp(20px,4vw,60px);
-
-  opacity:0;
-
-  animation:introReveal 2.5s ease forwards;
-}
-
-@keyframes introReveal{
-
-  to{
-    opacity:1;
-  }
-}
-
-/* ===================================
-   🖼 LOGO
-=================================== */
-
-.small-logo{
-
-  width:clamp(180px,24vw,310px);
-  min-width:50%;
-  height:auto;
-
-  object-fit:contain;
-  border-radius:24px;
-
-  filter:
-  drop-shadow(0 0 20px rgba(0,255,255,.9))
-  drop-shadow(0 0 60px rgba(0,255,255,.45))
-  drop-shadow(0 0 140px rgba(0,255,255,.28));
-
-  animation:
-  logoFloat 8s ease-in-out infinite,
-  logoPulse 5s ease-in-out infinite alternate;
-}
-
-@keyframes logoFloat{
-
-  0%{
-    transform:translateY(0px);
-  }
-
-  50%{
-    transform:translateY(-20px);
-  }
-
-  100%{
-    transform:translateY(0px);
-  }
-}
-
-@keyframes logoPulse{
-
-  from{
-    filter:
-    drop-shadow(0 0 15px rgba(0,255,255,.7))
-    drop-shadow(0 0 45px rgba(0,255,255,.35))
-    drop-shadow(0 0 100px rgba(0,255,255,.2));
-  }
-
-  to{
-    filter:
-    drop-shadow(0 0 30px rgba(0,255,255,1))
-    drop-shadow(0 0 80px rgba(0,255,255,.7))
-    drop-shadow(0 0 180px rgba(0,255,255,.35));
-  }
-}
-
-/* ===================================
-   ✨ ENERGY LINES
-=================================== */
-
-.logo{
-  margin-top:14px;
-}
-
-.logo .line{
-
-  width:190px;
-  height:4px;
-
-  margin:12px auto;
-
-  border-radius:999px;
-
-  background:
-  linear-gradient(
-    90deg,
-    transparent,
-    #00ffff,
-    white,
-    #00ffff,
-    transparent
-  );
-
-  box-shadow:
-  0 0 20px #00ffff,
-  0 0 60px rgba(0,255,255,.75);
-
-  opacity:0;
-
-  transform:scaleX(0);
-
-  animation:lineReveal 1.8s forwards;
-}
-
-.logo .line:nth-child(2){
-  animation-delay:.45s;
-}
-
-.logo .line:nth-child(3){
-  animation-delay:.9s;
-}
-
-@keyframes lineReveal{
-
-  to{
-    opacity:1;
-    transform:scaleX(1);
-  }
-}
-
-/* ===================================
-   🏷 MAIN TITLE
-=================================== */
-
-.title{
-
-  font-family:'Orbitron',sans-serif;
-
-  font-size:clamp(24px,3.8vw,48px);
-
-  letter-spacing:clamp(6px,1vw,16px);
-
-  margin-top:18px;
-  margin-bottom:18px;
-
-  background:
-  linear-gradient(
-    90deg,
-    #00ffff,
-    white,
-    #8efcff,
-    #00d9ff,
-    white,
-    #00ffff
-  );
-
-  background-size:300%;
-
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-
-  text-shadow:
-  0 0 20px rgba(0,255,255,.35);
-
-  opacity:0;
-
-  animation:
-  titleReveal 2s forwards 1s,
-  titleFlow 8s linear infinite;
-}
-
-@keyframes titleReveal{
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@keyframes titleFlow{
-
-  from{
-    background-position:0%;
-  }
-
-  to{
-    background-position:300%;
-  }
-}
-
-/* ===================================
-   📝 INTRODUCTION LINES
-=================================== */
-
-.tagline{
-
-  font-family:'Algerian',sans-serif;
-
-  font-size:clamp(14px,2vw,20px);
-
-  line-height:1.8;
-
-  margin:4px 0;
-
-  background:
-  linear-gradient(
-    270deg,
-    #00ffff,
-    white,
-    #00e1ff
-  );
-
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-
-  text-shadow:
-  0 0 12px rgba(0,255,255,.22);
-
-  opacity:0;
-
-  transform:translateY(12px);
-
-  animation:
-  tagReveal 2s forwards,
-  tagFloat 5s ease-in-out infinite;
-}
-
-.tagline:nth-of-type(1){
-  animation-delay:1.8s;
-}
-
-.tagline:nth-of-type(2){
-  animation-delay:2.6s;
-}
-
-.tagline:nth-of-type(3){
-  animation-delay:3.4s;
-}
-
-.tagline:nth-of-type(4){
-  animation-delay:4.2s;
-}
-
-.tagline:nth-of-type(5){
-  animation-delay:5s;
-}
-
-@keyframes tagReveal{
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@keyframes tagFloat{
-
-  0%{
-    transform:translateY(0px);
-  }
-
-  50%{
-    transform:translateY(-4px);
-  }
-
-  100%{
-    transform:translateY(0px);
-  }
-}
-
-/* ===================================
-   💥 PARTICLES
-=================================== */
-
-.explode{
-  position:absolute;
-
-  width:2px;
-  height:2px;
-
-  background:white;
-
-  border-radius:50%;
-
-  pointer-events:none;
-}
-
-@keyframes explodeAnim{
-
-  0%{
-    transform:translate(0,0) scale(1);
-    opacity:1;
-  }
-
-  100%{
-    transform:translate(var(--x),var(--y)) scale(0);
-    opacity:0;
-  }
-}
-
-/* ===================================
-   📱 MOBILE
-=================================== */
-
-@media (max-width:1100px){
-
-  .small-logo{
-    width:clamp(180px,58vw,270px);
-  }
-
-  .title{
-    font-size:clamp(24px,7vw,38px);
-    letter-spacing:4px;
-  }
-
-  .tagline{
-    font-size:clamp(14px,4.5vw,19px);
-  }
-}
-
-@media (max-width:600px){
-
-  .logo .line{
-    width:125px;
-  }
-}
-
-/* ===================================
-   📱 ADVANCED MOBILE / TABLET OPTIMIZATION
-   BELOW 1100px VIEWPORT
-=================================== */
-
-@media (max-width:1100px){
-
-  body{
-    overflow:hidden;
-  }
-
-  /* 🌌 softer nebula scaling */
-  body::before{
-
-    width:320%;
-    height:320%;
-
-    top:-110%;
-    left:-110%;
-
-    animation:
-    nebulaRotate 120s linear infinite,
-    nebulaPulse 14s ease-in-out infinite alternate;
-  }
-
-  /* 🎬 intro spacing */
-  .intro{
-
-    justify-content:center;
-
-    padding:
-    clamp(24px,6vw,50px)
-    clamp(18px,5vw,35px);
-
-    gap:4px;
-  }
-
-  /* 🖼 logo responsive cinematic look */
-  .small-logo{
-
-    width:clamp(190px,56vw,280px);
-    min-width: 60%;
-    border-radius:20px;
-
-    filter:
-    drop-shadow(0 0 18px rgba(0,255,255,.9))
-    drop-shadow(0 0 45px rgba(0,255,255,.45))
-    drop-shadow(0 0 120px rgba(0,255,255,.22));
-  }
-
-  /* ✨ glowing energy lines */
-  .logo{
-    margin-top:10px;
-  }
-
-  .logo .line{
-
-    width:clamp(120px,35vw,180px);
-
-    height:3px;
-
-    margin:10px auto;
-
-    box-shadow:
-    0 0 16px #00ffff,
-    0 0 45px rgba(0,255,255,.65);
-  }
-
-  /* 🏷 title optimization */
-  .title{
-
-    font-size:clamp(24px,7vw,38px);
-
-    letter-spacing:clamp(3px,1vw,7px);
-
-    line-height:1.35;
-
-    margin-top:14px;
-    margin-bottom:14px;
-
-    text-shadow:
-    0 0 14px rgba(0,255,255,.35),
-    0 0 35px rgba(0,255,255,.15);
-  }
-
-  /* 📝 tagline readability */
-  .tagline{
-
-    width:min(92vw,700px);
-
-    font-size:clamp(14px,3.9vw,18px);
-
-    line-height:1.8;
-
-    letter-spacing:.3px;
-
-    margin:2px auto;
-
-    text-shadow:
-    0 0 10px rgba(0,255,255,.18);
-
-    animation:
-    tagReveal 1.8s forwards,
-    tagFloat 6s ease-in-out infinite;
-  }
-
-  /* ⭐ slightly denser cosmic glow */
-  .stars div{
-
-    opacity:.95;
-  }
-
-}
-
-/* ===================================
-   📱 EXTRA SMALL DEVICES
-=================================== */
-
-@media (max-width:600px){
-
-  .intro{
-    padding:
-    22px
-    18px;
-  }
-
-  .small-logo{
-    width:clamp(180px,62vw,240px);
-    min-width:70%;
-  }
-
-  .title{
-
-    font-size:clamp(22px,8vw,32px);
-
-    letter-spacing:3px;
-  }
-
-  .tagline{
-
-    font-size:clamp(13px,4.3vw,16px);
-
-    line-height:1.75;
-  }
-
-  .logo .line{
-    width:110px;
-  }
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Cinematic Masterpiece - Fully Automatic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000; /* শুরুতে ১ সেকেন্ড সম্পূর্ণ অন্ধকার */
+            font-family: 'Algerian', 'Georgia', 'Times New Roman', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .content-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 85%;
+        }
+
+        .intro-img {
+            order: 1; 
+            width: 320px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+            opacity: 0;
+            margin-bottom: 25px;
+        }
+
+        .text-line {
+            order: 2;
+            opacity: 0;
+            font-size: 1.65rem;
+            letter-spacing: 1px;
+            margin: 12px 0;
+            position: relative;
+            background: linear-gradient(45deg, #00ffff, #ffffff, #00e1ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            overflow: hidden;
+        }
+
+        /* অ্যানিমেশন ট্রিগার ক্লাস */
+        .animate-text {
+            animation: fadeInOnly 1s forwards;
+        }
+        .animate-img {
+            animation: fadeInOnly 1.5s forwards;
+        }
+
+        @keyframes fadeInOnly {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* টেক্সটের ওপর দিয়ে আলোর ঝলকানি (Light Sweep) */
+        .text-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            transform: skewX(-25deg);
+        }
+        .sweep-effect::after {
+            animation: lightSweep 1.2s ease-in-out forwards;
+        }
+
+        @keyframes lightSweep {
+            0% { left: -100%; }
+            100% { left: 200%; }
+        }
+
+        @media (max-width: 1100px) {
+            .intro-img { width: 240px; margin-bottom: 20px; }
+            .text-line { font-size: 1.25rem; margin: 8px 0; }
+        }
+        
+        .nebula-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(0,255,255,0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 3;
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="stars"></div>
-<div class="energy"></div>
+    <canvas id="spaceCanvas"></canvas>
+    <div class="nebula-overlay" id="nebula"></div>
 
-<div class="intro">
+    <div class="content-container" id="mainContent">
+        <img src="Intro.png" alt="Intro Image" class="intro-img" id="introImg">
+        <div class="text-line" id="l1">One Universe of Infinite Intelligence.</div>
+        <div class="text-line" id="l2">Beyond Every Imagination.</div>
+        <div class="text-line" id="l3">Innovation Among the Stars.</div>
+        <div class="text-line" id="l4">Powering Humanity Forward.</div>
+        <div class="text-line" id="l5">The Future Begins Here.</div>
+    </div>
 
-  <!-- Make sure to have 'IDAI-Logo.jpg' in the same folder -->
-  <img src="Intro.png" class="small-logo" alt="IDAI Logo">
+    <script>
+        const canvas = document.getElementById('spaceCanvas');
+        const ctx = canvas.getContext('2d');
+        const mainContent = document.getElementById('mainContent');
+        const introImg = document.getElementById('introImg');
 
-  <div class="logo">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-  </div>
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
 
-  <p class="tagline">One Universe of Infinite Intelligence.</p>
-  <p class="tagline">Beyond Every Imagination.</p>
-  <p class="tagline">Innovation Among the Stars.</p>
-  <p class="tagline">Powering Humanity Forward.</p>
-  <p class="tagline">The Future Begins Here.</p>
+        const bgLayers = [[], [], []]; 
+        const driftingStars = [];
+        const heavyMeteors = [];
+        const supernovaComets = [];
 
-</div>
+        let currentPhase = 0;
+        let speedMultiplier = 1.0;
+        let launchSupernova = false;
+        let supernovaRadius = 0;
+        let supernovaAlpha = 0;
+        let showFlash = false;
+        let shockwaveRadius = 0;
+        let isShaking = false;
 
-<script>
+        // স্বয়ংক্রিয় স্টার্ট লজিক (পেজ লোড হওয়ার সাথে সাথেই কার্যকর হবে)
+        window.removeAttribute ? null : initAutomation();
 
-/* ===================================
-   ⭐ STARFIELD GENERATOR
-=================================== */
+        function initAutomation() {
+            // ১ সেকেন্ড সম্পূর্ণ অন্ধকার থাকার পর বাকি অ্যানিমেশন ফেজগুলো শুরু হবে
+            setTimeout(() => { currentPhase = 1; generate3DStars(); }, 1000);   
+            setTimeout(() => { currentPhase = 2; spawnSlowStars(1000); }, 2000); 
+            setTimeout(() => { speedMultiplier = 2.8; }, 2500); 
+            
+            // টেক্সট রিলিজ টাইমলাইন
+            setTimeout(() => { speedMultiplier = 1.0; triggerText(1); }, 3500);
+            setTimeout(() => { triggerText(2); }, 4500);
+            setTimeout(() => { triggerText(3); }, 5550);
+            setTimeout(() => { triggerText(4); }, 6500);
+            setTimeout(() => { triggerText(5); }, 7500);
 
-const starContainer=document.querySelector('.stars');
+            // ছবি এবং নেবুলা ক্লাউড (৮.৫ সেকেন্ডে)
+            setTimeout(() => { 
+                introImg.classList.add('animate-img');
+                document.getElementById('nebula').style.opacity = '1';
+            }, 8500);
 
-for(let i=0;i<450;i++){
+            setTimeout(() => { currentPhase = 3; triggerHyperDrive(); }, 10500);  
+            setTimeout(() => { triggerSupernovaComets(); }, 13100); 
+            setTimeout(() => { window.location.href = "Home.html"; }, 15000);   
+        }
 
-  let s=document.createElement('div');
+        function triggerText(num) {
+            const el = document.getElementById(`l${num}`);
+            if (el) {
+                el.classList.add('animate-text', 'sweep-effect');
+            }
+        }
 
-  let size=Math.random()*2+1;
+        // ৩D প্যারালাক্স ব্যাকগ্রাউন্ড
+        function generate3DStars() {
+            const counts = [2500, 1500, 1000]; 
+            for (let layer = 0; layer < 3; layer++) {
+                for (let i = 0; i < counts[layer]; i++) {
+                    bgLayers[layer].push({
+                        baseX: Math.random() * canvas.width,
+                        baseY: Math.random() * canvas.height,
+                        size: (layer + 1) * 0.5 + Math.random() * 0.4, 
+                        alpha: Math.random(),
+                        pulseSpeed: Math.random() * 0.02 + 0.005,
+                        angle: Math.random() * Math.PI * 2,
+                        jitterMax: (layer + 1) * 0.3 
+                    });
+                }
+            }
+        }
 
-  s.style.cssText=`
-  position:absolute;
-  width:${size}px;
-  height:${size}px;
+        // কৌণিক (Diagonal) তারা
+        function spawnSlowStars(count) {
+            for (let i = 0; i < count; i++) {
+                driftingStars.push({
+                    x: Math.random() * canvas.width + (canvas.width * 0.3),
+                    y: -(Math.random() * canvas.height * 0.5), 
+                    vx: -(Math.random() * 0.8 + 0.5), 
+                    vy: Math.random() * 0.6 + 0.4,    
+                    size: Math.random() * 1.5 + 0.5
+                });
+            }
+        }
 
-  border-radius:50%;
-  background:white;
+        function triggerHyperDrive() {
+            for (let i = 0; i < 300; i++) {
+                setTimeout(() => {
+                    heavyMeteors.push({
+                        x: canvas.width + 30,
+                        y: Math.random() * canvas.height, 
+                        vx: -(Math.random() * 15 + 12), 
+                        vy: Math.random() * 4 - 2,
+                        size: Math.random() * 2.5 + 1.2
+                    });
+                }, Math.random() * 2000);
+            }
+        }
 
-  box-shadow:
-  0 0 8px white,
-  0 0 18px #00ffff,
-  0 0 28px rgba(0,255,255,.7);
+        function triggerSupernovaComets() {
+            launchSupernova = true;
+            const corners = [
+                { x: -60, y: -60 }, { x: canvas.width + 60, y: -60 },        
+                { x: -60, y: canvas.height + 60 }, { x: canvas.width + 60, y: canvas.height + 60 } 
+            ];
+            corners.forEach(corner => {
+                supernovaComets.push({
+                    x: corner.x, y: corner.y,
+                    speed: 1.5, acceleration: 1.14, size: 18 
+                });
+            });
+        }
 
-  left:${Math.random()*100}vw;
-  top:${Math.random()*100}vh;
+        function doScreenShake() {
+            isShaking = true;
+            setTimeout(() => { isShaking = false; mainContent.style.transform = 'translate(0px, 0px)'; }, 1400);
+        }
 
-  animation:
-  twinkle ${2+Math.random()*5}s infinite alternate,
-  drift ${5+Math.random()*8}s linear infinite alternate;
-  `;
+        function animate() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.25)'; 
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  starContainer.appendChild(s);
-}
+            if (isShaking) {
+                let dx = (Math.random() - 0.5) * 18;
+                let dy = (Math.random() - 0.5) * 18;
+                mainContent.style.transform = `translate(${dx}px, ${dy}px)`;
+            }
 
-/* ===================================
-   💥 BURST PARTICLES
-=================================== */
+            // ব্যাকগ্রাউন্ড তারা
+            if (currentPhase >= 1) {
+                ctx.fillStyle = '#ffffff';
+                for (let layer = 0; layer < 3; layer++) {
+                    bgLayers[layer].forEach(star => {
+                        star.alpha += star.pulseSpeed;
+                        if (star.alpha > 1 || star.alpha < 0.1) star.pulseSpeed = -star.pulseSpeed;
+                        
+                        star.angle += 0.06;
+                        const jitterX = Math.cos(star.angle) * star.jitterMax;
+                        const jitterY = Math.sin(star.angle) * star.jitterMax;
 
-function burst(x,y){
+                        ctx.globalAlpha = star.alpha;
+                        ctx.fillRect(star.baseX + jitterX, star.baseY + jitterY, star.size, star.size);
+                    });
+                }
+                ctx.globalAlpha = 1.0;
+            }
 
-  for(let i=0;i<18;i++){
+            // কৌণিক তারা
+            if (currentPhase >= 2) {
+                ctx.fillStyle = '#ffffff';
+                driftingStars.forEach(s => {
+                    s.x += s.vx * speedMultiplier;
+                    s.y += s.vy * speedMultiplier;
 
-    let p=document.createElement('div');
+                    if (s.x < -20 || s.y > canvas.height + 20) {
+                        s.x = Math.random() * canvas.width + (canvas.width * 0.4);
+                        s.y = -(Math.random() * canvas.height * 0.3);
+                    }
+                    ctx.fillRect(s.x, s.y, s.size, s.size);
+                });
+            }
 
-    p.className='explode';
+            // মেটিওরস
+            if (currentPhase === 3) {
+                ctx.fillStyle = '#ffffff';
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = '#00ffff';
+                for (let i = heavyMeteors.length - 1; i >= 0; i--) {
+                    let m = heavyMeteors[i];
+                    m.x += m.vx; m.y += m.vy;
+                    ctx.fillRect(m.x, m.y, m.size * 2, m.size); 
+                    if (m.x < -50) heavyMeteors.splice(i, 1);
+                }
+                ctx.shadowBlur = 0;
+            }
 
-    let angle=Math.random()*Math.PI*2;
-    let dist=Math.random()*150+50;
+            // ৪ কোণার ৪টি দানব নক্ষত্র বিপুল গতিতে কেন্দ্রে ধাবিত হওয়া
+            if (launchSupernova && supernovaComets.length > 0) {
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
 
-    p.style.left=x+'px';
-    p.style.top=y+'px';
+                for (let i = supernovaComets.length - 1; i >= 0; i--) {
+                    let sc = supernovaComets[i];
+                    sc.speed *= sc.acceleration;
 
-    p.style.setProperty('--x',Math.cos(angle)*dist+'px');
-    p.style.setProperty('--y',Math.sin(angle)*dist+'px');
+                    const angle = Math.atan2(centerY - sc.y, centerX - sc.x);
+                    const vx = Math.cos(angle) * sc.speed;
+                    const vy = Math.sin(angle) * sc.speed;
 
-    p.style.boxShadow=`
-    0 0 14px #00ffff,
-    0 0 40px rgba(0,255,255,.8)
-    `;
+                    sc.x += vx; sc.y += vy;
 
-    p.style.animation='explodeAnim .8s linear forwards';
+                    ctx.shadowBlur = 35;
+                    ctx.shadowColor = '#00ffff';
+                    ctx.fillStyle = '#ffffff';
+                    ctx.beginPath();
+                    ctx.arc(sc.x, sc.y, sc.size, 0, Math.PI * 2);
+                    ctx.fill();
 
-    document.body.appendChild(p);
+                    const dist = Math.hypot(centerX - sc.x, centerY - sc.y);
+                    
+                    if (dist < 40 || sc.speed > 65) {
+                        supernovaComets.splice(0, supernovaComets.length);
+                        showFlash = true; 
+                        shockwaveRadius = 10; 
+                        doScreenShake(); 
+                        break;
+                    }
+                }
+                ctx.shadowBlur = 0;
+            }
 
-    setTimeout(()=>{
-      p.remove();
-    },800);
-  }
-}
+            // বাস্তবসম্মত সুপারনোভা ব্লাস্ট ফ্লাশ যা পুরো স্ক্রিন হোয়াইটআউট করবে
+            if (showFlash) {
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+                
+                supernovaRadius += 55; 
+                shockwaveRadius += 80; 
+                if (supernovaAlpha < 1.0) supernovaAlpha += 0.08;
 
-/* ===================================
-   🚀 SHOOTING STARS
-=================================== */
+                // মহাজাগতিক শকওয়েভ রিং
+                ctx.strokeStyle = `rgba(0, 255, 255, ${1.0 - (shockwaveRadius / (canvas.width * 1.5))})`;
+                ctx.lineWidth = 20;
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, shockwaveRadius, 0, Math.PI * 2);
+                ctx.stroke();
 
-function shootStar(){
+                // রিয়েল থ্রিডি গ্রেডিয়েন্ট ব্লাস্ট কোর
+                const gradient = ctx.createRadialGradient(centerX, centerY, 5, centerX, centerY, supernovaRadius);
+                gradient.addColorStop(0, '#ffffff');          
+                gradient.addColorStop(0.15, '#00ffff');        
+                gradient.addColorStop(0.35, '#ff00ff');        
+                gradient.addColorStop(0.65, '#ffaa00');        
+                gradient.addColorStop(1, 'rgba(0, 0, 0, 0)'); 
 
-  let star=document.createElement('div');
+                ctx.fillStyle = gradient;
+                ctx.globalAlpha = supernovaAlpha;
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, supernovaRadius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.globalAlpha = 1.0;
 
-  star.style.cssText=`
-  position:absolute;
+                // যখন ব্লাস্টের তীব্র আলো পুরো স্ক্রিনকে গ্রাস করে ফেলবে
+                const maxDiagonal = Math.hypot(canvas.width, canvas.height);
+                if (supernovaRadius > maxDiagonal) {
+                    ctx.fillStyle = '#ffffff'; 
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                }
+            }
 
-  width:2px;
-  height:2px;
+            requestAnimationFrame(animate);
+        }
 
-  border-radius:50%;
-  background:#00ffff;
-
-  box-shadow:
-  0 0 12px #00ffff,
-  0 0 35px rgba(0,255,255,.9);
-  z-index: 3;
-  `;
-
-  let sx=window.innerWidth+120;
-  let sy=Math.random()*window.innerHeight;
-
-  let ex=Math.random()*window.innerWidth*.25;
-  let ey=Math.random()*window.innerHeight;
-
-  star.style.left=sx+'px';
-  star.style.top=sy+'px';
-
-  document.body.appendChild(star);
-
-  let steps=38;
-  let i=0;
-
-  let dx=(ex-sx)/steps;
-  let dy=(ey-sy)/steps;
-
-  let cx=sx;
-  let cy=sy;
-
-  let move=setInterval(()=>{
-
-    cx+=dx;
-    cy+=dy;
-
-    i++;
-
-    star.style.left=cx+'px';
-    star.style.top=cy+'px';
-
-    burst(cx,cy);
-
-    if(i>=steps){
-      clearInterval(move);
-      star.remove();
-    }
-
-  },22);
-}
-
-/* ===================================
-   🌠 COSMIC LOOP
-=================================== */
-
-setInterval(()=>{
-  shootStar();
-},450);
-
-/* ===================================
-   🚪 AUTO TRANSITION
-=================================== */
-
-setTimeout(()=>{
-
-  document.body.style.transition='1.8s ease';
-  document.body.style.opacity='0';
-
-  setTimeout(()=>{
-    window.location.assign('Home.html');
-  },1800);
-
-},14000);
-
-</script>
-
+        animate();
+    </script>
 </body>
 </html>
