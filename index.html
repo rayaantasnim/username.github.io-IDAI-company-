@@ -6,13 +6,10 @@
 <title>IDAI Portal - Login</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
 /* ---------- BODY & BACKGROUND ---------- */
-
 body{
 margin:0;
 font-family:'Exo 2',sans-serif;
@@ -24,7 +21,6 @@ overflow-y:auto;
 }
 
 /* ---------- STAR FIELD ---------- */
-
 .star{
 position:absolute;
 background:white;
@@ -34,25 +30,12 @@ animation:starMove linear forwards;
 }
 
 @keyframes starMove{
-
-0%{
-transform:translate(0,0);
-opacity:0;
-}
-
-10%{
-opacity:1;
-}
-
-100%{
-transform:translate(-120vw,120vh);
-opacity:0;
-}
-
+0%{transform:translate(0,0); opacity:0;}
+10%{opacity:1;}
+100%{transform:translate(-120vw,120vh); opacity:0;}
 }
 
 /* ---------- LOGIN CARD ---------- */
-
 .login-box{
 width:450px;
 max-width:95%;
@@ -75,7 +58,6 @@ transform:scale(1.02);
 }
 
 /* ---------- LOGO ---------- */
-
 .logo{
 text-align:center;
 margin-bottom:25px;
@@ -96,7 +78,6 @@ animation:pulse 3s infinite;
 }
 
 /* ---------- TITLE ---------- */
-
 .title{
 font-family:'Orbitron',sans-serif;
 font-size:32px;
@@ -115,7 +96,6 @@ margin-bottom:35px;
 }
 
 /* ---------- FORM ---------- */
-
 .form-control{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.2);
@@ -136,7 +116,6 @@ outline:none;
 }
 
 /* ---------- BUTTON ---------- */
-
 .login-btn{
 width:100%;
 margin-top:15px;
@@ -156,7 +135,6 @@ box-shadow:0 0 25px rgba(0,220,255,0.7);
 }
 
 /* ---------- ERROR ---------- */
-
 #errorMsg{
 margin-top:15px;
 text-align:center;
@@ -170,10 +148,10 @@ border:1px solid #ff4d4d;
 box-shadow:0 0 16px rgba(255,80,80,0.6);
 font-weight:600;
 transition:all 0.3s;
+display: none; /* ডিফল্টভাবে লুকিয়ে রাখা হয়েছে ডিজাইন সুন্দর রাখার জন্য */
 }
 
 /* ---------- STAR LAYER ---------- */
-
 .stars-layer{
 position:fixed;
 top:0;
@@ -185,20 +163,15 @@ overflow:hidden;
 }
 
 /* ---------- RESPONSIVE ---------- */
-
 @media (max-width:1100px){
-
 .login-box{
 width:90%;
 padding:40px 25px;
 }
-
 .title{font-size:28px;}
 .tagline{font-size:12px;}
 .logo img{width:50%;}
-
 }
-
 </style>
 </head>
 
@@ -207,7 +180,6 @@ padding:40px 25px;
 <div class="stars-layer" id="starsLayer"></div>
 
 <div class="login-box">
-
 <div class="logo">
 <img src="IDAI-Logo.jpg" alt="IDAI Logo">
 </div>
@@ -216,7 +188,6 @@ padding:40px 25px;
 <div class="tagline">Inspiring Trust Through Innovation</div>
 
 <form id="loginForm">
-
 <div class="mb-3"><input id="name" type="text" class="form-control" placeholder="Full Name"></div>
 <div class="mb-3"><input id="username" type="text" class="form-control" placeholder="Username"></div>
 <div class="mb-3"><input id="email" type="email" class="form-control" placeholder="G-mail Address"></div>
@@ -225,21 +196,15 @@ padding:40px 25px;
 <div class="mb-3"><input id="profession" type="text" class="form-control" placeholder="Profession"></div>
 
 <button type="submit" class="login-btn">Explore the Universe</button>
-
 <div id="errorMsg"></div>
-
 </form>
-
 </div>
 
 <script>
-
 /* ---------- COSMIC STAR ENGINE ---------- */
-
 const starsLayer=document.getElementById("starsLayer")
 
 function createStar(){
-
 const star=document.createElement("div")
 star.classList.add("star")
 
@@ -249,58 +214,42 @@ star.style.height=size+"px"
 
 star.style.top=Math.random()*200+"vh"
 star.style.left=Math.random()*100+"vw"
-
 star.style.animationDuration=(Math.random()*6+4)+"s"
 
 starsLayer.appendChild(star)
 
 /* remove star after animation */
-
 setTimeout(()=>{
 star.remove()
 },10000)
-
 }
 
 /* initial star burst */
-
 for(let i=0;i<700;i++){
 createStar()
 }
 
 /* infinite star generation */
-
 setInterval(()=>{
-
 let burst=Math.random()
-
 let amount
 
 if(burst>0.7){
-
 amount=150
-
 }else if(burst>0.4){
-
 amount=80
-
 }else{
-
 amount=40
-
 }
 
 for(let i=0;i<amount;i++){
 createStar()
 }
-
 },800)
 
 
-/* ---------- FORM VALIDATION ---------- */
-
+/* ---------- FORM VALIDATION & LOGIC ---------- */
 document.getElementById("loginForm").addEventListener("submit",function(e){
-
 e.preventDefault()
 
 const name=document.getElementById("name").value.trim()
@@ -309,32 +258,41 @@ const email=document.getElementById("email").value.trim()
 const password=document.getElementById("password").value.trim()
 const contact=document.getElementById("contact").value.trim()
 const profession=document.getElementById("profession").value.trim()
+const errorDiv=document.getElementById("errorMsg")
 
 let error=""
 
+// ইনপুট ভ্যালিডেশন চেক (অ্যালার্ট রিমুভ করে সরাসরি কাস্টম বক্সে দেখানো হচ্ছে)
 if(!name||!username||!email||!password||!contact||!profession){
 error="All fields must be filled!"
-alert(error)
 }
 else if(contact.length!==11||isNaN(contact)){
 error="Contact number must be exactly 11 digits!"
-alert(error)
 }
 else if(password.length<9){
 error="Password must be more than 8 characters!"
-alert(error)
 }
 
-const errorDiv=document.getElementById("errorMsg")
+if(error){
+// এরর থাকলে বক্সটি দৃশ্যমান হবে এবং মেসেজ দেখাবে
+alert(error)
 errorDiv.innerText=error
 
-if(!error){
+errorDiv.style.display="block"
+} else {
+// কোনো এরর না থাকলে এরর বক্সটি হাইড হবে
+errorDiv.style.display="none"
+errorDiv.innerText=""
+
+// গিটহাব পেজেসের অন্যান্য পেজে ইউজার ডাটা অ্যাক্সেস করার জন্য লোকাল স্টোরেজে সেভ
+localStorage.setItem("idai_user_name", name)
+localStorage.setItem("idai_username", username)
+localStorage.setItem("idai_is_logged_in", "true")
+
+// সফলভাবে প্রবেশদ্বার বা নেক্সট পেজে রিডাইরেক্ট
 window.location.href="opening.html"
 }
-
 })
-
 </script>
 </body>
-
 </html>
