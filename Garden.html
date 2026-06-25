@@ -103,6 +103,114 @@
         font-size: 13px;
       }
     }
+
+    @media (max-width: 1000px) {
+  body {
+    margin-left: 3px !important;
+    margin-right: 3px !important;
+    margin-top:30px !important;
+    padding: 0 !important;
+
+    h2{
+      margin-top:50px !important;
+    }
+  }
+
+  .section {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    padding: 10px !important;
+    width: auto;
+  }
+
+  .navbar {
+    padding: 5px !important;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    font-size: 12px !important;
+    margin-left: 10px !important;
+  }
+
+  .nav-link {
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+    margin: 3px 0 !important;
+    width: 100%;
+    display: block;
+  }
+
+  .min {
+    margin: 10px auto !important;
+    padding: 8px !important;
+    font-size: 12px !important;
+    width: auto;
+  }
+
+  img {
+    width: 95% !important;
+    margin: 5px auto !important;
+  }
+
+  .events {
+    margin: 5px !important;
+    padding: 12px !important;
+  }
+
+  .best-brand, .sovereign-state, .state-brand {
+    margin: 8px auto !important;
+    padding: 12px !important;
+    width: auto;
+  }
+
+  .explore-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .explore-btn {
+    width: 90% !important;
+    margin-bottom: 10px !important;
+    padding: 12px !important;
+    font-size: 14px !important;
+  }
+
+  footer {
+    padding: 8px !important;
+    font-size: 12px !important;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .section {
+    margin: 8px !important;
+    padding: 10px !important;
+    width: auto;
+  }
+
+  /* Nested section inside section */
+  .section .section {
+    margin: 5px !important;
+    padding: 8px !important;
+    width: auto;
+    background: #fff;          /* nested section আলাদা বোঝানোর জন্য */
+    border: 1px solid #ddd;    /* subtle border */
+    border-radius: 8px;
+  }
+
+  .section .section p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin: 5px 0 !important;
+  }
+}
+
   </style>
 </head>
 <body>

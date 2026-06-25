@@ -96,107 +96,6 @@
       font-weight: bold;
     }
 
-.Time {
-  width: auto;
-  background: linear-gradient(160deg, #0a0f2b 0%, #1f2340 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 5vh 5vw;
-  box-sizing: border-box;
-  color: #fff;
-  text-align: center;
-}
-
-.Time h1 {
-  font-size: clamp(2rem, 6vw, 4rem);
-  text-shadow: 0 0 0.8em rgba(0, 255, 200, 0.7);
-  margin-bottom: 2vh;
-}
-
-.Time p {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  line-height: 1.6;
-  max-width: 70ch;
-  margin-bottom: 4vh;
-  color: #e0f7fa;
-}
-
-.Time .panel {
-  width: 80vw;
-  max-width: 900px;
-  margin: 3vh auto;
-  padding: 4vh 4vw;
-  border-radius: 1.5em;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 2em rgba(0, 255, 200, 0.4);
-  backdrop-filter: blur(10px);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.Time .panel:hover {
-  transform: translateY(-2%);
-  box-shadow: 0 0 3em rgba(0, 255, 200, 0.7);
-}
-
-.Time .panel h2 {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  margin-bottom: 1vh;
-  color: #00ffc8;
-  text-shadow: 0 0 0.6em rgba(0, 255, 200, 0.8);
-  background: none; /* no white background */
-}
-
-.Time .panel p {
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  margin-bottom: 1vh;
-}
-
-.Time .panel small {
-  font-size: clamp(0.8rem, 2vw, 1rem);
-  color: #b2dfdb;
-}
-
-/* Button styling */
-.Time button {
-  padding: 1em 2em;
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  border: none;
-  border-radius: 0.5em;
-  background: #00ffc8;
-  color: #0a0f2b;
-  cursor: pointer;
-  box-shadow: 0 0 1.5em rgba(0, 255, 200, 0.7);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-top: 4vh;
-}
-
-.Time button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 2em rgba(0, 255, 200, 0.9);
-}
-
-    .para{
-      width:auto;
-      text-align: justify;
-      height:auto;
-      margin-left:20px;
-      margin-right:20px;
-      padding:15px;
-      border:1.5px solid #1a6bed;
-      border-radius:10px;
-    }
-
-/* Optional media query for very small screens */
-@media (max-width: 1100px) {
-  .Time .panel {
-    padding: 3vh 3vw;
-  }
-  .Time h1 {
-    font-size: 2rem;
-  }
-}
 
   /* Responsive */
   @media (max-width: 1100px) {
@@ -217,6 +116,74 @@
       padding:10px;
     }
   }
+
+@media (max-width: 1000px) {
+  body {
+    padding-top: 60px;   /* navbar নিচে কনটেন্ট লুকাবে না */
+    margin-top: 12px;    /* extra breathing space for mobile */
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+  }
+
+  .section {
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+    padding: 12px !important;
+    width: auto;
+  }
+
+  .navbar {
+    padding: 6px !important;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    font-size: 13px !important;
+    margin-left: 10px !important;
+  }
+
+  .nav-link {
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+    margin: 3px 0 !important;
+    width: 100%;
+    display: block;
+  }
+
+  footer {
+    padding: 10px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .section {
+    margin: 8px !important;
+    padding: 10px !important;
+    width: auto;
+  }
+
+  /* Nested section inside section */
+  .section .section {
+    margin: 5px !important;
+    padding: 8px !important;
+    width: auto;
+    background: #fff;          /* nested section আলাদা বোঝানোর জন্য */
+    border: 1px solid #ddd;    /* subtle border */
+    border-radius: 8px;
+  }
+
+  .section .section p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin: 5px 0 !important;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -247,7 +214,7 @@
 <center>
 	<img src="All the provinces in sky view.jpg">
 </center><br>
-<p class="para">
+<p id="para">
 IDAI is a sovereign nation unlike any other, a vast green land stretching across 14.2 million square kilometers and home to one billion genius citizens. It is a living testament to the harmony of technology, culture, and nature, where futuristic cities rise from lush landscapes and innovation flows through every sector. From agriculture to aerospace, fashion to defense, IDAI thrives as a multidimensional powerhouse, blending progress with purpose. Its infrastructure is designed to inspire awe, with monumental capitals, ecological sanctuaries, and strategic command bases that symbolize strength, wisdom, and unity.  <br><br>
 
 At the heart of IDAI lies a vision that transcends borders: to act as guardian of humanity and beacon of trust. The nation’s philosophy is rooted in justice, order, and God-consciousness, while its global influence radiates through diplomacy, creativity, and interstellar ambition. IDAI is not just a country, it is a cosmic covenant, a promise of peace and prosperity where innovation and faith walk hand in hand toward eternity.
