@@ -1,400 +1,393 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDAI Portal - Login</title>
-
-    <link href="https://googleapis.com" rel="stylesheet">
-
+    <title>IDAI Universe: To Forge the future</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            font-family: 'Exo 2', sans-serif;
-            color: white;
-            background: linear-gradient(180deg, #0a0c1a, #1a1d2c);
-            position: relative;
-            min-height: 100vh;
-            overflow-x: hidden;
-            overflow-y: auto;
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000; /* শুরুতে ১ সেকেন্ড সম্পূর্ণ অন্ধকার */
+            font-family: 'Algerian', 'Georgia', 'Times New Roman', serif;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-
-        .star {
+        canvas {
             position: absolute;
-            background: white;
-            border-radius: 50%;
-            opacity: 0.8;
-            animation: starMove linear forwards;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
 
-        @keyframes starMove {
-            0% { 
-                transform: translate(0, 0); 
-                opacity: 0; 
-            }
-            10% { 
-                opacity: 1; 
-            }
-            100% { 
-                transform: translate(-120vw, 120vh); 
-                opacity: 0; 
-            }
-        }
-
-
-        .login-box {
-            width: 450px;
-            max-width: 95%;
-            margin: 40px auto;
-            padding: 50px 40px;
-            background: rgba(20, 25, 50, 0.9);
-            border-radius: 22px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 
-                0 0 80px rgba(0, 150, 255, 0.3),
-                0 0 200px rgba(0, 80, 255, 0.2);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+        .content-container {
             position: relative;
             z-index: 2;
-            box-sizing: border-box;
-            transition: transform 0.3s ease;
-        }
-
-        .login-box:hover { 
-            transform: scale(1.02); 
-        }
-
-
-        .logo { 
-            text-align: center; 
-            margin-bottom: 25px; 
-        }
-
-        .logo img { 
-            width: 35%; 
-            height: auto; 
-            object-fit: contain; 
-            filter: drop-shadow(0 0 18px #00d4ff); 
-            animation: pulse 3s infinite; 
-        }
-
-        @keyframes pulse { 
-            0%, 100% { transform: scale(1); } 
-            50% { transform: scale(1.05); } 
-        }
-
-
-        .title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 32px;
-            text-align: center;
-            letter-spacing: 2px;
-            background: linear-gradient(90deg, #00d4ff, #7f8cff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 5px;
-        }
-
-        .tagline { 
-            text-align: center; 
-            font-size: 14px; 
-            opacity: 0.8; 
-            margin-top: 0; 
-            margin-bottom: 35px; 
-        }
-
-        .input-group { 
-            margin-bottom: 16px; 
-        }
-
-
-        .form-control {
-            width: 100%;
-            padding: 8px 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 6px;
-            color: white;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            box-sizing: border-box;
-            outline: none;
-        }
-
-        .form-control:focus {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: #00c3ff;
-            box-shadow: 0 0 18px rgba(0, 200, 255, 0.7);
-        }
-
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-
-        .checkbox-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            margin-top: 15px;
-            margin-bottom: 15px;
-            font-size: 13px;
-            opacity: 0.9;
-            cursor: pointer;
+            text-align: center;
+            max-width: 85%;
         }
 
-        .checkbox-container input { 
-            margin-right: 8px; 
-            accent-color: #00c3ff; 
-        }
-
-
-        .btn-flex { 
-            display: flex; 
-            gap: 12px; 
-            margin-top: 10px; 
-        }
-
-        .recognize-btn {
-            flex: 1; 
-            padding: 12px; 
-            border: 1px solid #00c3ff; 
+        .intro-img {
+            order: 1; 
+            width: 320px;
+            height: auto;
             border-radius: 12px;
-            font-family: 'Orbitron', sans-serif; 
-            font-size: 13px; 
-            color: #00c3ff;
-            background: transparent; 
-            cursor: pointer; 
-            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+            opacity: 0;
+            margin-bottom: 25px;
         }
 
-        .recognize-btn:hover { 
-            background: rgba(0, 195, 255, 0.15); 
-            box-shadow: 0 0 15px rgba(0, 195, 255, 0.4); 
+        .text-line {
+            order: 2;
+            opacity: 0;
+            font-size: 1.65rem;
+            letter-spacing: 1px;
+            margin: 12px 0;
+            position: relative;
+            background: linear-gradient(45deg, #00ffff, #ffffff, #00e1ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            overflow: hidden;
         }
 
-        .login-btn {
-            flex: 1.3; 
-            padding: 12px; 
-            border: none; 
-            border-radius: 12px;
-            font-family: 'Orbitron', sans-serif; 
-            font-size: 14px; 
-            color: white;
-            background: linear-gradient(135deg, #00c3ff, #004cff); 
-            cursor: pointer;
-            transition: all 0.3s ease; 
-            box-shadow: 0 0 10px rgba(0, 200, 255, 0.4);
+        /* অ্যানিমেশন ট্রিগার ক্লাস */
+        .animate-text {
+            animation: fadeInOnly 1s forwards;
+        }
+        .animate-img {
+            animation: fadeInOnly 1.5s forwards;
         }
 
-        .login-btn:hover { 
-            background: linear-gradient(135deg, #33d6ff, #2a6cff); 
-            box-shadow: 0 0 25px rgba(0, 220, 255, 0.7); 
+        @keyframes fadeInOnly {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
-
-        #errorMsg {
-            margin-top: 15px; 
-            text-align: center; 
-            font-size: 14px; 
-            padding: 12px 15px;
-            border-radius: 10px; 
-            font-weight: 600; 
-            display: none; 
-            box-sizing: border-box;
+        /* টেক্সটের ওপর দিয়ে আলোর ঝলকানি (Light Sweep) */
+        .text-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            transform: skewX(-25deg);
+        }
+        .sweep-effect::after {
+            animation: lightSweep 1.2s ease-in-out forwards;
         }
 
-        .err-style { 
-            background: rgba(255, 107, 107, 0.25); 
-            color: white; 
-            border: 1px solid #ff4d4d; 
-            box-shadow: 0 0 16px rgba(255, 80, 80, 0.6); 
+        @keyframes lightSweep {
+            0% { left: -100%; }
+            100% { left: 200%; }
         }
 
-        .success-style { 
-            background: rgba(46, 204, 113, 0.25); 
-            color: white; 
-            border: 1px solid #2ecc71; 
-            box-shadow: 0 0 16px rgba(46, 204, 113, 0.6); 
+        @media (max-width: 1100px) {
+            .intro-img { width: 240px; min-width:90%; margin-bottom: 10px; margin: 0px !important;}
+            .text-line { font-size: 1.25rem; margin: 8px 0; font-family: Times New Roman;}
         }
-
-        .stars-layer { 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 200vh; 
-            z-index: 1; 
-            overflow: hidden; 
-            pointer-events: none; 
+        
+        .nebula-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(0,255,255,0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 3;
+            opacity: 0;
+            transition: opacity 2s ease;
         }
     </style>
 </head>
-
 <body>
 
-    <div class="stars-layer" id="starsLayer"></div>
+    <canvas id="spaceCanvas"></canvas>
+    <div class="nebula-overlay" id="nebula"></div>
 
-    <div class="login-box">
-        <div class="logo">
-            <img src="IDAI-Logo.jpg" alt="IDAI Logo">
-        </div>
-
-        <div class="title">IDAI PORTAL</div>
-        <div class="tagline">Inspiring Trust Through Innovation</div>
-
-        <form id="loginForm">
-            <div class="input-group"><input id="name" type="text" class="form-control" placeholder="Full Name"></div>
-            <div class="input-group"><input id="username" type="text" class="form-control" placeholder="Username"></div>
-            <div class="input-group"><input id="email" type="email" class="form-control" placeholder="G-mail Address"></div>
-            <div class="input-group"><input id="password" type="password" class="form-control" placeholder="Password"></div>
-            <div class="input-group"><input id="contact" type="number" class="form-control" placeholder="Contact Number"></div>
-            <div class="input-group"><input id="profession" type="text" class="form-control" placeholder="Profession"></div>
-
-            <label class="checkbox-container">
-                <input type="checkbox" id="declarationCheck">
-                I hereby declare that all the information provided above is correct.
-            </label>
-
-            <div class="btn-flex">
-                <button type="button" id="recognizeBtn" class="recognize-btn">Recognize Me</button>
-                <button type="submit" class="login-btn">Explore Universe</button>
-            </div>
-            
-            <div id="errorMsg"></div>
-        </form>
+    <div class="content-container" id="mainContent">
+        <img src="Intro.png" alt="Intro Image" class="intro-img" id="introImg">
+        <div class="text-line" id="l1">One Universe of Infinite Intelligence.</div>
+        <div class="text-line" id="l2">Beyond Every Imagination.</div>
+        <div class="text-line" id="l3">Innovation Among the Stars.</div>
+        <div class="text-line" id="l4">Powering Humanity Forward.</div>
+        <div class="text-line" id="l5">The Future Begins Here.</div>
     </div>
 
     <script>
-        const starsLayer = document.getElementById("starsLayer");
-        let starInterval; 
+        const canvas = document.getElementById('spaceCanvas');
+        const ctx = canvas.getContext('2d');
+        const mainContent = document.getElementById('mainContent');
+        const introImg = document.getElementById('introImg');
 
-        function createStar() {
-            const star = document.createElement("div"); 
-            star.classList.add("star");
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
 
-            const size = Math.random() * 3 + 1; 
-            star.style.width = size + "px"; 
-            star.style.height = size + "px";
+        const bgLayers = [[], [], []]; 
+        const driftingStars = [];
+        const heavyMeteors = [];
+        const supernovaComets = [];
 
-            star.style.top = Math.random() * 200 + "vh"; 
-            star.style.left = Math.random() * 100 + "vw";
+        let currentPhase = 0;
+        let speedMultiplier = 1.0;
+        let launchSupernova = false;
+        let supernovaRadius = 0;
+        let supernovaAlpha = 0;
+        let showFlash = false;
+        let shockwaveRadius = 0;
+        let isShaking = false;
 
-            const duration = Math.random() * 3 + 2; 
-            star.style.animationDuration = duration + "s";
+        // স্বয়ংক্রিয় স্টার্ট লজিক (পেজ লোড হওয়ার সাথে সাথেই কার্যকর হবে)
+        window.removeAttribute ? null : initAutomation();
 
-            starsLayer.appendChild(star);
+        function initAutomation() {
+            // ১ সেকেন্ড সম্পূর্ণ অন্ধকার থাকার পর বাকি অ্যানিমেশন ফেজগুলো শুরু হবে
+            setTimeout(() => { currentPhase = 1; generate3DStars(); }, 1000);   
+            setTimeout(() => { currentPhase = 2; spawnSlowStars(1000); }, 2000); 
+            setTimeout(() => { speedMultiplier = 2.8; }, 2500); 
+            
+            // টেক্সট রিলিজ টাইমলাইন
+            setTimeout(() => { speedMultiplier = 1.0; triggerText(1); }, 3500);
+            setTimeout(() => { triggerText(2); }, 4500);
+            setTimeout(() => { triggerText(3); }, 5550);
+            setTimeout(() => { triggerText(4); }, 6500);
+            setTimeout(() => { triggerText(5); }, 7500);
 
+            // ছবি এবং নেবুলা ক্লাউড (৮.৫ সেকেন্ডে)
             setTimeout(() => { 
-                star.remove(); 
-            }, duration * 1000);
+                introImg.classList.add('animate-img');
+                document.getElementById('nebula').style.opacity = '1';
+            }, 8500);
+
+            setTimeout(() => { currentPhase = 3; triggerHyperDrive(); }, 10500);  
+            setTimeout(() => { triggerSupernovaComets(); }, 13100); 
+            setTimeout(() => { window.location.href = "Home.html"; }, 15000);   
         }
 
-        for (let i = 0; i < 1000; i++) { 
-            createStar(); 
-        }
-
-        starInterval = setInterval(() => {
-            let burst = Math.random(); 
-            let amount = burst > 0.7 ? 250 : (burst > 0.4 ? 150 : 80);
-            
-            for (let i = 0; i < amount; i++) { 
-                createStar(); 
+        function triggerText(num) {
+            const el = document.getElementById(`l${num}`);
+            if (el) {
+                el.classList.add('animate-text', 'sweep-effect');
             }
-        }, 500);
-
-
-        let userDatabase = JSON.parse(localStorage.getItem("idai_user_database")) || [];
-
-
-        function notifyUser(text, isSuccess) {
-            // অ্যালার্ট পপ-আপ এবং এরর মেসেজ বক্স দুটিই একসাথে সক্রিয় করা হয়েছে 
-            alert(text);
-            const errorDiv = document.getElementById("errorMsg");
-            errorDiv.innerText = text; 
-            errorDiv.style.display = "block";
-            errorDiv.className = isSuccess ? "success-style" : "err-style";
         }
 
+        // ৩D প্যারালাক্স ব্যাকগ্রাউন্ড
+        function generate3DStars() {
+            const counts = [2500, 1500, 1000]; 
+            for (let layer = 0; layer < 3; layer++) {
+                for (let i = 0; i < counts[layer]; i++) {
+                    bgLayers[layer].push({
+                        baseX: Math.random() * canvas.width,
+                        baseY: Math.random() * canvas.height,
+                        size: (layer + 1) * 0.5 + Math.random() * 0.4, 
+                        alpha: Math.random(),
+                        pulseSpeed: Math.random() * 0.02 + 0.005,
+                        angle: Math.random() * Math.PI * 2,
+                        jitterMax: (layer + 1) * 0.3 
+                    });
+                }
+            }
+        }
 
-        document.getElementById("recognizeBtn").addEventListener("click", function() {
-            const nameInput = document.getElementById("name").value.trim();
-            const emailInput = document.getElementById("email").value.trim();
+        // কৌণিক (Diagonal) তারা
+        function spawnSlowStars(count) {
+            for (let i = 0; i < count; i++) {
+                driftingStars.push({
+                    x: Math.random() * canvas.width + (canvas.width * 0.3),
+                    y: -(Math.random() * canvas.height * 0.5), 
+                    vx: -(Math.random() * 0.8 + 0.5), 
+                    vy: Math.random() * 0.6 + 0.4,    
+                    size: Math.random() * 1.5 + 0.5
+                });
+            }
+        }
 
-            if (!nameInput || !emailInput) { 
-                notifyUser("Please enter your full name and gmail address to recognize.", false); 
-                return; 
+        function triggerHyperDrive() {
+            for (let i = 0; i < 300; i++) {
+                setTimeout(() => {
+                    heavyMeteors.push({
+                        x: canvas.width + 30,
+                        y: Math.random() * canvas.height, 
+                        vx: -(Math.random() * 15 + 12), 
+                        vy: Math.random() * 4 - 2,
+                        size: Math.random() * 2.5 + 1.2
+                    });
+                }, Math.random() * 2000);
+            }
+        }
+
+        function triggerSupernovaComets() {
+            launchSupernova = true;
+            const corners = [
+                { x: -60, y: -60 }, { x: canvas.width + 60, y: -60 },        
+                { x: -60, y: canvas.height + 60 }, { x: canvas.width + 60, y: canvas.height + 60 } 
+            ];
+            corners.forEach(corner => {
+                supernovaComets.push({
+                    x: corner.x, y: corner.y,
+                    speed: 1.5, acceleration: 1.14, size: 18 
+                });
+            });
+        }
+
+        function doScreenShake() {
+            isShaking = true;
+            setTimeout(() => { isShaking = false; mainContent.style.transform = 'translate(0px, 0px)'; }, 1400);
+        }
+
+        function animate() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.25)'; 
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            if (isShaking) {
+                let dx = (Math.random() - 0.5) * 18;
+                let dy = (Math.random() - 0.5) * 18;
+                mainContent.style.transform = `translate(${dx}px, ${dy}px)`;
             }
 
-            const matchedUser = userDatabase.find(u => u.name.toLowerCase() === nameInput.toLowerCase() && u.email.toLowerCase() === emailInput.toLowerCase());
-            
-            if (matchedUser) {
-                document.getElementById("username").value = matchedUser.username;
-                document.getElementById("password").value = matchedUser.password;
-                document.getElementById("contact").value = matchedUser.contact;
-                document.getElementById("profession").value = matchedUser.profession;
+            // ব্যাকগ্রাউন্ড তারা
+            if (currentPhase >= 1) {
+                ctx.fillStyle = '#ffffff';
+                for (let layer = 0; layer < 3; layer++) {
+                    bgLayers[layer].forEach(star => {
+                        star.alpha += star.pulseSpeed;
+                        if (star.alpha > 1 || star.alpha < 0.1) star.pulseSpeed = -star.pulseSpeed;
+                        
+                        star.angle += 0.06;
+                        const jitterX = Math.cos(star.angle) * star.jitterMax;
+                        const jitterY = Math.sin(star.angle) * star.jitterMax;
+
+                        ctx.globalAlpha = star.alpha;
+                        ctx.fillRect(star.baseX + jitterX, star.baseY + jitterY, star.size, star.size);
+                    });
+                }
+                ctx.globalAlpha = 1.0;
+            }
+
+            // কৌণিক তারা
+            if (currentPhase >= 2) {
+                ctx.fillStyle = '#ffffff';
+                driftingStars.forEach(s => {
+                    s.x += s.vx * speedMultiplier;
+                    s.y += s.vy * speedMultiplier;
+
+                    if (s.x < -20 || s.y > canvas.height + 20) {
+                        s.x = Math.random() * canvas.width + (canvas.width * 0.4);
+                        s.y = -(Math.random() * canvas.height * 0.3);
+                    }
+                    ctx.fillRect(s.x, s.y, s.size, s.size);
+                });
+            }
+
+            // মেটিওরস
+            if (currentPhase === 3) {
+                ctx.fillStyle = '#ffffff';
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = '#00ffff';
+                for (let i = heavyMeteors.length - 1; i >= 0; i--) {
+                    let m = heavyMeteors[i];
+                    m.x += m.vx; m.y += m.vy;
+                    ctx.fillRect(m.x, m.y, m.size * 2, m.size); 
+                    if (m.x < -50) heavyMeteors.splice(i, 1);
+                }
+                ctx.shadowBlur = 0;
+            }
+
+            // ৪ কোণার ৪টি দানব নক্ষত্র বিপুল গতিতে কেন্দ্রে ধাবিত হওয়া
+            if (launchSupernova && supernovaComets.length > 0) {
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+
+                for (let i = supernovaComets.length - 1; i >= 0; i--) {
+                    let sc = supernovaComets[i];
+                    sc.speed *= sc.acceleration;
+
+                    const angle = Math.atan2(centerY - sc.y, centerX - sc.x);
+                    const vx = Math.cos(angle) * sc.speed;
+                    const vy = Math.sin(angle) * sc.speed;
+
+                    sc.x += vx; sc.y += vy;
+
+                    ctx.shadowBlur = 35;
+                    ctx.shadowColor = '#00ffff';
+                    ctx.fillStyle = '#ffffff';
+                    ctx.beginPath();
+                    ctx.arc(sc.x, sc.y, sc.size, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    const dist = Math.hypot(centerX - sc.x, centerY - sc.y);
+                    
+                    if (dist < 40 || sc.speed > 65) {
+                        supernovaComets.splice(0, supernovaComets.length);
+                        showFlash = true; 
+                        shockwaveRadius = 10; 
+                        doScreenShake(); 
+                        break;
+                    }
+                }
+                ctx.shadowBlur = 0;
+            }
+
+            // বাস্তবসম্মত সুপারনোভা ব্লাস্ট ফ্লাশ যা পুরো স্ক্রিন হোয়াইটআউট করবে
+            if (showFlash) {
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
                 
-                // সফল রিকগনিশনে কোনো ব্রাউজার অ্যালার্ট আসবে না, জাস্ট নিচের বক্সে স্ট্যাটাস দেখাবে
-                const errorDiv = document.getElementById("errorMsg");
-                errorDiv.innerText = "Your profile has been found and verified successfully.";
-                errorDiv.style.display = "block";
-                errorDiv.className = "success-style";
-            } else {
-                notifyUser("Your profile was not found in the system registry.", false);
-            }
-        });
+                supernovaRadius += 55; 
+                shockwaveRadius += 80; 
+                if (supernovaAlpha < 1.0) supernovaAlpha += 0.08;
 
+                // মহাজাগতিক শকওয়েভ রিং
+                ctx.strokeStyle = `rgba(0, 255, 255, ${1.0 - (shockwaveRadius / (canvas.width * 1.5))})`;
+                ctx.lineWidth = 20;
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, shockwaveRadius, 0, Math.PI * 2);
+                ctx.stroke();
 
-        document.getElementById("loginForm").addEventListener("submit", function(e) {
-            e.preventDefault();
+                // রিয়েল থ্রিডি গ্রেডিয়েন্ট ব্লাস্ট কোর
+                const gradient = ctx.createRadialGradient(centerX, centerY, 5, centerX, centerY, supernovaRadius);
+                gradient.addColorStop(0, '#ffffff');          
+                gradient.addColorStop(0.15, '#00ffff');        
+                gradient.addColorStop(0.35, '#ff00ff');        
+                gradient.addColorStop(0.65, '#ffaa00');        
+                gradient.addColorStop(1, 'rgba(0, 0, 0, 0)'); 
 
-            const name = document.getElementById("name").value.trim();
-            const username = document.getElementById("username").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value.trim();
-            const contact = document.getElementById("contact").value.trim();
-            const profession = document.getElementById("profession").value.trim();
-            const isChecked = document.getElementById("declarationCheck").checked;
+                ctx.fillStyle = gradient;
+                ctx.globalAlpha = supernovaAlpha;
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, supernovaRadius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.globalAlpha = 1.0;
 
-            // কোলন ছাড়া সাধারণ সিঙ্গেল ক্লজের বাক্য
-            if (!name || !username || !email || !password || !contact || !profession) { 
-                notifyUser("All input fields must be filled completely.", false); 
-                return; 
-            } 
-            if (contact.length !== 11 || isNaN(contact)) { 
-                notifyUser("The contact number must contain exactly eleven digits.", false); 
-                return; 
-            } 
-            if (password.length < 9) { 
-                notifyUser("The security password must be more than eight characters.", false); 
-                return; 
-            }
-            if (!isChecked) { 
-                notifyUser("You must accept the formal declaration check box to proceed.", false); 
-                return; 
+                // যখন ব্লাস্টের তীব্র আলো পুরো স্ক্রিনকে গ্রাস করে ফেলবে
+                const maxDiagonal = Math.hypot(canvas.width, canvas.height);
+                if (supernovaRadius > maxDiagonal) {
+                    ctx.fillStyle = '#ffffff'; 
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                }
             }
 
-            const alreadyExists = userDatabase.some(u => u.email.toLowerCase() === email.toLowerCase());
-            if(!alreadyExists) {
-                userDatabase.push({ name, username, email, password, contact, profession });
-                localStorage.setItem("idai_user_database", JSON.stringify(userDatabase));
-            }
+            requestAnimationFrame(animate);
+        }
 
-            clearInterval(starInterval);
-            localStorage.setItem("idai_user_name", name);
-            localStorage.setItem("idai_is_logged_in", "true");
-            
-            // সব ঠিক থাকলে কোনো অ্যালার্ট ছাড়াই সরাসরি পেজ পরিবর্তন হবে
-            window.location.href = "opening.html";
-        });
+        animate();
     </script>
 </body>
 </html>
