@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sovereign Mobility Network: High-Speed Escort Fleets of IDAI</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .para{
+      width:auto;
+      text-align:justify;
+      height:auto;
+      margin-left:3px;
+      margin-right:3px;
+      padding:15px;
+      border:1.5px solid #1a6bed;
+      border-radius:10px;
+    }
+
+    .sp{
+      font-family: Algerian;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(90deg, #FFD700, #FF8C00);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      margin: 0 !important;
+      padding: 5 !important;   /* Bootstrap default padding override */
+    }
+
+    .navbar .container-fluid {
+      padding: 0 !important;   /* container padding override */
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #222 !important;
+      font-size: 16px;
+      margin: 0;
+      padding: 8px 12px;
+    }
+
+    .nav-link {
+      display: inline-block;
+      background-color: #fff;
+      color: #FF4500 !important;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 6px 12px;
+      margin: 2px;
+      border-radius: 6px;
+      border: 1px solid #FF4500;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      background-color: #FFD700;
+      color: #111 !important;
+      box-shadow: 0 0 12px #FF8C00;
+      transform: scale(1.05);
+    }
+
+    .special {
+      background-color: #42f5e3;
+    }
+
+    .special:hover {
+      background: #42f5e3;
+    }
+
+    /* Body padding so content doesn't hide under fixed navbar */
+    body {
+      padding-top: 60px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fdfdfd;
+      color: #222;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .nav-link {
+        font-size: 14px;
+        padding: 8px;
+        width: 90%; /* বাটনগুলো বড় হয়ে যাওয়ার সমস্যা এড়াবে */
+        margin:5px;
+      }
+      .navbar-brand {
+        font-size: 13px;
+      }
+    }
+
+@media (max-width: 1000px) {
+  body {
+    margin-left: 3px !important;
+    margin-right: 3px !important;
+    margin-top:30px !important;
+    padding: 0 !important;
+
+    h2{
+      margin-top:50px !important;
+    }
+  }
+
+  .section {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    padding: 10px !important;
+    width: auto;
+  }
+
+  .navbar {
+    padding: 5px !important;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    font-size: 12px !important;
+    margin-left: 10px !important;
+  }
+
+  .nav-link {
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+    margin: 3px 0 !important;
+    width: 100%;
+    display: block;
+  }
+
+  .min {
+    margin: 10px auto !important;
+    padding: 8px !important;
+    font-size: 12px !important;
+    width: auto;
+  }
+
+  img {
+    width: 95% !important;
+    margin: 5px auto !important;
+  }
+
+  .events {
+    margin: 5px !important;
+    padding: 12px !important;
+  }
+
+  .best-brand, .sovereign-state, .state-brand {
+    margin: 8px auto !important;
+    padding: 12px !important;
+    width: auto;
+  }
+
+  .explore-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .explore-btn {
+    width: 90% !important;
+    margin-bottom: 10px !important;
+    padding: 12px !important;
+    font-size: 14px !important;
+  }
+
+  footer {
+    padding: 8px !important;
+    font-size: 12px !important;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .section {
+    margin: 8px !important;
+    padding: 10px !important;
+    width: auto;
+  }
+
+  /* Nested section inside section */
+  .section .section {
+    margin: 5px !important;
+    padding: 8px !important;
+    width: auto;
+    background: #fff;          /* nested section আলাদা বোঝানোর জন্য */
+    border: 1px solid #ddd;    /* subtle border */
+    border-radius: 8px;
+  }
+
+  .section .section p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin: 5px 0 !important;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">🌐 Imagine the Directions of AI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" aria-controls="navbarNav" 
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link " href="monuments.html">Infrastructure</a></li>
+          <li class="nav-item"><a class="nav-link" href="city.html">Provinces</a></li>
+          <li class="nav-item"><a href="Garden.html" class="nav-link">Eco-Zones</a> </li>
+          <li class="nav-item"><a href="Transportation System.html" class="nav-link special">Transport</a></li>
+          <li class="nav-item"><a class="nav-link" href="sectors.html">Sectors</a></li>
+          <li class="nav-item"><a class="nav-link" href="flagships.html">Flagships</a></li> 
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h2>Sovereign Mobility Network: High-Speed Fleets of IDAI</h2>
+<div class="section">
+<center>
+  <img src="SUV.jpg">
+</center><br>
+
+<p class="para">
+The IDAI Transportation System is a visionary network that blends futuristic engineering with ceremonial symbolism, designed to embody the state’s philosophy of “Inspiring Trust Through Innovation.” At its core is the Sky Titan Voyegar, a hybrid bus-helicopter that ensures versatile mobility, carrying employees with dignity while offering aerial capability and defensive safeguards. Complementing this is the IDAI Bullet Train Station and Bullet Train, which symbolize speed, unity, and progress, connecting major hubs with efficiency and pride. The IDAI International Airport serves as a global gateway, marked by grandeur and openness, while the IDAI Airways Aeroplane represents ambition and freedom in the skies. Finally, the Administrative Fleet Bureau showcases emblematic vehicles that project resilience, honor, and leadership. Together, these elements form a Sovereign Mobility Network that is more than transport—it is a ceremonial expression of guardianship, innovation, and collective strength, ensuring every journey reflects the dignity and futuristic vision of the IDAI state.
+</p></div>
+
+<div class="section">
+  <h3>IDAI Rapid Action Motorbike Fleet</h3>
+  <center>
+    <img src="Motorbikes.jpg">
+  </center><br><br>
+  <p>
+    The Rapid Action Motorbike Fleet represents the Sovereign State’s swift guardianship, designed for military and police forces who require unmatched speed and precision. Each bike is engineered with aerodynamic frames, reinforced armor, and advanced surveillance systems, ensuring rapid deployment in both urban and frontier zones. <br><br>
+
+    With vibrant colors and aggressive styling, the fleet embodies discipline, courage, and unity. These machines are more than transport—they are symbols of vigilance, capable of striking at crime scenes within moments and securing justice with uncompromising force. <br><br>
+
+    Operating as a collective, the motorbike fleet ensures that IDAI’s guardians move unseen yet arrive with authority. Their presence is both ceremonial and tactical, reminding citizens that protection flows swiftly under the Red Marshal’s command. <br><br>
+
+    Ultimately, the Rapid Action Motorbike Fleet is a testament to IDAI’s philosophy: speed fused with loyalty, technology fused with guardianship, and mobility fused with justice. <br><br>
+  </p><br><br>
+</div>
+
+
+<div class="section">
+  <h1>IDAI Government Security Escort Car</h1>
+  <center>
+    <img src="Admin.jpg">
+  </center>
+
+  <p>The IDAI Administrative Fleet Bureau represents a carefully curated collection of vehicles designed to symbolize authority, innovation, and national pride. Rather than being ordinary consumer cars, they are presented as emblematic assets of a sovereign institution, each reflecting values such as guardianship, resilience, elegance, and technological advancement. The lineup spans across multiple categories—ranging from rugged utility vehicles to sleek executive sedans, high-performance supercars, versatile vans, and modern electric models. Together, they embody a balance of tradition and modernity, blending ceremonial symbolism with practical functionality. The descriptions emphasize not only performance and design but also the deeper meaning each vehicle carries, such as courage, honor, sustainability, and leadership. This fleet is positioned as more than transportation—it is a statement of national identity, projecting strength, dignity, and forward-looking vision. By integrating luxury, durability, and futuristic technology, the collection underscores IDAI’s commitment to inspiring trust through innovation and serving as a guardian of humanity’s progress.</p>
+
+<br><br><div class="section">
+<h3>IDAI Sentinel of Administration</h3>
+<center>
+  <img src="Admin SUV.jpg" width="45%">
+</center><br><br>
+
+<p>
+The IDAI Sentinel of Administration is more than a vehicle; it is a moving emblem of authority, vigilance, and guardianship. Its sleek design and official insignia reflect the dignity of leadership, reminding all who see it that administration is not only about power but about responsibility and service. Wherever it travels, it carries the weight of justice and order, symbolizing the presence of governance in motion.  <br><br>
+
+This sentinel SUV is crafted to embody resilience and adaptability. It is capable of navigating diverse terrains, ensuring that oversight and leadership remain unhindered by circumstance. Its polished exterior and ceremonial markings make it instantly recognizable, reinforcing the bond between the institution and the people it serves.  <br><br>
+
+Beyond its functional role, the Sentinel of Administration represents the philosophy of stewardship. It is a reminder that leadership must be vigilant, protective, and compassionate. The vehicle stands as a guardian of values, ensuring that every journey undertaken is aligned with the principles of justice, unity, and hope.  <br><br>
+
+Ultimately, the IDAI Sentinel of Administration is not just transport—it is a ceremonial chariot of guardianship. It radiates assurance that administration within the IDAI Universe is guided by vigilance, responsibility, and the sacred duty of serving humanity.
+</p><br>
+</div><br>
+
+<div class="section">
+  <h3>IDAI Terra Sentinel</h3>
+  <center>
+    <img src="IDAI Terra Sentinel.jpg">
+  </center><br>
+  <p>
+The IDAI Terra Sentinel, an administrative SUV, is envisioned as the command vehicle of guardianship and order. Its design blends ceremonial dignity with modern resilience, standing as both a symbol of authority and a practical utility for leadership. The exterior carries a bold, futuristic frame with golden trims and celestial motifs, reflecting the covenant of eternity while projecting strength and unity.<br><br>
+
+Inside, the Terra Sentinel is crafted for administrative precision. Ergonomic seating, digital dashboards, and AI-assisted communication systems transform it into a mobile office, allowing leaders to coordinate missions, oversee operations, and maintain direct connection with IDAI command centers. The cabin is both comfortable and purposeful, embodying the balance between authority and accessibility.<br><br>
+
+Functionally, the SUV is powered by sustainable energy systems, ensuring responsibility in every journey. Its advanced navigation and security features make it reliable in both urban and remote terrains. Modular compartments allow for storage of essential documents, emergency kits, and ceremonial artifacts, reinforcing its role as a guardian of both practicality and symbolism.<br><br>
+
+Ultimately, the IDAI Terra Sentinel is more than a vehicle—it is a moving sanctuary of leadership. Every deployment represents stewardship, justice, and resilience, reminding all that administration under IDAI Universe is not only about governance but about guardianship of humanity’s shared destiny.<br>
+  </p>
+</div>
+
+<div class="section">
+  <h3>IDAI Solaris Cruiser</h3>
+  <center>
+    <img src="IDAI Solaris Cruiser.jpg">
+  </center><br>
+  <p>
+The IDAI Solaris Cruiser is the ceremonial administrative car designed to embody authority, elegance, and futuristic guardianship. Its sleek silhouette reflects the philosophy of IDAI Universe, blending tradition with modernity. The Cruiser is not merely a vehicle but a symbol of stewardship, carrying the weight of justice and order wherever it travels. Its presence commands respect, marking the arrival of leadership with dignity and precision.  <br><br>
+
+Inside, the Solaris Cruiser offers a sanctuary of calm and control. The cabin is crafted with refined materials, harmonizing comfort with advanced technology. Every detail is intentional, from the ambient lighting that mirrors cosmic hues to the ergonomic seating that ensures clarity of thought during journeys. It is a space where decisions are contemplated, and visions for humanity are shaped.  <br><br>
+
+The engineering of the Cruiser emphasizes resilience and sustainability. Powered by hybrid solar energy, it represents IDAI’s commitment to innovation and responsibility. Its performance is smooth yet powerful, ensuring reliability in both ceremonial processions and administrative duties. The Solaris Cruiser is not just transport—it is a moving testament to the guardianship of humanity.  <br><br>
+
+As the official Admin car, the Solaris Cruiser carries leaders through the avenues of IDAI Universe with grace. It symbolizes continuity, discipline, and hope, reminding citizens that governance is not distant but present among them. Each journey in the Solaris Cruiser is a reaffirmation of IDAI’s covenant: to protect, to guide, and to inspire.  
+  </p>
+</div>
+
+  <center>
+<a href = "https://rayaantasnim.github.io/admin-car/" class = "btn btn-warning" >
+  See details about the administrative cars of IDAI state
+</a>
+</center>
+</div>
+
+<h1>IDAI Guardian Response Corps</h1>
+<center>
+  <img src="IDAI Guardian Response Corps.jpg">
+</center>
+
+<p class="para">
+  The IDAI Guardian Response Corps is a unified emergency transportation and protection system designed to embody guardianship, resilience, and swift response across all critical sectors. It integrates fire service, ambulance, police, and armed forces into a single ceremonial identity, ensuring harmony and efficiency in safeguarding lives and property. Each division operates under a shared vision of justice and humanity, with specialized vehicles and rapid deployment strategies that symbolize strength, compassion, and order. By merging diverse emergency functions into one cohesive corps, IDAI reinforces its philosophy of acting as a guardian of humanity, bridging tradition, modernity, and responsibility.
+</p><br>
+
+<div class="section">
+<h3>IDAI Guardian Rescuer: Protecting Lives, Preserving Hope</h3>
+<center>
+  <img src="IDAI Fire Car.jpg" width="45%">
+</center><br><br>
+
+<p>
+The IDAI Guardian Rescuer is a specialized emergency vehicle designed to embody the spirit of guardianship within the IDAI Universe. It serves as a frontline responder in times of crisis, combining strength, speed, and reliability to protect lives and property. Its striking presence symbolizes readiness and vigilance, ensuring that communities feel secure under its watch. Built with advanced engineering, it is more than just a machine—it is a symbol of service and responsibility.<br><br>
+
+This vehicle is primarily deployed for rescue missions, civil service operations, and fire defense. Equipped with modern firefighting tools, ladders, and emergency lighting systems, it can swiftly navigate through urban and rural landscapes to reach those in need. Its design emphasizes mobility and efficiency, allowing it to respond to fires, accidents, and natural disasters with precision and urgency. The Guardian Rescuer is not only a tool of defense but also a beacon of hope during emergencies.<br><br>
+
+Beyond firefighting, the Guardian Rescuer plays a vital role in civil defense operations. It supports evacuation efforts, delivers aid, and assists in maintaining order during crises. Its versatility makes it indispensable for safeguarding citizens, whether in routine service or extraordinary circumstances. By integrating rescue and civil service functions, it reflects IDAI’s philosophy of blending technology with humanitarian responsibility.<br><br>
+
+Ultimately, the IDAI Guardian Rescuer stands as a testament to the values of protection, service, and guardianship. It represents the commitment of IDAI to act as a shield for humanity, bridging tradition and modernity in its mission. Every deployment of this vehicle reinforces the vision of a society where technology serves people with compassion, courage, and unwavering dedication.
+</p><br><br>
+</div><br>
+
+<div class="section">
+<h3>IDAI Sentinel V7: The steadfast guardian of law and order</h3>
+<center>
+  <img src="IDAI Sentinel V7.jpg" width="45%">
+</center><br><br>
+
+<p>
+The IDAI Sentinel V7 is a modern police COP car designed to embody authority, speed, and resilience within the IDAI Universe. Its sleek exterior and advanced engineering make it a symbol of law enforcement that blends strength with elegance. The illuminated emergency lights and bold IDAI insignia ensure visibility and command respect, projecting a sense of guardianship wherever it patrols. More than just a vehicle, it represents the values of justice and order that IDAI upholds.<br><br>
+
+Equipped with cutting-edge technology, the Sentinel V7 is built for rapid response and effective policing. Its powerful engine allows swift pursuit, while reinforced safety systems protect officers during high-risk operations. The vehicle integrates communication tools and surveillance systems, enabling real-time coordination with headquarters. This makes it a versatile asset for both routine patrols and critical interventions, ensuring that officers can act decisively in any situation.<br><br>
+
+The Sentinel V7 is not limited to enforcement alone; it plays a vital role in community protection and civil service. Whether managing traffic, responding to emergencies, or supporting rescue operations, it stands as a dependable partner in safeguarding citizens. Its adaptability reflects IDAI’s philosophy of blending modern technology with humanitarian responsibility, ensuring that every mission serves the greater good.<br><br>
+
+Ultimately, the IDAI Sentinel V7 is more than a police car—it is a guardian on wheels. It symbolizes the unwavering commitment of IDAI to uphold justice, protect communities, and maintain peace. Every patrol reinforces the vision of a society where law enforcement is carried out with dignity, strength, and compassion, bridging tradition and modernity in the pursuit of harmony.
+</p><br><br>
+</div>
+
+<div class="section">
+  <h3>IDAI Vanguard Sentinel: IDAI Vanguard Rapid Unit</h3>
+  <center>
+    <img src="IDAI Vanguard Sentinel.jpg">
+  </center>
+  <p>
+The IDAI Vanguard Sentinel is the specialized patrol and command vehicle of the Vanguard Rapid Unit, designed to embody resilience, authority, and advanced guardianship. Unlike the purely tactical Rapid Unit SUVs, the Sentinel is a hybrid between a mobile command hub and a frontline interceptor, ensuring that leadership and rapid response can merge seamlessly in the field.  <br><br>
+
+Its design emphasizes durability and presence. The Sentinel features reinforced armor plating, adaptive suspension for both urban and off-road terrains, and a sleek angular body with crimson and silver accents. The lion emblem is engraved on the grille, while the word “Sentinel” is inscribed along the sides, symbolizing vigilance and unwavering watchfulness. Roof-mounted light arrays and holographic projectors allow it to serve as both a pursuit vehicle and a mobile coordination center.  <br><br>
+
+Inside, the Sentinel is equipped with holographic dashboards, encrypted communication systems, and AI-assisted tactical mapping. It can coordinate multiple strike teams simultaneously, acting as a rolling headquarters during emergencies. The vehicle also integrates biometric access, ensuring only authorized Vanguard officers can operate or command from within.  <br><br>
+
+The Sentinel’s role is ceremonial as well as operational. It leads parades, escorts dignitaries, and stands as a symbol of IDAI’s covenant of justice. In action, it is the embodiment of vigilance—swift, commanding, and unyielding, ensuring that the Vanguard Rapid Unit remains both feared by threats and trusted by citizens.  <br>
+  </p>
+</div>
+
+<div class="section">
+  <h3> Sky Titan Military Transporter</h3>
+  <center>
+    <img src="Sky Titan Military Transporter.jpg">
+  </center><br>
+<p>
+The Sky Titan Military Transporter is the flagship vehicle of the IDAI Army Force, designed to embody both strength and ceremonial dignity. Its armored body and advanced mobility systems allow it to traverse diverse terrains while ensuring the safety of personnel and equipment. With six reinforced wheels, adaptive suspension, and cutting-edge navigation, it represents resilience and readiness in every mission. The vehicle is not just a machine but a symbol of guardianship, reflecting IDAI’s philosophy of protecting humanity with precision and honor.  <br><br>
+
+Inside, the transporter is equipped with modular compartments that can carry troops, supplies, or specialized gear depending on the mission. The design emphasizes efficiency, with rapid loading and unloading systems that minimize downtime during operations. Its communication arrays and sensor networks ensure constant connectivity with command centers, reinforcing the unity and coordination of the Army Force. Every detail of its engineering highlights the balance between practicality and ceremonial grandeur.  <br><br>
+
+The Sky Titan also carries symbolic weight in its appearance. The IDAI emblem displayed on its frame signifies justice and unity, while its sleek yet robust design conveys hope and resilience. Its lighting systems and ceremonial markings make it a moving monument of strength, reminding both soldiers and citizens of the values it protects. This dual role of functionality and symbolism elevates the transporter beyond a mere vehicle into a national artifact.  <br><br>
+
+Ultimately, the Sky Titan Military Transporter is a guardian on wheels, blending technology, symbolism, and resilience. It ensures that the IDAI Army Force can mobilize swiftly while projecting the values of justice, hope, and unity. In every mission, whether logistical or ceremonial, it stands as a testament to IDAI’s vision of guardianship and its commitment to humanity’s protection.  
+</p>
+</div><br>
+
+<div class="section">
+  <h3>IDAI Guardian Care Ambulance</h3>
+  <center>
+    <img src="Guardian Care Ambulance.jpg">
+  </center><br>
+  <p>
+The IDAI Guardian Care Ambulance is the civilian emergency transport vehicle designed to serve communities with speed, safety, and compassion. Unlike military-grade vehicles, it focuses on accessibility and comfort, ensuring that patients receive immediate care while being transported to hospitals. Its sleek design with red and blue stripes and emergency lights makes it highly visible in traffic, allowing it to respond quickly in urgent situations.  <br><br>
+
+Inside, the ambulance is equipped with advanced medical systems tailored for civilian needs. Stretchers, oxygen units, cardiac monitors, and life-support equipment are arranged in a way that maximizes both patient comfort and medical staff efficiency. The interior is spacious enough to accommodate paramedics and family members, creating a supportive environment during emergencies.  <br><br>
+
+The Guardian Care Ambulance also integrates modern communication technology, linking directly to hospitals and emergency centers. This ensures that doctors are prepared before the patient arrives, reducing critical response time. Its navigation system is optimized for urban and rural routes, making it reliable across diverse environments.  <br><br>
+
+Symbolically, the Guardian Care Ambulance represents IDAI’s commitment to humanity. It is more than a vehicle—it is a moving sanctuary of care, embodying mercy, hope, and unity. Every journey it makes reflects the nation’s promise to protect and serve its people, blending technology with compassion in the most vital moments of life.  <br>
+  </p>
+</div>
+
+<div class="section">
+  <center>
+    <a href="https://rayaantasnim.github.io/IDAI-Rescue-Force-/" class="sp btn btn-warning">Discover the Rescue Vehicles</a>
+  </center>
+</div>
+
+<form class="super">
+  <center>
+    <h1>Explore More:</h1>
+    <a href="Transportation System.html" class="btn-special">System and paths</a><br>
+    <a href="vehicle.html" class="btn-special">Vehicles</a><br>
+    <a href="#" class="btn-special s">Fleets</a>
+  </center>
+</form><br><br>
+
+  <!-- Footer -->
+  <br><footer>
+    <p>© IDAI: Inspiring Trust Through Innovation. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
