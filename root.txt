@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rayaantasnim.github.io/username.github.io-IDAI-company-/sitemap.xml

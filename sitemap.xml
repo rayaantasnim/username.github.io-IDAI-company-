@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Intro / Opening Ceremony -->
+  <url>
+    <loc>https://rayaantasnim.github.io/username.github.io-IDAI-company-/index.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Main Home Page -->
+  <url>
+    <loc>https://rayaantasnim.github.io/username.github.io-IDAI-company-/Home.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sovereign Nation's Provincial Divisions -->
+  <url>
+    <loc>https://rayaantasnim.github.io/username.github.io-IDAI-company-/city.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- National Flagships, Currency, Symbols -->
+  <url>
+    <loc>https://rayaantasnim.github.io/username.github.io-IDAI-company-/flagships.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Government Fleets -->
+  <url>
+    <loc>https://rayaantasnim.github.io/username.github.io-IDAI-company-/fleet.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- National Gardens & Sanctuaries -->
+  <url>
+    <loc>https://rayaantasnim.github.io/username.github.io-IDAI-company-/Garden.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- National Monuments & Infrastructures -->
+  <url>
+    <loc>https://rayaantasnim.github.io/username.github.io-IDAI-company-/monuments.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Business Sectors -->
+  <url>
+    <loc>https://rayaantasnim.github.io/username.github.io-IDAI-company-/sectors.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Transportation System -->
+  <url>
+    <loc>https://rayaantasnim.github.io/username.github.io-IDAI-company-/Transportation%20System.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Unique Vehicles -->
+  <url>
+    <loc>https://rayaantasnim.github.io/username.github.io-IDAI-company-/vehicle.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
